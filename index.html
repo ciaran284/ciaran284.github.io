@@ -1,5 +1,8 @@
 <html>
 <body bgcolor="#1F1F1F";margin-left:200px;>
+
+mark.green {color:green;background: none;}
+
 <head>
 <style>
 h1 {color:green;font-style:bold;font-size: 60px;font-family: "Trebuchet MS";padding: 100px;line-height: 34px;text-shadow: 1px 1px 1px #000000;text-shadow: 1px 1px 1px #000000}
@@ -19,6 +22,14 @@ ul {color:808080;font-style:bold;font-size: 22px;font-family: "Trebuchet MS";mar
              <div class="Inner">
                 <h2>ITEMS</h2>
    
+   <figure>
+      <img src="images/items/ciaran_ring.png" hspace='150'>
+      <h3>Ciaran's Ring:</h3>
+      <ul>
+         <li>Attribute bonus reduced from 7 to 6.</li>
+		 <br>
+      </ul>
+   </figure>   
    <figure>
       <p><img src="images/items/clawed_boots.png" hspace='150'></p>
       <h3>Clawed Boots:</h3>
@@ -69,6 +80,27 @@ ul {color:808080;font-style:bold;font-size: 22px;font-family: "Trebuchet MS";mar
       </ul>
    </figure>
    <figure>
+      <img src="images/items/infernalis.png" hspace='150'>
+      <h3>Infernalis: <span style="color:green">NEW ITEM</span></h3>
+      <ul>
+         <li>Requires: </br>
+			 Orb of Pyros (1250)</br>
+			 Even Hood (400)</br>
+			 Sharp Dirk (500)</br>
+			 Total Cost: 2150</br></li><br>
+			 
+		 <li>Provides: </br>
+		    15 Damage </br>
+			6 Agility </br>
+			9 Intelligence </br>
+			200 HP </br></li><br>
+			
+		 <li>Passive: </br>
+			Burns enemies in a 600 radius for 25 damage each second.</li>
+		 <br>
+      </ul>
+   </figure>   
+   <figure>
       <img src="images/items/unbreakable_willpower.png" hspace='150'>
       <h3>Jonathan's Willpower:</h3>
       <ul>
@@ -92,6 +124,14 @@ ul {color:808080;font-style:bold;font-size: 22px;font-family: "Trebuchet MS";mar
 		 <br>
       </ul>
    </figure>
+   <figure>
+      <img src="images/items/orb_of_pyros.png" hspace='150'>
+      <h3>Orb of Pyros:</h3>
+      <ul>
+         <li>Health bonus reduced from 300 to 200.</li>
+		 <br>
+      </ul>
+   </figure>   
    <figure>
       <img src="images/items/priestheaddress.png" hspace='150'>
       <h3>Priest's Headdress:</h3>
@@ -141,6 +181,27 @@ ul {color:808080;font-style:bold;font-size: 22px;font-family: "Trebuchet MS";mar
          <li>Active miss chance increased from 20% to 40%.</li>
 		 <br>
       </ul>
+   </figure>	  
+   <figure>
+      <img src="images/items/ursine_zeal.png" hspace='150'>
+      <h3>Ursine Zeal: <span style="color:green">NEW ITEM</span></h3>
+      <ul>
+         <li>Requires: </br>
+			 Nonchalance(XXX)</br>
+			 Priest Tunic(XXX)</br>
+			 Total Cost:(2150)</br></li><br>
+			 
+		 <li>Provides: </br>
+		    1 Mana Regen</br>
+			7 Health Regen</br>
+			10% Magic Resistance</br>
+			
+		 <li>Passive Aura: </br>
+			Gives 1.5 Mana Regen and 15% Magic Resistance to all allies in 800 radius.</li>
+		 <br>
+      </ul>
+   </figure> 
+   <figure>
 	  
    </figure>
 	  <div class="Container RepeatY BGStyle1" id="Heroes">
@@ -162,12 +223,14 @@ ul {color:808080;font-style:bold;font-size: 22px;font-family: "Trebuchet MS";mar
 
    <figure>
       <img src="images/heroes/basilisk.png" hspace='150'>
-      <h3>Basilisk:</h3>
+      <h3>Basilisk: <span style="color:green">REWORKED HERO</span></h3>
       <ul>
 		 <li>Petrify now reduces the targets armor by 5/6/7/8 instead of amplifying right click damage taken by 20%/25%/30%/35%.</li>		 
-		 <li>Expel Acid manacost reduced from 55 to 25.</li>
-         <li>Virtulent Toxic Reworked - Now applies a 3 second debuff to any enemy basilisk attacks. The debuff deals physical damage each second equal to 10/14/18/22% of basilisks attack damage.</li>		 
-         <li>Paroxysm Reworked - Now petrifies all enemy heroes around basilisk for 1.25/1.5/1.75s on use, stunning and reducing their armor by 7/9/11. Afterwards deals 50/75/100 physical damage to them. If this petrifies at least one enemy, Basilisk gains a 50/60/70% magic resistance buff for 6 seconds.</li>		 
+		 <li>Expel Acid manacost reduced from 55 to 25.</li> 	 
+         <li>Virtulent Toxin <span style="color:green">Reworked</span> <br> 
+		 <img src="images/spellicons/basilisk_toxin2.png" hspace='-150' width="75" height="75"> <br>
+		 Now applies a 3 second debuff to any enemy Basilisk attacks. The debuff deals physical damage each second equal to 10/14/18/22% of Basilisk's attack damage.</li>		 
+         <li>Paroxysm <span style="color:green">Reworked</span> - Now petrifies all enemy heroes around basilisk for 1.25/1.5/1.75s on use, stunning and reducing their armor by 7/9/11. Afterwards deals 50/75/100 physical damage to them. If this petrifies at least one enemy, Basilisk gains a 50/60/70% magic resistance buff for 6 seconds.</li>		 
          <li>Paroxysm cooldown reduced from 90 to 80/70/60.</li>		 
 		 <br>		 
       </ul>
@@ -175,18 +238,21 @@ ul {color:808080;font-style:bold;font-size: 22px;font-family: "Trebuchet MS";mar
 
    <figure>
       <img src="images/heroes/npc_dota_wolf.png" hspace='150'>
-      <h3>Cursed Wolf:</h3>
+      <h3>Cursed Wolf: <span style="color:green">NEW ABILITY</span></h3>
       <ul>
 		 <li> <b>Lick Paw</b> replaced with <b>Healing Glyph</b>.</li>		 
+ 
+		 <img src="images/spellicons/wolf_heal2.png" hspace='-150' width="75" height="75">
+
 		 <br>
 		 <li> <b>Healing Glyph:</b> </br>
-		 700 Cast Range. </br> 
-		 20/18/16/14 second cooldown. </br> 
+		 700 Cast Range </br> 
+		 20/18/16/14 second cooldown </br> 
 		 120 Manacost </br> 
 		 </br> 
 		 Targets an ally to place a buff on them which heals each second based on their missing health. </br> 
-		 Base HPS: 25/40/55/70. </br>
-		 Bonus HPS: 6/8/10/12% of the target's missing health. </br> 
+		 Base Healing per second: 25/40/55/70. </br>
+		 Bonus Healing per second: 6/8/10/12% of the target's missing health. </br> 
 		 </li>
 		 
 		 <br>		 
@@ -199,7 +265,8 @@ ul {color:808080;font-style:bold;font-size: 22px;font-family: "Trebuchet MS";mar
       <ul>
 		 <li>Army of Shadows shadow damage increased from 25%/35%/45% to 75%/80%/85%.</li>		 
 		 <li>Army of Shadows shadows now gives a stack of Knights of the Dark.</li>
-         <li>Anticipation cast point reduced from 0.3 to 0.1.</li>		 
+         <li>Anticipation cast point reduced from 0.3 to 0.1.</li>
+		 <li>Rescaled the King's movement speed from 350 to 370/385/400.</li>
 		 <br>		 
       </ul>	 
    </figure>
