@@ -1,0 +1,149 @@
+<html>
+<!--CUSTOM TEXT/HEADING STYLES/BACKGROUNDS-->
+<head>
+	<link href="css/global_new.css" rel="stylesheet" type="text/css">
+	<link href="css/global_116.css" rel="stylesheet" type="text/css">
+	<link href="images/gtd_logo.png"rel="shortcut icon">
+	<title>Gameplay Update - 1.16</title>
+
+	<script type="text/javascript" src="http://cdn.dota2.com/apps/dota2/javascript/static/jquery-1.7.1.min.js?v=4965973"></script>
+	<script type="text/javascript" src="http://cdn.dota2.com/apps/dota2/javascript/static/jquery.cycle.all.min.js?v=4965973"></script>
+	<script type="text/javascript" src="http://cdn.dota2.com/apps/dota2/javascript/static/jquery.easing.1.3.min.js?v=4965973"></script>
+	<script type="text/javascript" src="http://cdn.dota2.com/apps/dota2/javascript/static/jquery.imagesloaded.min.js?v=4965973"></script>	
+	
+	<script>
+		var g_bSkillAdvancing = true;
+		function SetActiveSkill( strName, bManual )
+		{
+			if ( bManual )
+			{
+				g_bSkillAdvancing = false;
+				$( '#BG02 video' ).attr( 'loop', 'loop' );
+			}
+
+			$( '#BG02' ).removeClass();
+			$( '#BG02' ).addClass( 'Container' );
+			$( '#BG02' ).addClass( strName + 'Active' );
+			$( '#BG02 video' ).each( function () {
+				this.currentTime = 0;
+				this.pause();
+			});
+			$( '#BG02 video.' + strName ).each( function () {
+				this.currentTime = 0;
+				this.play();
+			});
+		}
+		var rgAbilityClasses = [
+			'Q',
+			'W',
+			<!-- 'E', -->
+			<!-- 'R', -->
+		];
+		function CycleAbilityVideo( nDelta )
+		{
+			var $BG02 = $( '#BG02' );
+			for ( var i = 0; i < rgAbilityClasses.length; i++ )
+			{
+				if ( !$BG02.hasClass( rgAbilityClasses[i] + 'Active' ) )
+					continue;
+
+				SetActiveSkill( rgAbilityClasses[ ( i + nDelta + rgAbilityClasses.length ) % rgAbilityClasses.length ], false );
+				break;
+			}
+		}
+		$( function () {
+			$( '#BG02 video' ).bind( 'ended', function () {
+				if ( g_bSkillAdvancing )
+				{
+					CycleAbilityVideo( +1 );
+				}
+			});
+		});
+	</script>
+</head>
+
+
+<!--MAIN PATCH HEADING-->
+<body>
+<div id="Container_Title" class="Container">
+	<div id="Container_Title" class="Content">
+	</div>
+</div>
+<div id="Container_01" class="Container">
+	<div id="Content_01" class="Content">
+	</div>
+</div>
+
+<div class="Container QActive" id="BG02">
+	<div class="Inner">
+		<div class="ButtonIconContainer">
+			<a class="ButtonIcon Q" href="javascript:SetActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetActiveSkill( 'W', true );"></a>
+			<!-- <a class="ButtonIcon E" href="javascript:SetActiveSkill( 'E', true );"></a> -->
+			<!-- <a class="ButtonIcon R" href="javascript:SetActiveSkill( 'R', true );"></a>			 -->
+			<div style="clear: both;"></div>
+		</div>
+		<video autoplay="" preload="auto" class="Q" >
+		  <source src="videos/116/Q.webm" type="video/webm"/>
+		</video>	
+		<video preload="auto" class="W">
+		  <source src="videos/116/W.webm" type="video/webm"/>
+		</video>	
+
+		<div class="LargeIcon"></div>
+
+		<h2 class="Q">Q Ability</h2>
+		<p class="Q GrayDescription">Q Description.</p>
+
+		<h2 class="W">W Ability</h2>
+		<p class="W GrayDescription">W Description.</p>
+	
+	<!-- <h2 class="Q">E Ability</h2> -->
+	<!-- <p class="Q GrayDescription">E Description.</p> -->
+	
+	<!-- <h2 class="Q">R Ability</h2> -->
+	<!-- <p class="Q GrayDescription">R Description.</p>	 -->
+	
+	</div>
+</div>
+
+
+<div class="content">
+
+<!--NEW ITEMS-->	
+<h2><div class="headingbox_items">ITEMS</div></h2>
+	<div class="transbox"><br><br><br>
+		<figure>
+			<img src="images/items/angelpearl.png" hspace='100'>
+			<h3>Angel Pearl: <span style="color:green">NEW ITEM</span></h3>
+			<ul>
+				<li>Total Cost: 2200</li><br>
+					
+				<li>Provides: </br>
+				<ul class="subtab">					
+					+11 All Attributes</br></li>
+				</ul>
+				<br>
+			</ul>
+		</figure>
+	</div>	
+
+<!--UPDATED HEROES-->   
+<h2><div class="headingbox_heroes">HEROES</div></h2>
+	<div class="transbox"><br><br><br>	
+		<figure>
+			<img src="images/heroes/ancient_rose.png" hspace='100'>
+			<h3>Ancient Rose:</h3>
+			<ul>
+				<li>Stranglethorn cast point increased from 0.05 to 0.3.</li>
+				<li>Stranglethorn now has a 2 second delay, during which Rose can act freely (previously required a 1.5 second channel).</li>
+				<li>Stranglethorn damage reduced from 400/500/600 to 200/250/300.</li>		
+				<li>Stranglethorn stun duration reduced from 3/4/5 to 1.75/2/2.25.</li>
+				<br>		 
+			</ul>	 
+		</figure>			
+	</div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+@font-face {font-family: "Radiance";src: url('fonts/radiance.ttf');font-weight: normal;font-style: normal;}
+div{font-family: 'Radiance';}
+div.Container .Inner
+{
+    background-position:top center;background-repeat:no-repeat;margin-right:auto;margin-left:auto;position:relative;
+	
+}
+h2.ClickImage
+{
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 21px;
+    color: #decdad;
+    font-weight: normal;
+    text-align: center;
+}
+
+h1 {color:green;font-style:bold;font-size: 75px;font-family: "Radiance";padding: 25px;line-height: 34px;text-shadow: 1px 1px 1px #000000;text-shadow: 1px 1px 1px #000000}
+h2 {color:white;font-style:bold;font-size: 45px;font-family: "Radiance";padding: 15px;margin-left: 125px;line-height: 34px;text-shadow: 1px 1px 1px #000000}
+h3 {color:C1C1C1;font-style:bold;font-size: 22px;font-family: "Radiance";margin-left: 100px;line-height: 34px;text-shadow: 1px 1px 1px #000000}
+
+ul {color:808080;font-style:bold;font-size: 22px;font-family: "Radiance";margin-left: 100px;margin-right: 50px;line-height: 34px;text-shadow: 1px 1px 1px #000000}
+ul.subtab {margin-left: 0px}
+
+p.GrayDescription{display: block;font-size: 22px;color: #999999;line-height: 36px;}
+
+header{background-color: #000000;padding: 5px;color: white;text-align: center;background-repeat: repeat-y;}
+.Container {background-position:top center;background-repeat:no-repeat;margin-right:auto;margin-left:auto;position:relative;}
+.Content {background-position:top center;background-repeat:no-repeat;margin-right:auto;margin-left:auto;position:relative;width:1500px;}
+
+div.headingbox_patchhistory{background-image:linear-gradient(to right,#00AA00,green);padding: 25px;;margin: 50px 25px 0px 25px;width:250px;}
+
+div.headingbox_generalchanges {background-image:linear-gradient(to right,#00AA00,green);padding: 25px;margin: 50px 25px 0px 25px;width:390px;}
+div.headingbox_items{background-image:linear-gradient(to right,#00AA00,green);padding: 25px;margin: 50px 25px 0px 25px;width:120px;}
+div.headingbox_heroes{background-image:linear-gradient(to right,#00AA00,green);padding: 25px;;margin: 50px 25px 0px 25px;width:150px;}
+div.transbox {background: rgba(0,0,0,0.6);margin-left: 160px;margin-right: 50px;padding: 10px;margin-top: 10px;margin-bot: 10px;}
+div.transbox figure{margin-bot: 100px;}
+
+
+body {background-image: url("images/background_main.jpg");background-repeat: repeat-y;background-color: #151618;background-position:center;}
+
+a:link {color: green;}
+a:visited {color: green;}
+a{text-decoration: none;color:green;font-style:bold;font-size: 25px;font-family: "Radiance";line-height: 34px;text-shadow: 1px 1px 1px #000000}
+
+#Container_Title, #Content_Title{background-image: url("images/116/Container_Title.jpg");height:500px;}
+#Container_01, #Content_01{background-image: url("images/116/Container_01.jpg");height:1125px;}
+
+#BG02, #BG02.Inner{background-image: url("images/116/BG02.jpg");height:1125px;}
+#BG02 video {position: absolute;top: 100;left: 75px;visibility: collapse;height:500px;}
+#BG02 .ButtonIconContainer{position: absolute;top: 700px;left: 185px;}
+#BG02 a.ButtonIcon{display: block;width: 100px;height: 100px;float: left;margin-right: 50px;}
+#BG02 .LargeIcon {position: absolute;top: 651px;left: 254px;width: 100px;height: 100px;}
+#BG02 h2 {position: absolute;top: 820px;left: 100px;font-family: 'Radiance';font-size: 24px;color: #D8E6DC;text-transform: uppercase;letter-spacing: 3.6px;text-shadow: 0px 0px 25px rgba( 253, 255, 107, 0.62 );visibility: collapse;}
+#BG02 p {position: absolute;top: 875px;left: 250px;width: 525px;font-size: 18px;line-height: 28px;visibility: collapse;}
+
+#Container_03, #Content_03{background-image: url("images/116/Container_03.jpg");height:1500px;}
+
+#BG02.QActive .ButtonIcon.Q { background-image: url("images/116/Q.jpg"); cursor: default; }
+#BG02.WActive .ButtonIcon.W { background-image: url("images/116/W.jpg"); cursor: default; }
+#BG02.EActive .ButtonIcon.E { background-image: url("images/116/E.jpg"); cursor: default; }
+#BG02.RActive .ButtonIcon.R { background-image: url("images/116/R.jpg"); cursor: default; }
+
+#BG02:not(.QActive) .ButtonIcon:hover.Q { background-image: url("images/116/Q.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
+#BG02:not(.WActive) .ButtonIcon:hover.W { background-image: url("images/116/W.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
+#BG02:not(.EActive) .ButtonIcon:hover.E { background-image: url("images/116/E.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
+#BG02:not(.RActive) .ButtonIcon:hover.R { background-image: url("images/116/R.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
+
+#BG02.QActive.LargeIcon {background-image: url("images/116/Q.jpg");}
+#BG02.WActive.LargeIcon {background-image: url("images/116/W.jpg");}
+#BG02.EActive.LargeIcon {background-image: url("images/116/E.jpg");}
+#BG02.RActive.LargeIcon {background-image: url("images/116/R.jpg");}
+
+#BG02.QActive video.Q { visibility: visible; }
+#BG02.WActive video.W { visibility: visible; }
+#BG02.EActive video.E { visibility: visible; }
+#BG02.RActive video.R { visibility: visible; }
+
+#BG02.QActive h2.Q { visibility: visible; }
+#BG02.WActive h2.W { visibility: visible; }
+#BG02.EActive h2.E { visibility: visible; }
+#BG02.RActive h2.R { visibility: visible; }
+
+#BG02.QActive p.Q { visibility: visible; }
+#BG02.WActive p.W { visibility: visible; }
+#BG02.EActive p.E { visibility: visible; }
+#BG02.RActive p.R { visibility: visible; }
