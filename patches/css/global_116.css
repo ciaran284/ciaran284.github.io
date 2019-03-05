@@ -53,22 +53,20 @@ a{text-decoration: none;color:green;font-style:bold;font-size: 25px;font-family:
 #BG02 h2 {position: absolute;top: 875px;left: 125px;font-family: 'Radiance';font-size: 36px;color: #D8E6DC;text-transform: uppercase;letter-spacing: 3.6px;text-shadow: 0px 0px 50px rgba( 0, 255, 0, 1.62 );visibility: collapse;}
 #BG02 p {position: absolute;top: 950px;left: 275px;width: 650px;font-size: 25px;line-height: 35px;visibility: collapse;}
 
-#Container_03, #Content_03{background-image: url("images/116/Container_03.jpg");height:1500px;}
+#BG02.QActive .ButtonIcon.Q { background-image: url("images/116/TotemCarverQ.jpg"); cursor: default; }
+#BG02.WActive .ButtonIcon.W { background-image: url("images/116/TotemCarverW.jpg"); cursor: default; }
+#BG02.EActive .ButtonIcon.E { background-image: url("images/116/TotemCarverE.jpg"); cursor: default; }
+#BG02.RActive .ButtonIcon.R { background-image: url("images/116/TotemCarverR.jpg"); cursor: default; }
 
-#BG02.QActive .ButtonIcon.Q { background-image: url("images/116/Q.jpg"); cursor: default; }
-#BG02.WActive .ButtonIcon.W { background-image: url("images/116/W.jpg"); cursor: default; }
-#BG02.EActive .ButtonIcon.E { background-image: url("images/116/E.jpg"); cursor: default; }
-#BG02.RActive .ButtonIcon.R { background-image: url("images/116/R.jpg"); cursor: default; }
+#BG02:not(.QActive) .ButtonIcon:hover.Q { background-image: url("images/116/TotemCarverQ.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG02:not(.WActive) .ButtonIcon:hover.W { background-image: url("images/116/TotemCarverW.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG02:not(.EActive) .ButtonIcon:hover.E { background-image: url("images/116/TotemCarverE.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG02:not(.RActive) .ButtonIcon:hover.R { background-image: url("images/116/TotemCarverR.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
 
-#BG02:not(.QActive) .ButtonIcon:hover.Q { background-image: url("images/116/Q.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
-#BG02:not(.WActive) .ButtonIcon:hover.W { background-image: url("images/116/W.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
-#BG02:not(.EActive) .ButtonIcon:hover.E { background-image: url("images/116/E.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
-#BG02:not(.RActive) .ButtonIcon:hover.R { background-image: url("images/116/R.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
-
-#BG02.QActive .LargeIcon {background-image: url("images/116/QLarge.jpg");}
-#BG02.WActive .LargeIcon {background-image: url("images/116/WLarge.jpg");}
-#BG02.EActive .LargeIcon {background-image: url("images/116/ELarge.jpg");}
-#BG02.RActive .LargeIcon {background-image: url("images/116/RLarge.jpg");}
+#BG02.QActive .LargeIcon {background-image: url("images/116/TotemCarverQLarge.jpg");}
+#BG02.WActive .LargeIcon {background-image: url("images/116/TotemCarverWLarge.jpg");}
+#BG02.EActive .LargeIcon {background-image: url("images/116/TotemCarverELarge.jpg");}
+#BG02.RActive .LargeIcon {background-image: url("images/116/TotemCarverRLarge.jpg");}
 
 #BG02.QActive video.Q { visibility: visible; }
 #BG02.WActive video.W { visibility: visible; }
@@ -84,3 +82,39 @@ a{text-decoration: none;color:green;font-style:bold;font-size: 25px;font-family:
 #BG02.WActive p.W { visibility: visible; }
 #BG02.EActive p.E { visibility: visible; }
 #BG02.RActive p.R { visibility: visible; }
+
+/* <> */
+#BG03, #BG03.Inner{background-image: url("images/116/BG03.png");height:861px;background-color: #151618;}
+
+/* <> */
+#BG04, #BG04.Inner{background-image: url("images/116/BG04.png");height:1100px;background-color: #151618;}
+#BG04 .ButtonIconContainer{position: absolute;top: 140px;left: 175px;}
+#BG04 a.ButtonIcon{display: block;width: 100px;height: 100px;float: left;margin-right: 100px;}
+#BG04 .LargeIcon {position: absolute;top: 400px;left: 10px;width: 200px;height: 200px;}
+#BG04 h2 {position: absolute;top: 400px;left: 125px;font-family: 'Radiance';font-size: 36px;color: #D8E6DC;text-transform: uppercase;letter-spacing: 3.6px;text-shadow: 0px 0px 50px rgba( 0, 255, 0, 1.62 );visibility: collapse;}
+#BG04 p {position: absolute;top: 475px;left: 275px;width: 650px;font-size: 25px;line-height: 35px;visibility: collapse;}
+
+#BG04.QActive .ButtonIcon.Q { background-image: url("images/116/ValkyrieQ.jpg"); cursor: default; }
+#BG04.WActive .ButtonIcon.W { background-image: url("images/116/ValkyrieW.jpg"); cursor: default; }
+#BG04.EActive .ButtonIcon.E { background-image: url("images/116/ValkyrieE.jpg"); cursor: default; }
+#BG04.RActive .ButtonIcon.R { background-image: url("images/116/ValkyrieR.jpg"); cursor: default; }
+
+#BG04:not(.QActive) .ButtonIcon:hover.Q { background-image: url("images/116/ValkyrieQ.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG04:not(.WActive) .ButtonIcon:hover.W { background-image: url("images/116/ValkyrieW.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG04:not(.EActive) .ButtonIcon:hover.E { background-image: url("images/116/ValkyrieE.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG04:not(.RActive) .ButtonIcon:hover.R { background-image: url("images/116/ValkyrieR.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+
+#BG04.QActive .LargeIcon {background-image: url("images/116/ValkyrieQLarge.jpg");}
+#BG04.WActive .LargeIcon {background-image: url("images/116/ValkyrieWLarge.jpg");}
+#BG04.EActive .LargeIcon {background-image: url("images/116/ValkyrieELarge.jpg");}
+#BG04.RActive .LargeIcon {background-image: url("images/116/ValkyrieRLarge.jpg");}
+
+#BG04.QActive h2.Q { visibility: visible; }
+#BG04.WActive h2.W { visibility: visible; }
+#BG04.EActive h2.E { visibility: visible; }
+#BG04.RActive h2.R { visibility: visible; }
+
+#BG04.QActive p.Q { visibility: visible; }
+#BG04.WActive p.W { visibility: visible; }
+#BG04.EActive p.E { visibility: visible; }
+#BG04.RActive p.R { visibility: visible; }

@@ -9,12 +9,12 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	
 	<script>
-		var g_bSkillAdvancing = true;
-		function SetActiveSkill( strName, bManual )
+		var g_bCarverSkillAdvancing = true;
+		function SetCarverActiveSkill( strName, bManual )
 		{
 			if ( bManual )
 			{
-				g_bSkillAdvancing = false;
+				g_bCarverSkillAdvancing = false;
 				$( '#BG02 video' ).attr( 'loop', 'loop' );
 			}
 
@@ -30,33 +30,44 @@
 				this.play();
 			});
 		}
-		var rgAbilityClasses = [
+		var rgCarverAbilityClasses = [
 			'Q',
 			'W',
 			'E',
 			'R',
 		];
-		function CycleAbilityVideo( nDelta )
+		function CycleCarverAbilityVideo( nDelta )
 		{
 			var $BG02 = $( '#BG02' );
-			for ( var i = 0; i < rgAbilityClasses.length; i++ )
+			for ( var i = 0; i < rgCarverAbilityClasses.length; i++ )
 			{
-				if ( !$BG02.hasClass( rgAbilityClasses[i] + 'Active' ) )
+				if ( !$BG02.hasClass( rgCarverAbilityClasses[i] + 'Active' ) )
 					continue;
 
-				SetActiveSkill( rgAbilityClasses[ ( i + nDelta + rgAbilityClasses.length ) % rgAbilityClasses.length ], false );
+				SetCarverActiveSkill( rgCarverAbilityClasses[ ( i + nDelta + rgCarverAbilityClasses.length ) % rgCarverAbilityClasses.length ], false );
 				break;
 			}
 		}
 		$( function () {
 			$( '#BG02 video' ).bind( 'ended', function () {
-				if ( g_bSkillAdvancing )
+				if ( g_bCarverSkillAdvancing )
 				{
-					CycleAbilityVideo( +1 );
+					CycleCarverAbilityVideo( +1 );
 				}
 			});
 		});
 	</script>
+	
+	<script>
+		var g_bValkyrieSkillAdvancing = true;
+		function SetValkyrieActiveSkill( strName, bManual )
+		var rgValkyrieAbilityClasses = [
+			'Q',
+			'W',
+			'E',
+			'R',
+		];
+	</script>	
 </head>
 
 
@@ -74,10 +85,10 @@
 <div class="Container QActive" id="BG02">
 	<div class="Inner">
 		<div class="ButtonIconContainer">
-			<a class="ButtonIcon Q" href="javascript:SetActiveSkill( 'Q', true );"></a>
-			<a class="ButtonIcon W" href="javascript:SetActiveSkill( 'W', true );"></a>
-			<a class="ButtonIcon E" href="javascript:SetActiveSkill( 'E', true );"></a>
-			<a class="ButtonIcon R" href="javascript:SetActiveSkill( 'R', true );"></a>			
+			<a class="ButtonIcon Q" href="javascript:SetCarverActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetCarverActiveSkill( 'W', true );"></a>
+			<a class="ButtonIcon E" href="javascript:SetCarverActiveSkill( 'E', true );"></a>
+			<a class="ButtonIcon R" href="javascript:SetCarverActiveSkill( 'R', true );"></a>			
 			<div style="clear: both;"></div>
 		</div>
 		<video autoplay="" preload="auto" class="Q" >
@@ -107,9 +118,42 @@
 		<h2 class="R">Ancestral Spirit</h2>
 		<p class="R GrayDescription">After a 2 second channel, Totemcarver teleports to the target area and gains powers of the Ancestors, granting him damage immunity and cooldown reduction for a short duration.</p>	
 	
+	</div>	
+</div>
+<div id="BG03" class="Container">
+	<div id="BG03" class="Content">
 	</div>
 </div>
+<div id="BG04" class="Container">
+	<div id="BG04" class="Content">
+	</div>
+</div>
+<!-- <div class="Container QActive" id="BG04"> -->
+	<!-- <div class="Inner"> -->
+		<!-- <div class="ButtonIconContainer"> -->
+			<!-- <a class="ButtonIcon Q" href="javascript:SetCarverActiveSkill( 'Q', true );"></a> -->
+			<!-- <a class="ButtonIcon W" href="javascript:SetCarverActiveSkill( 'W', true );"></a> -->
+			<!-- <a class="ButtonIcon E" href="javascript:SetCarverActiveSkill( 'E', true );"></a> -->
+			<!-- <a class="ButtonIcon R" href="javascript:SetCarverActiveSkill( 'R', true );"></a>			 -->
+			<!-- <div style="clear: both;"></div> -->
+		<!-- </div> -->
+		
+		<!-- <div class="LargeIcon"></div> -->
 
+		<!-- <h2 class="Q">Aurora Ball</h2> -->
+		<!-- <p class="Q GrayDescription">Shoots a slow-moving ball of light which passes through enemies hit, damaging them. The slow grows stronger with each enemy hit.</p> -->
+
+		<!-- <h2 class="W">Dragontide Totem</h2> -->
+		<!-- <p class="W GrayDescription">Places a totem which provides nearby enemies with a mana regeneration aura, and damages enemies each second.</p> -->
+	
+		<!-- <h2 class="E">Totemic Might</h2> -->
+		<!-- <p class="E GrayDescription">Enchants targetted hero, giving them an incoming damage taken reduction if it's an ally, or an attack speed slow if it's an enemy.</p> -->
+
+		<!-- <h2 class="R">Ancestral Spirit</h2> -->
+		<!-- <p class="R GrayDescription">After a 2 second channel, Totemcarver teleports to the target area and gains powers of the Ancestors, granting him damage immunity and cooldown reduction for a short duration.</p>	 -->
+	
+	<!-- </div>	 -->
+<!-- </div> -->
 
 <div class="content">
 
