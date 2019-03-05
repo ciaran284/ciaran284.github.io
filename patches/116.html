@@ -1,0 +1,624 @@
+<html>
+<!--CUSTOM TEXT/HEADING STYLES/BACKGROUNDS-->
+<head>
+	<link href="css/global_new.css" rel="stylesheet" type="text/css">
+	<link href="css/global_116.css" rel="stylesheet" type="text/css">
+	<link href="images/gtd_logo.png"rel="shortcut icon">
+	<title>Gameplay Update - 1.16</title>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<script>
+		var g_bCarverSkillAdvancing = true;
+		function SetCarverActiveSkill( strName, bManual )
+		{
+			if ( bManual )
+			{
+				g_bCarverSkillAdvancing = false;
+				$( '#BG02 video' ).attr( 'loop', 'loop' );
+			}
+
+			$( '#BG02' ).removeClass();
+			$( '#BG02' ).addClass( 'Container' );
+			$( '#BG02' ).addClass( strName + 'Active' );
+			$( '#BG02 video' ).each( function () {
+				this.currentTime = 0;
+				this.pause();
+			});
+			$( '#BG02 video.' + strName ).each( function () {
+				this.currentTime = 0;
+				this.play();
+			});
+		}
+		var rgCarverAbilityClasses = [
+			'CarverQ',
+			'CarverW',
+			'CarverE',
+			'CarverR',
+		];
+		function CycleCarverAbilityVideo( nDelta )
+		{
+			var $BG02 = $( '#BG02' );
+			for ( var i = 0; i < rgCarverAbilityClasses.length; i++ )
+			{
+				if ( !$BG02.hasClass( rgCarverAbilityClasses[i] + 'Active' ) )
+					continue;
+
+				SetCarverActiveSkill( rgCarverAbilityClasses[ ( i + nDelta + rgCarverAbilityClasses.length ) % rgCarverAbilityClasses.length ], false );
+				break;
+			}
+		}
+		$( function () {
+			$( '#BG02 video' ).bind( 'ended', function () {
+				if ( g_bCarverSkillAdvancing )
+				{
+					CycleCarverAbilityVideo( +1 );
+				}
+			});
+		});
+	</script>
+	
+	<script>
+		var g_bValkyrieSkillAdvancing = true;
+		function SetValkyrieActiveSkill( strName, bManual )
+		{
+			$( '#BG04' ).removeClass();
+			$( '#BG04' ).addClass( 'Container' );
+			$( '#BG04' ).addClass( strName + 'Active' );
+		}		
+		var rgValkyrieAbilityClasses = [
+			'ValkyrieQ',
+			'ValkyrieW',
+			'ValkyrieE',
+			'ValkyrieR',
+		];		
+	</script>	
+</head>
+
+
+<!--MAIN PATCH HEADING-->
+<body>
+<header>
+  <h1>GYOKURA - UPDATE: 1.16</h1><br>
+  <a href=index.html>PREVIOUS CHANGELOGS</a><br><br>
+</header>
+<div id="Container_01" class="Container">
+	<div id="Content_01" class="Content">
+	</div>
+</div>
+
+<div class="Container QActive" id="BG02">
+	<div class="Inner">
+		<div class="ButtonIconContainer">
+			<a class="ButtonIcon Q" href="javascript:SetCarverActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetCarverActiveSkill( 'W', true );"></a>
+			<a class="ButtonIcon E" href="javascript:SetCarverActiveSkill( 'E', true );"></a>
+			<a class="ButtonIcon R" href="javascript:SetCarverActiveSkill( 'R', true );"></a>			
+			<div style="clear: both;"></div>
+		</div>
+		<video autoplay="" preload="auto" class="Q" >
+		  <source src="videos/116/Q.webm" type="video/webm"/>
+		</video>	
+		<video preload="auto" class="W">
+		  <source src="videos/116/W.webm" type="video/webm"/>
+		</video>	
+		<video preload="auto" class="E">
+		  <source src="videos/116/E.webm" type="video/webm"/>
+		</video>	
+		<video preload="auto" class="R">
+		  <source src="videos/116/R.webm" type="video/webm"/>
+		</video>	
+		
+		<div class="LargeIcon"></div>
+
+		<h2 class="Q">Aurora Ball</h2>
+		<p class="Q GrayDescription">Shoots a slow-moving ball of light which passes through enemies hit, damaging them. The slow grows stronger with each enemy hit.</p>
+
+		<h2 class="W">Dragontide Totem</h2>
+		<p class="W GrayDescription">Places a totem which provides nearby enemies with a mana regeneration aura, and damages enemies each second.</p>
+	
+		<h2 class="E">Totemic Might</h2>
+		<p class="E GrayDescription">Enchants targetted hero, giving them an incoming damage taken reduction if it's an ally, or an attack speed slow if it's an enemy.</p>
+
+		<h2 class="R">Ancestral Spirit</h2>
+		<p class="R GrayDescription">After a 2 second channel, Totemcarver teleports to the target area and gains powers of the Ancestors, granting him damage immunity and cooldown reduction for a short duration.</p>	
+	
+	</div>	
+</div>
+<div id="BG03" class="Container">
+	<div id="BG03" class="Content">
+	</div>
+</div>
+<div class="Container QActive" id="BG04">
+	<div class="Inner">
+		<div class="ButtonIconContainer">
+			<a class="ButtonIcon Q" href="javascript:SetValkyrieActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetValkyrieActiveSkill( 'W', true );"></a>
+			<a class="ButtonIcon E" href="javascript:SetValkyrieActiveSkill( 'E', true );"></a>
+			<a class="ButtonIcon R" href="javascript:SetValkyrieActiveSkill( 'R', true );"></a>			
+			<div style="clear: both;"></div>
+		</div>
+		
+		<div class="LargeIcon"></div>
+
+		<h2 class="Q">Blessing of Eir</h2>
+		<p class="Q GrayDescription">Valkyrie instantly heals the target ally and grants them a movement speed buff. The spell's effectiveness is amplified per percentage of missing health.<br><br>
+		
+		Base Heal: 90/130/170/210<br> Base Momement Speed buff: 15/20/25/30%<br> Amplication per percentage of Health Missing: 1%<br>Duration: 9s
+		<br><br>Mana Cost: 90<br>Cooldown: 17/16/15/14s 
+		
+		</p>
+
+		<h2 class="W">Vae Victis</h2>
+		<p class="W GrayDescription">After a medium delay spears land in the target area, stunning any enemy in the vicinity and dealing damage. The stun is longer in the center.<br><br>
+		
+		Magical Damage: 130/200/270/340<br>Short Stun: 1.2/1.4/1.6/1.8s<br>Long Stun: 2.4/2.8/3.2/3.6s<br>Delay: 1.6s<br>Radius: 400<br> Center Radius: 125
+		<br><br>Mana Cost: 100/115/130/145<br>Cooldown: 12s 
+		
+		</p>
+	
+		<h2 class="E">Praetor's Thrust</h2>
+		<p class="E GrayDescription">Valkyrie pierces enemies with her spear, granting her a narrow but long cleave.<br><br>
+		
+		Cleave Damage: 40/60/80/100%<br>Cleave Width: 105<br>Cleave Length: 600<br>
+		
+		</p>
+
+		<h2 class="R">Soaring Fury</h2>
+		<p class="R GrayDescription">Valkyrie gains a damage buff relative to her current health on cast. During the duration, all healing received by her is amplified.<br><br>
+		
+		Current Health as Damage: 4.5/6/7.5%<br>Healing Amplification: 30%<br>Duration: 20s
+		<br><br>Mana Cost: 25<br>Cooldown: 50s 
+		
+		</p>	
+	
+	</div>	
+</div>
+
+<div class="content">
+
+<!--NEW ITEMS-->	
+<h2><div class="headingbox_items">ITEMS</div></h2>
+	<div class="transbox"><br><br><br>
+		<figure>
+			<img src="images/items/alucard_shield.png" hspace='100'>
+			<h3>Alucard Shield: <span style="color:green">NEW ITEM</span></h3>
+			<ul>
+				<li>Requires: </br>
+				<ul class="subtab">					
+						Gold Ring (170)</br>
+						Vampirism Amulet (300)</br>						
+						Round Shield (250)</br>	
+						Total Cost: 720</br></li><br>
+				</ul>	
+					
+				<li>Provides: </br>
+				<ul class="subtab">					
+					+3 All Attributes</br>
+					5% Lifesteal</br>
+					Restores 10 health whenever the wielder is hit.</br>					
+					</li>
+				</ul>
+			</ul><br><br>
+		</figure>
+		<figure>
+			<img src="images/items/lucky_coin.png" hspace='100'>
+			<h3>Lucky Coin: <span style="color:green">NEW ITEM</span></h3>
+			<ul>
+				<li>Cost: 500</li><br>
+					
+				<li>Provides: </br>
+				<ul class="subtab">					
+					+3 All Attributes</br></li>
+				</ul>
+				<br>
+				
+				<li>Passive: Greed</br>
+				<ul class="subtab">				
+						You gain 2-3 extra gold from each unit killed.</br></li>
+				</ul>
+			</ul><br><br>
+		</figure>
+		<figure>
+			<img src="images/items/sac_ring.png" hspace='100'>
+			<h3>Sacrificial Ring: <span style="color:green">NEW ITEM</span></h3>
+			<ul>
+				<li>Requires: </br>
+				<ul class="subtab">					
+						Wizard's Robe (350)</br>
+						Recipe (300)</br>						
+						Total Cost: 650</br></li><br>
+				</ul>		
+
+					
+				<li>Provides: </br>
+				<ul class="subtab">					
+					+5 Intelligence</br>
+					+0.5 Mana Regen</br>
+					</li>
+				</ul>
+				<br>
+				
+				<li>Active: Pact</br>
+				<ul class="subtab">				
+						Kills target creep up to Level 3 and heals the user for 80% of its current health. The creep provides no gold or experience bounty. </br></li>
+				</ul>
+			</ul><br><br>
+		</figure>
+		<figure>
+			<img src="images/items/unstable_orb.png" hspace='100'>
+			<h3>Unstable Orb: <span style="color:green">NEW ITEM</span></h3>
+			<ul>
+				<li>Cost: 400</li><br>
+					
+				<li>Passive: Mana Burn</br>
+				<ul class="subtab">				
+						Your attacks burn 8 mana from the target.</br></li>
+				</ul>
+			</ul><br><br>
+		</figure>		
+	</div>	
+
+<!--UPDATED ITEMS-->
+	<div class="transbox"><br><br><br>
+		<figure>
+			<p><img src="images/items/bladed_blade.png" hspace='100'></p>
+			<h3>Bladed Blade</h3>
+			<ul>
+				<li>Recipe cost lowered from 500 to 200 (Total cost lowered from 3600 to 3300).</li>
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/bloodgod_amulet.png" hspace='100'></p>
+			<h3>Bloodgod Amulet</h3>
+			<ul>
+				<li>Mana regen increased from 2.5 to 3.5.</li>
+				<li>Mana bonus reduced from 500 to 450.</li>
+				<li>Movement speed bonus reduced from 10% to 6%.</li>				
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/breaker_of_nightmares.png" hspace='100'></p>
+			<h3>Breaker of Nightmares</h3>
+			<ul>
+				<li>Strength bonus increased from 36 to 38.</li>
+				<br>
+			</ul><br>
+		</figure> 		
+		<figure>
+			<p><img src="images/items/life_cage.png" hspace='100'></p>
+			<h3>Cage of Life: <span style="color:#CCCC00">NEW RECIPE</span></h3>
+			<ul>
+				<li>Old Recipe:</br>
+				<ul class="subtab">				
+						Runed Bracers(1100)</br>
+						Metal Shard (200)</br>
+						Magic Tooth (300)<br>
+						Recipe (600)</br>							
+						Total Cost: 2200</br></li><br>
+				</ul>		
+
+				<li>New Recipe:</br>
+				<ul class="subtab">				
+						Runed Bracers(1100)</br>
+						Metal Shard (200)</br>
+						Sacrificial Ring (650)</br>
+						Recipe (150)</br>						
+						Total Cost: 2100</br></li><br>
+				</ul>
+			</ul>
+		</figure>
+		<figure>
+			<p><img src="images/items/ciaran_ring.png" hspace='100'></p>
+			<h3>Ciaran's Ring</h3>
+			<ul>
+				<li>Mana regen increased from 2.5 to 3.</li>						
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/bone_cradle.png" hspace='100'></p>
+			<h3>Cradle of Bone: <span style="color:#C00000">REMOVED</span></h3>
+			<ul>
+				<li>Removed from the game.</li>
+				<br>
+			</ul><br>
+		</figure>		
+		<figure>
+			<p><img src="images/items/dice_dice.png" hspace='100'></p>
+			<h3>Dice's Dice: <span style="color:#CCCC00">NEW RECIPE</span></h3>
+			<ul>
+				<li>Old Recipe:</br>
+				<ul class="subtab">				
+						Magic Tooth (300)</br>
+						Metal Shard (200)</br>
+						Magic Cube (800)<br>
+						Total Cost: 1300</br></li><br>
+				</ul>		
+
+				<li>New Recipe:</br>
+				<ul class="subtab">				
+						Magic Tooth (300)</br>
+						Metal Shard (200)</br>
+						Lucky Coin (500)</br>
+						Total Cost: 1000</br></li><br>
+				</ul>
+			</ul>
+		</figure>
+		<figure>
+			<p><img src="images/items/diffusionstone.png" hspace='100'></p>
+			<h3>Diffusion Stone</h3>
+			<ul>
+				<li>Mana regen increased from 2.25 to 2.5.</li>						
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/enduring_willpower.png" hspace='100'></p>
+			<h3>Enduring Willpower</h3>
+			<ul>
+				<li>Mana regen increased from 1 to 1.5.</li>		
+				<br>
+			</ul><br>
+		</figure> 		
+		<figure>
+			<p><img src="images/items/eternal_frenzy.png" hspace='100'></p>
+			<h3>Eternal Frenzy</h3>
+			<ul>
+				<li>Active armour loss reduced from 15 to 12.</li>		
+				<br>
+			</ul><br>
+		</figure> 		
+		<figure>
+			<p><img src="images/items/goldensun.png" hspace='100'></p>
+			<h3>Golden Sun</h3>
+			<ul>
+				<li>Mana regen increased from 4 to 6.</li>		
+				<br>
+			</ul><br>
+		</figure> 
+		<figure>
+			<p><img src="images/items/hydra_thirst.png" hspace='100'></p>
+			<h3>Hydra's Thirst</h3>
+			<ul>
+				<li>Bonus damage increased from 15 to 20.</li>		
+				<br>
+			</ul><br>
+		</figure> 		
+		<figure>
+			<p><img src="images/items/immortalia.png" hspace='100'></p>
+			<h3>Immortalia</h3>
+			<ul>
+				<li>Health bonus increased from 550 to 600.</li>
+				<li>Health regen increased from 6 to 6.5.</li>
+				<li>Mana regen increased from 4.5 to 5.</li>					
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/ironside_dancer.png" hspace='100'></p>
+			<h3>Ironside Dancer</h3>
+			<ul>
+				<li>Recipe cost reduced from 1000 to 800 (Total cost lowered from 1925 to 1725).</li>			
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/jonathan_willpower.png" hspace='100'></p>
+			<h3>Jonathan's Willpower</h3>
+			<ul>
+				<li>Mana regen increased from 2.5 to 3.</li>			
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/loyal_paw.png" hspace='100'></p>
+			<h3>Loyal Paw</h3>
+			<ul>
+				<li>Agility bonus increased from 18 to 20.</li>			
+				<br>
+			</ul><br>
+		</figure>			
+		<figure>
+			<p><img src="images/items/mage_skull.png" hspace='100'></p>
+			<h3>Mage's Skull</h3>
+			<ul>
+				<li>Bonus movement speed reduced from 5% to 3%.</li>			
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/momentum_boots.png" hspace='100'></p>
+			<h3>Momentum Boots</h3>
+			<ul>
+				<li>Percentage movement speed bonus reduced from 5% to 4%.</li>		
+				<br>
+			</ul><br>
+		</figure> 		
+		<figure>
+			<p><img src="images/items/murder_of_crows.png" hspace='100'></p>
+			<h3>Murder of Crows</h3>
+			<ul>
+				<li>Recipe cost lowered from 850 to 800 (Total cost lowered from 1950 to 1900).</li>		
+				<br>
+			</ul><br>
+		</figure> 		
+		<figure>
+			<p><img src="images/items/resonance_bell.png" hspace='100'></p>
+			<h3>Resonance Bell</h3>
+			<ul>
+				<li>Slow duration increased from 2 seconds to 5 seconds.</li>
+				<br>
+			</ul><br>
+		</figure>  		
+		<figure>
+			<p><img src="images/items/sanguine_fletcher.png" hspace='100'></p>
+			<h3>Sanguine Fletcher</h3>
+			<ul>
+				<li>Passive Reworked: Now causes the target to bleed for 30 magical damage per second for 4 seconds.</li>
+				<li>Health regen increased from 7.25 to 7.5.</li>
+				<li>Mana regen increased from 2.5 to 3.</li>					
+				<br>
+			</ul><br>
+		</figure> 
+		<figure>
+			<p><img src="images/items/vendetta_grasp.png" hspace='100'></p>
+			<h3>Vendetta's Grasp</h3>
+			<ul>
+				<li>Mana regen increased from 5 to 8.</li>				
+				<br>
+			</ul><br>
+		</figure> 		
+	</div>	
+	
+<!-- <!--UPDATED HEROES-->    -->
+<h2><div class="headingbox_heroes">HEROES</div></h2>
+	<div class="transbox"><br><br><br>	
+		<figure>
+			<img src="images/heroes/armordillo.png" hspace='100'>
+			<h3>Armordillo:</h3>
+			<ul>
+				<li>Base Strength reduced from 17 to 16.</li>
+				<li>Strength gain reduced from 2.2 to 2.0.</li>					
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/basilisk.png" hspace='100'>
+			<h3>Basilisk:</h3>
+			<ul>
+				<li>Expel Acid cooldown reduced from 9/8/7/6 to 7/6/5/4.</li>			
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/carna.png" hspace='100'>
+			<h3>Carna:</h3>
+			<ul>
+				<li>Spellsoak manacost reduced from 40 to 0.</li>			
+			</ul><br>	 
+		</figure>			
+		<figure>
+			<img src="images/heroes/npc_dota_wolf.png" hspace='100'>
+			<h3>Cursed Wolf:</h3>
+			<ul>
+				<li>Rooting Pounce cast range reduced from 600 to 550.</li>			
+			</ul><br>	 
+		</figure>			
+		<figure>
+			<img src="images/heroes/darkqueen.png" hspace='100'>
+			<h3>Dark Queen:</h3>
+			<ul>
+				<li>Base Intelligence increased from 15 to 17.</li>
+				<li>Hidden Insight vision reduced from 600/1200/1800 to 600/1000/1400.</li>
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/npc_dota_eldritch.png" hspace='100'>
+			<h3>Eldritch:</h3>
+			<ul>
+				<li>Abominations now have 50% magic resistance.</li>
+				<li>Corrupting Field attack speed bonus increased from 10/15/20/25 to 10/20/30/40.</li>	
+				<li>Become Abomination manacost reduced from 100 to 40.</li>				
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/ethereal_lancer.png" hspace='100'>
+			<h3>Ethereal Lancer:</h3>
+			<ul>
+				<li>Agility gain redcued from 3.1 to 2.7.</li>
+				<li>Ghost Form now passively gives permanent 7/14/21 agility.</li>				
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/ent.png" hspace='100'>
+			<h3>Great Ent:</h3>
+			<ul>
+				<li>Inspiring Song movement speed bonus increased from 16/20/24/28% to 20/24/28/32%.</li>
+				<li>Inspiring Song duration increased from 6 to 7.</li>
+				<li>Treantic Offering manacost reduced from 250 to 200.</li>
+				<li>Treantic Offering cooldown reduced from 160s to 145s.</li>				
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/huntress.png" hspace='100'>
+			<h3>Huntress:</h3>
+			<ul>
+				<li>Base Agility reduced from 19 to 14.</li>
+				<li>Nocked Arrows manacost rescaled from 80/100/120/140 to 125.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/kron.png" hspace='100'>
+			<h3>Kron the Vanguard:</h3>
+			<ul>
+				<li>Powerful Roar damage increased from 55/110/165/220 to 70/120/170/220.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/merchant.png" hspace='100'>
+			<h3>Merchant:</h3>
+			<ul>
+				<li>Escalating Odds gold as cooldown reduced from 10/7/4% to 8/6/4%.</li>
+				<li>Escalating Odds maximum cooldown reduced from 10 minutes to 5 minutes.</li>				
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/okita.png" hspace='100'>
+			<h3>Okita:</h3>
+			<ul>
+				<li>Tenmetsu Suru armour reduction radius increased from 225 to 275.</li>
+				<li>Zanmato critical damage increased from 200/250/300% to 225/275/325%.</li>		 	 
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/proxima.png" hspace='100'>
+			<h3>Proxima Centauri:</h3>
+			<ul>
+				<li>Moment of Respite manacost reduced from 100/125/150/175 to 100/115/130/145.</li>	 	 
+			</ul><br>	 
+		</figure>			
+		<figure>
+			<img src="images/heroes/robotscientist.png" hspace='100'>
+			<h3>Robot Scientist:</h3>
+			<ul>
+				<li>Cross-Hook cast point reduced from 0.25 to 0.15.</li>	 	 
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/valkyrie.png" hspace='100'>
+			<h3>Valkyrie: <span style="color:green">HERO REWORKED</span></h3>
+			<ul>
+				<li>New Ability: Blessing of Eir</li>
+				<img src="images/spellicons/valkyrie_buff.png" hspace='-150' width="75" height="75"><br>
+					
+					Valkyrie instantly heals the target ally and grants them a movement speed buff. The spell's effectiveness is amplified per percentage of missing health.<br><br>				
+				
+				<li>New Ability: Vae Victis</li>
+				<img src="images/spellicons/valkyrie_spear.png" hspace='-150' width="75" height="75"><br>
+					
+					After a medium delay spears land in the target area, stunning any enemy in the vicinity and dealing damage. The stun is longer in the center.<br><br>		
+
+				<li>New Ability: Praetor's Thrust</li>
+				<img src="images/spellicons/valkyrie_cleave.png" hspace='-150' width="75" height="75"><br>
+					
+					Valkyrie pierces enemies with her spear, granting her a narrow but long cleave.<br><br>		
+
+				<li>New Ability: Soaring Fury</li>
+				<img src="images/spellicons/valkyrie_ulti.png" hspace='-150' width="75" height="75"><br>
+					
+					Valkyrie gains a damage buff relative to her current health on cast. During the duration, all healing received by her is amplified.<br><br>		 
+			</ul>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/vampiremistress.png" hspace='100'>
+			<h3>Vampire Mistress:</h3>
+			<ul>
+				<li>Call of the Void movement speed slow increased from 50% to 60%.</li>		 	 
+			</ul><br>	 
+		</figure>		
+	</div>
+	
+</div>
+</body>
+</html>
