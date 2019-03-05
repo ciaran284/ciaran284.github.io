@@ -43,7 +43,9 @@ a:visited {color: green;}
 a{text-decoration: none;color:green;font-style:bold;font-size: 25px;font-family: "Radiance";line-height: 34px;text-shadow: 1px 1px 1px #000000}
 
 #Container_Title, #Content_Title{background-image: url("images/116/Container_Title.png");height:500px;background-color: #000000;}
-#Container_01, #Content_01{background-image: url("images/116/BG01.png");height:1000px;background-color: #151618;}
+
+#BG01, #BG01.Inner{background-image: url("images/116/BG01.png");height:861px;background-color: #151618;}
+#BG01 h2 {position: absolute;top: 200px;left: 0px;font-family: 'Radiance';font-size: 100px;color: #D8E6DC;text-transform: uppercase;letter-spacing: 3.6px;text-shadow: 4px 4px black}
 
 #BG02, #BG02.Inner{background-image: url("images/116/BG02.png");height:1400px;background-color: #151618;}
 #BG02 video {position: absolute;top: 100;left: 75px;visibility: collapse;height:500px;}
@@ -85,6 +87,7 @@ a{text-decoration: none;color:green;font-style:bold;font-size: 25px;font-family:
 
 /* <> */
 #BG03, #BG03.Inner{background-image: url("images/116/BG03.png");height:861px;background-color: #151618;}
+#BG03 h2 {position: absolute;top: 100px;left: 0px;font-family: 'Radiance';font-size: 100px;color: #D8E6DC;text-transform: uppercase;letter-spacing: 3.6px;text-shadow: 4px 4px black}
 
 /* <> */
 #BG04, #BG04.Inner{background-image: url("images/116/BG04.png");height:1100px;background-color: #151618;}
