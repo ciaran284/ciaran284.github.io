@@ -33,9 +33,8 @@ div.headingbox_patchhistory{background-image:linear-gradient(to right,#00AA00,gr
 div.headingbox_generalchanges {background-image:linear-gradient(to right,#00AA00,green);padding: 25px;margin: 50px 25px 0px 25px;width:390px;}
 div.headingbox_items{background-image:linear-gradient(to right,#00AA00,green);padding: 25px;margin: 50px 25px 0px 25px;width:120px;}
 div.headingbox_heroes{background-image:linear-gradient(to right,#00AA00,green);padding: 25px;;margin: 50px 25px 0px 25px;width:150px;}
-div.transbox {background: rgba(0,0,0,0.6);margin-left: 160px;margin-right: 50px;padding: 10px;margin-top: 10px;margin-bot: 10px;}
+div.transbox {background: rgba(0,0,0,0.6);margin-left: 160px;margin-right: 160px;padding: 10px;margin-top: 10px;margin-bot: 10px;}
 div.transbox figure{margin-bot: 100px;}
-
 
 body {background-image: url("images/background_main.jpg");background-repeat: repeat-y;background-color: #151618;background-position:center;}
 
@@ -43,16 +42,16 @@ a:link {color: green;}
 a:visited {color: green;}
 a{text-decoration: none;color:green;font-style:bold;font-size: 25px;font-family: "Radiance";line-height: 34px;text-shadow: 1px 1px 1px #000000}
 
-#Container_Title, #Content_Title{background-image: url("images/116/Container_Title.jpg");height:500px;}
-#Container_01, #Content_01{background-image: url("images/116/Container_01.jpg");height:1125px;}
+#Container_Title, #Content_Title{background-image: url("images/116/Container_Title.png");height:500px;background-color: #000000;}
+#Container_01, #Content_01{background-image: url("images/116/BG01.png");height:1000px;background-color: #151618;}
 
-#BG02, #BG02.Inner{background-image: url("images/116/BG02.jpg");height:1125px;}
+#BG02, #BG02.Inner{background-image: url("images/116/BG02.png");height:1400px;background-color: #151618;}
 #BG02 video {position: absolute;top: 100;left: 75px;visibility: collapse;height:500px;}
-#BG02 .ButtonIconContainer{position: absolute;top: 700px;left: 185px;}
-#BG02 a.ButtonIcon{display: block;width: 100px;height: 100px;float: left;margin-right: 50px;}
-#BG02 .LargeIcon {position: absolute;top: 651px;left: 254px;width: 100px;height: 100px;}
-#BG02 h2 {position: absolute;top: 820px;left: 100px;font-family: 'Radiance';font-size: 24px;color: #D8E6DC;text-transform: uppercase;letter-spacing: 3.6px;text-shadow: 0px 0px 25px rgba( 253, 255, 107, 0.62 );visibility: collapse;}
-#BG02 p {position: absolute;top: 875px;left: 250px;width: 525px;font-size: 18px;line-height: 28px;visibility: collapse;}
+#BG02 .ButtonIconContainer{position: absolute;top: 650px;left: 175px;}
+#BG02 a.ButtonIcon{display: block;width: 100px;height: 100px;float: left;margin-right: 100px;}
+#BG02 .LargeIcon {position: absolute;top: 875px;left: 10px;width: 200px;height: 200px;}
+#BG02 h2 {position: absolute;top: 875px;left: 125px;font-family: 'Radiance';font-size: 36px;color: #D8E6DC;text-transform: uppercase;letter-spacing: 3.6px;text-shadow: 0px 0px 50px rgba( 0, 255, 0, 1.62 );visibility: collapse;}
+#BG02 p {position: absolute;top: 950px;left: 275px;width: 650px;font-size: 25px;line-height: 35px;visibility: collapse;}
 
 #Container_03, #Content_03{background-image: url("images/116/Container_03.jpg");height:1500px;}
 
@@ -61,15 +60,15 @@ a{text-decoration: none;color:green;font-style:bold;font-size: 25px;font-family:
 #BG02.EActive .ButtonIcon.E { background-image: url("images/116/E.jpg"); cursor: default; }
 #BG02.RActive .ButtonIcon.R { background-image: url("images/116/R.jpg"); cursor: default; }
 
-#BG02:not(.QActive) .ButtonIcon:hover.Q { background-image: url("images/116/Q.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
-#BG02:not(.WActive) .ButtonIcon:hover.W { background-image: url("images/116/W.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
-#BG02:not(.EActive) .ButtonIcon:hover.E { background-image: url("images/116/E.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
-#BG02:not(.RActive) .ButtonIcon:hover.R { background-image: url("images/116/R.jpg"); box-shadow: 0px 0px 10px rgba( 153, 51, 0, 0.5 );}
+#BG02:not(.QActive) .ButtonIcon:hover.Q { background-image: url("images/116/Q.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG02:not(.WActive) .ButtonIcon:hover.W { background-image: url("images/116/W.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG02:not(.EActive) .ButtonIcon:hover.E { background-image: url("images/116/E.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
+#BG02:not(.RActive) .ButtonIcon:hover.R { background-image: url("images/116/R.jpg"); box-shadow: 0px 0px 10px rgba( 0, 255, 0, 0.5 );}
 
-#BG02.QActive.LargeIcon {background-image: url("images/116/Q.jpg");}
-#BG02.WActive.LargeIcon {background-image: url("images/116/W.jpg");}
-#BG02.EActive.LargeIcon {background-image: url("images/116/E.jpg");}
-#BG02.RActive.LargeIcon {background-image: url("images/116/R.jpg");}
+#BG02.QActive .LargeIcon {background-image: url("images/116/QLarge.jpg");}
+#BG02.WActive .LargeIcon {background-image: url("images/116/WLarge.jpg");}
+#BG02.EActive .LargeIcon {background-image: url("images/116/ELarge.jpg");}
+#BG02.RActive .LargeIcon {background-image: url("images/116/RLarge.jpg");}
 
 #BG02.QActive video.Q { visibility: visible; }
 #BG02.WActive video.W { visibility: visible; }
