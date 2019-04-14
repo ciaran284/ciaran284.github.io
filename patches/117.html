@@ -1,0 +1,449 @@
+<html>
+<!--CUSTOM TEXT/HEADING STYLES/BACKGROUNDS-->
+<head>
+	<link href="css/global_new.css" rel="stylesheet" type="text/css">
+	<link href="css/global_116.css" rel="stylesheet" type="text/css">
+	<link href="images/gtd_logo.png"rel="shortcut icon">
+	<title>Gameplay Update - 1.17</title>
+
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<script>
+		var g_bCarverSkillAdvancing = true;
+		function SetCarverActiveSkill( strName, bManual )
+		{
+			if ( bManual )
+			{
+				g_bCarverSkillAdvancing = false;
+				$( '#BG02 video' ).attr( 'loop', 'loop' );
+			}
+
+			$( '#BG02' ).removeClass();
+			$( '#BG02' ).addClass( 'Container' );
+			$( '#BG02' ).addClass( strName + 'Active' );
+			$( '#BG02 video' ).each( function () {
+				this.currentTime = 0;
+				this.pause();
+			});
+			$( '#BG02 video.' + strName ).each( function () {
+				this.currentTime = 0;
+				this.play();
+			});
+		}
+		var rgCarverAbilityClasses = [
+			'CarverQ',
+			'CarverW',
+			'CarverE',
+			'CarverR',
+		];
+		function CycleCarverAbilityVideo( nDelta )
+		{
+			var $BG02 = $( '#BG02' );
+			for ( var i = 0; i < rgCarverAbilityClasses.length; i++ )
+			{
+				if ( !$BG02.hasClass( rgCarverAbilityClasses[i] + 'Active' ) )
+					continue;
+
+				SetCarverActiveSkill( rgCarverAbilityClasses[ ( i + nDelta + rgCarverAbilityClasses.length ) % rgCarverAbilityClasses.length ], false );
+				break;
+			}
+		}
+		$( function () {
+			$( '#BG02 video' ).bind( 'ended', function () {
+				if ( g_bCarverSkillAdvancing )
+				{
+					CycleCarverAbilityVideo( +1 );
+				}
+			});
+		});
+	</script>
+	
+	<script>
+		var g_bValkyrieSkillAdvancing = true;
+		function SetValkyrieActiveSkill( strName, bManual )
+		{
+			$( '#BG04' ).removeClass();
+			$( '#BG04' ).addClass( 'Container' );
+			$( '#BG04' ).addClass( strName + 'Active' );
+		}		
+		var rgValkyrieAbilityClasses = [
+			'ValkyrieQ',
+			'ValkyrieW',
+			'ValkyrieE',
+			'ValkyrieR',
+		];		
+	</script>	
+</head> -->
+
+
+<!--MAIN PATCH HEADING-->
+<body>
+<header>
+  <h1>THE SHIFT OF POWER - UPDATE: 1.17</h1><br>
+  <a href=index.html>PREVIOUS CHANGELOGS</a><br><br>
+</header>
+<!-- <div id="BG01" class="Container">
+	<div id="BG01" class="Content">
+	<h2>Totemcarver</h2>	
+	</div>
+</div> -->
+
+<!-- <div class="Container QActive" id="BG02">
+	<div class="Inner">
+		<div class="ButtonIconContainer">
+			<a class="ButtonIcon Q" href="javascript:SetCarverActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetCarverActiveSkill( 'W', true );"></a>
+			<a class="ButtonIcon E" href="javascript:SetCarverActiveSkill( 'E', true );"></a>
+			<a class="ButtonIcon R" href="javascript:SetCarverActiveSkill( 'R', true );"></a>			
+			<div style="clear: both;"></div>
+		</div>
+		<video autoplay="" preload="auto" class="Q" loop>
+		  <source src="videos/116/CarverQ.mp4" type="video/mp4"/>
+		</video>	
+		<video preload="auto" class="W" loop>
+		  <source src="videos/116/CarverW.mp4" type="video/mp4"/>
+		</video>	
+		<video preload="auto" class="E" loop>
+		  <source src="videos/116/CarverE.mp4" type="video/mp4"/>
+		</video>	
+		<video preload="auto" class="R" loop>
+		  <source src="videos/116/CarverR.mp4" type="video/mp4"/>
+		</video>	
+		
+		<div class="LargeIcon"></div>
+
+		<h2 class="Q">Aurora Ball</h2>
+		<p class="Q GrayDescription">Shoots a slow-moving ball of light which passes through enemies hit, damaging them. The slow grows stronger with each enemy hit.</p>
+
+		<h2 class="W">Dragontide Totem</h2>
+		<p class="W GrayDescription">Places a totem which provides nearby allies with a mana regeneration aura, and damages enemies each second.</p>
+	
+		<h2 class="E">Totemic Might</h2>
+		<p class="E GrayDescription">Enchants targetted hero, giving them an incoming damage taken reduction if it's an ally, or an attack speed slow if it's an enemy.</p>
+
+		<h2 class="R">Ancestral Spirit</h2>
+		<p class="R GrayDescription">After a 2 second channel, Totemcarver teleports to the target area and gains powers of the Ancestors, granting him damage immunity and cooldown reduction for a short duration.</p>	
+	
+	</div>	
+</div>
+<div id="BG03" class="Container">
+	<div id="BG03" class="Content">
+	<h2>Valkyrie</h2>
+	</div>
+</div> -->
+
+<!-- <div class="Container QActive" id="BG04">
+	<div class="Inner">
+		<div class="ButtonIconContainer">
+			<a class="ButtonIcon Q" href="javascript:SetValkyrieActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetValkyrieActiveSkill( 'W', true );"></a>
+			<a class="ButtonIcon E" href="javascript:SetValkyrieActiveSkill( 'E', true );"></a>
+			<a class="ButtonIcon R" href="javascript:SetValkyrieActiveSkill( 'R', true );"></a>			
+			<div style="clear: both;"></div>
+		</div>
+		
+		<div class="LargeIcon"></div>
+
+		<h2 class="Q">Blessing of Eir</h2>
+		<p class="Q GrayDescription">Valkyrie instantly heals the target ally and grants them a movement speed buff. The spell's effectiveness is amplified per percentage of missing health.<br><br>
+		
+		Base Heal: 90/130/170/210<br> Base Momement Speed buff: 15/20/25/30%<br> Amplication per percentage of Health Missing: 1%<br>Duration: 9s
+		<br><br>Mana Cost: 90<br>Cooldown: 17/16/15/14s 
+		
+		</p>
+
+		<h2 class="W">Vae Victis</h2>
+		<p class="W GrayDescription">After a medium delay spears land in the target area, stunning any enemy in the vicinity and dealing damage. The stun is longer in the center.<br><br>
+		
+		Magical Damage: 130/200/270/340<br>Short Stun: 1.2/1.4/1.6/1.8s<br>Long Stun: 2.4/2.8/3.2/3.6s<br>Delay: 1.6s<br>Radius: 400<br> Center Radius: 125
+		<br><br>Mana Cost: 100/115/130/145<br>Cooldown: 12s 
+		
+		</p>
+	
+		<h2 class="E">Praetor's Thrust</h2>
+		<p class="E GrayDescription">Valkyrie pierces enemies with her spear, granting her a narrow but long cleave.<br><br>
+		
+		Cleave Damage: 40/60/80/100%<br>Cleave Width: 105<br>Cleave Length: 600<br>
+		
+		</p>
+
+		<h2 class="R">Soaring Fury</h2>
+		<p class="R GrayDescription">Valkyrie gains a damage buff relative to her current health on cast. During the duration, all healing received by her is amplified.<br><br>
+		
+		Current Health as Damage: 4.5/6/7.5%<br>Healing Amplification: 30%<br>Duration: 20s
+		<br><br>Mana Cost: 25<br>Cooldown: 50s 
+		
+		</p>	
+	
+	</div>	
+</div> -->
+
+<div class="content">
+
+<!--NEW ITEMS-->	
+<!-- <h2><div class="headingbox_items">ITEMS</div></h2>
+	<div class="transbox"><br><br><br>
+		<figure>
+			<img src="images/items/unstable_orb.png" hspace='100'>
+			<h3>Unstable Orb: <span style="color:green">NEW ITEM</span></h3>
+			<ul>
+				<li>Cost: 400</li><br>
+					
+				<li>Passive: Mana Burn</br>
+				<ul class="subtab">				
+						Your attacks burn 8 mana from the target.</br></li>
+				</ul>
+			</ul><br><br>
+		</figure>		
+	</div>	 -->
+
+<!-- UPDATED ITEMS
+	<div class="transbox"><br><br><br>
+		<figure>
+		</figure>
+	</div>	 -->
+	
+<!-- <!--UPDATED HEROES-->    -->
+<h2><div class="headingbox_heroes">HEROES</div></h2>
+	<div class="transbox"><br><br><br>	
+		<figure>
+			<img src="images/heroes/ancient_rose.png" hspace='100'>
+			<h3>Ancient Rose:</h3>
+			<ul>
+				<li>Stranglethorn radius increased from 400 to 475.</li>
+				<li>Rooting Vines damage increased from 75/150/225/300 to 120/180/240/300.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/basilisk.png" hspace='100'>
+			<h3>Basilisk:</h3>
+			<ul>
+				<li>Petrify stun duration reduced from 1.2/1.5/1.8/2.1 to 1/1.2/1.4/1.6</li>
+				<li>Expel Acid cooldown reduced from 7/6/5/4 to 6/5/4/3.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/carna.png" hspace='100'>
+			<h3>Carna:</h3>
+			<ul>
+				<li>Blood Vomit miss change increased from 25/30/35/40% to 35/40/45/50%.</li>
+				<li>Base agility reduced from 14 + 1.8 to 11 + 1.6.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/npc_dota_wolf.png" hspace='100'>
+			<h3>Cursed Wolf:</h3>
+			<ul>
+				<li>Healing Glyph base heal rescaled from 25/40/55/70 to 30/40/50/60.</li>
+				<li>Healing Glyph missing health percentage as healing reduced from 6/8/10/12% to 5.5/7/8.5/10%.</li>
+				<li>Healing Glyph manacost rescaled from 120 to 95/105/115/125.</li>
+				<li>Howling Night vision reduction reduced from 600 to 300/450/600.</li>
+				<li>Howling Night manacost reduced from 120 to 100.</li>
+				<li>Wizard's Claw magical damage increased from 40/50/60/70 to 50/65/80/95.</li>
+				<li>Rooting Pounce manacost rescaled from 110 to 100/110/120/130.</li>
+				<li>Rooting Pounce total damage reduced from 60/120/180/240 to 60/100/140/180 (dps from 60/60/90/80 to 60/50/70/60).</li>
+				<li>Base agility increased from 15+2.6 to 16+3.0.</li>
+			</ul><br>	 
+		</figure>	
+		<figure>
+			<img src="images/heroes/darkqueen.png" hspace='100'>
+			<h3>Dark Queen:</h3>
+			<ul>
+				<li>Arcane Missile projectile speed increased from 1250 to 1500.</li>
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/npc_dota_eldritch.png" hspace='100'>
+			<h3>Eldritch:</h3>
+			<ul>
+				<li>Spawn Abomination abomination count increased from 1/1/1/2 to 1/2/2/3.</li>
+				<li>Spawn Abomination duration rescaled from 20/40/60/80 to 65.</li>
+				<li>Abomination health reduced from 500 to 475.</li>
+				<li>Abomination movement speed increased from 300 to 345.</li>
+				<li>Non-Euclidean Design projectile speed reduced from 1200 to 900.</li>
+				<li>End of All That Is burn duration increased from 5/5.5/6 to 5/6/7.</li>
+				<li>End of All That Is burn damage rescaled from 60/70/80 to 65.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/ethereal_lancer.png" hspace='100'>
+			<h3>Ethereal Lancer:</h3>
+			<ul>
+				<li>Soul-Tearing Thrust magic damage amplification reduced from 30/40/50/60% to 30%.</li>
+				<li>Soul-Tearing Thrust debuff duration rescaled from 2 to 1.6/2.4/3.2/4.</li>
+				<li>Soul-Tearing Thrust debuff no longer slows.</li>
+				<li>Soul-Tearing Thrust debuff no longer disarms.</li>
+				<li>Soul-Tearing Thrust cooldown rescaled from 18/16/14/12 to 17/16/15/14.</li>
+				<li>Decisive Strike bonus magical damage increased from 25/40/55/70 to 25/50/75/100.</li>
+				<li>Decisive Strike manacost increased from 40 to 60.</li>
+				<li>Strength gain reduced from 2.0 to 1.5.</li>
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/ent.png" hspace='100'>
+			<h3>Great Ent:</h3>
+			<ul>
+				<li>Inspiring Song cooldown reduced from 30/23/16/9 to 18/15/12/9.</li>
+			</ul><br>	 
+		</figure>		
+		<figure>
+			<img src="images/heroes/huntress.png" hspace='100'>
+			<h3>Huntress:</h3>
+			<ul>
+				<li>Tactical Retreat now has a 0.5s fade time.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/kazak.png" hspace='100'>
+			<h3>Kazak:</h3>
+			<ul>
+				<li>Ferocious Roar silence duration increased from 2/2.5/3/3.5 to 3/3.5/4/4.5.</li>
+				<li>Ferocious Roar move/attack speed slow reduced from 50/60/70/80% to 55%.</li>
+				<li>Primal Aspect no longer provides a 4/8/12 all stat bonus.</li>
+				<li>Primal Aspect now provides an 8/14/20 health regen bonus.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/kingseeker.png" hspace='100'>
+			<h3>Kingseeker:</h3>
+			<ul>
+				<li>Strength gain reduced from 2.5 to 1.8.</li>
+				<li>Knights of the Dark aura radius increased from 900 to 1200.</li>
+				<li>Anticipation manacost increased from 75 to 95.</li>
+				<li>Movement speed increased from 295 to 300.</li>
+				<li>Base armour reduced by 1 (total armour at level 1 is now 2.5).</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/kron.png" hspace='100'>
+			<h3>Kron:</h3>
+			<ul>
+				<li>Strength gain reduced from 3.0 to 2.0.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/manaeater.png" hspace='100'>
+			<h3>Mana Eater:</h3>
+			<ul>
+				<li>Base movement speed increased by 15.</li>
+				<li>Agility gain increased from 1.2 to 1.6.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/nahl.png" hspace='100'>
+			<h3>Nahl:</h3>
+			<ul>
+				<li>Creeping Cold damage increased from 75/100/125/150 to 90/120/150/180.</li>
+				<li>Attack range reduced from 550 to 380.</li>
+				<li>Strength gain increased from 1.7 to 2.0.</li>
+				<li>Agility gain increased from 2.3 to 4.0.</li>				
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/okita.png" hspace='100'>
+			<h3>Okita:</h3>
+			<ul>
+				<li>Base movespeed reduced from XXX  to XXX.</li>	
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/plaguelord.png" hspace='100'>
+			<h3>Plaguelord:</h3>
+			<ul>
+				<li>Reworked Ability: Life Drain.</li>
+				<!-- <img src="images/spellicons/carna_consume.png" hspace='-150' width="75" height="75">			 -->
+				<br>No longer an attack modifier, now a passive. Causes your attacks to apply a stacking debuff on enemies. 
+				Heals and restores mana based on damage dealt and the amount of stacks while slowing the enemy. 
+				<br><br>
+
+				Debuff Duration: 2.4/2.8/3.2/3.6.<br>
+				Movespeed slow per stack: 8%.<br>
+				Slow Duration: 0.25s.<br>
+				Lifesteal per stack: 8%.<br>
+				Mana restore per stack: 4%<br>	
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/proxima.png" hspace='100'>
+			<h3>Proxima Centauri:</h3>
+			<ul>
+				<li>Base movespeed increased from 295 to 310.</li>
+				<li>Celestial Leash slow break slow duration increased from 1/2/3 to 1.5/2.25/3.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/robotscientist.png" hspace='100'>
+			<h3>Robot Scientist:</h3>
+			<ul>
+				<li>Cross Hook distance increased from 750 to 900.</li>
+				<li>Full Missile Jacket damage per rocket reduced from 300 to 270.</li>
+				<li>Daytime vision range reduced from 1800 to 1200.</li>
+				<li>Night time vision range increased from 800 to 1200.</li>				
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/shaman.png" hspace='100'>
+			<h3>Shaman:</h3>
+			<ul>
+				<li>Dispel Bolt cooldown reduced from 13 to 13/12/11/10.</li>
+				<li>Dispel Bolt can now be cast on allies to dispel debuffs without slowing/dealing damage.</li>		
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/shifter.png" hspace='100'>
+			<h3>Shifter:</h3>
+			<ul>
+				<li>Shapeshift cooldown increased from 1 to 2.</li>
+				<li>Absence no longer restores mana.</li>		
+				<li>Shadow Curse now deals 25/50/75/100 magical damage to the target whenever it gets silenced by it.</li>
+				<li>Water Form armour bonus increased from 1/3/5/7 to 1/4/9/16.</li>
+				<li>Shadow Form base attack time increased from 1.5/1.4/1.3/1.2 to 1.6/1.5/1.4/1.3.</li>
+				<li>Agility gain reduced from 3.7 to 3.4</li>
+				<li>Boiling Point mana cost rescaled from 120 to 105/115/125/135.</li>
+				<li>Boiling Point cooldown reduced from 17/16/15/14 to 16/14/12/10.</li>
+				<li>Pressure Burst cooldown rescaled from 16/14/12/10 to 18/15/12/9.</li>
+				<li>Pressure Burst mana cost increased from 100 to 110.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/totemcarver.png" hspace='100'>
+			<h3>Totemcarver:</h3>
+			<ul>
+				<li>Totem duration reduced from 20 to 15.</li>
+				<li>Totem cooldown reduced from 30 to 20.</li>
+				<li>Totemic Might cooldown increased from 14 to 16.</li>		
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/valkyrie.png" hspace='100'>
+			<h3>Valkyrie:</h3>
+			<ul>
+				<li>Soaring Fury manacost increased from 25 to 75.</li>
+				<li>Soaring Fury cooldown increased from 50 to 70.</li>
+				<li>Intelligence gain reduced from 2.0 to 1.5.</li>		
+			</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/vampiremistress.png" hspace='100'>
+			<h3>Vampire Mistress:</h3>
+			<ul>
+				<li>Call of the Void cooldown increased from 120/115/110 to 140/130/120.</li>
+				<li>Base damage increased by 8.</li>
+				<li>Base armour reduced by 1 (armour at level 1 now 2.5).</li>
+				<li>Attack range reduced from 550 to 450.</li>		
+			</ul><br>	 
+		</figure>	
+		<figure>
+			<img src="images/heroes/whitemagician.png" hspace='100'>
+			<h3>White Magician:</h3>
+			<ul>
+				<li>Base agility increased from 14 to 18.</li>
+				<li>Intelligence gain increased from 4.0 to 4.2.</li>
+				<li>Fundamental Power cooldown reduced from 120/110/100/90 to 110/100/90/80.</li>		
+			</ul><br>	 
+		</figure>																																																					
+	</div>
+	
+</div>
+</body>
+</html>
