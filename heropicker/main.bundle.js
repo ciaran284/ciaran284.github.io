@@ -25887,7 +25887,7 @@ var HeroesListComponent = (function () {
         this.splashText = "";
         this.isLoading = false;
         //�-�-�-�-�-��-�-�-�-�-�-�-�-�-�-�-�-�-�
-        this.order = ["b1", "b2", "b1", "b2", "b1", "b2", "p1", "p2", "p2", "p1", "p1", "p2", "p2", "p1", "p1", "p2", "p2", "p1", "b2", "b1", "p2", "p1"];
+        this.order = ["b1", "b2", "b1", "b2", "b1", "b2", "p1", "p2", "p2", "p1", "p1", "p2", "p2", "p1", "p1", "p2", "p2", "p1"];
         this.currOrder = 0;
         this.isComplete = false;
         this.page = 'pick';
