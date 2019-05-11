@@ -1,0 +1,472 @@
+<html>
+<!--CUSTOM TEXT/HEADING STYLES/BACKGROUNDS-->
+<head>
+	<link href="css/global_new.css" rel="stylesheet" type="text/css">
+	<link href="css/global_116.css" rel="stylesheet" type="text/css">
+	<link href="images/gtd_logo.png"rel="shortcut icon">
+	<title>Gameplay Update - 1.18</title>
+
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<script>
+		var g_bCarverSkillAdvancing = true;
+		function SetCarverActiveSkill( strName, bManual )
+		{
+			if ( bManual )
+			{
+				g_bCarverSkillAdvancing = false;
+				$( '#BG02 video' ).attr( 'loop', 'loop' );
+			}
+
+			$( '#BG02' ).removeClass();
+			$( '#BG02' ).addClass( 'Container' );
+			$( '#BG02' ).addClass( strName + 'Active' );
+			$( '#BG02 video' ).each( function () {
+				this.currentTime = 0;
+				this.pause();
+			});
+			$( '#BG02 video.' + strName ).each( function () {
+				this.currentTime = 0;
+				this.play();
+			});
+		}
+		var rgCarverAbilityClasses = [
+			'CarverQ',
+			'CarverW',
+			'CarverE',
+			'CarverR',
+		];
+		function CycleCarverAbilityVideo( nDelta )
+		{
+			var $BG02 = $( '#BG02' );
+			for ( var i = 0; i < rgCarverAbilityClasses.length; i++ )
+			{
+				if ( !$BG02.hasClass( rgCarverAbilityClasses[i] + 'Active' ) )
+					continue;
+
+				SetCarverActiveSkill( rgCarverAbilityClasses[ ( i + nDelta + rgCarverAbilityClasses.length ) % rgCarverAbilityClasses.length ], false );
+				break;
+			}
+		}
+		$( function () {
+			$( '#BG02 video' ).bind( 'ended', function () {
+				if ( g_bCarverSkillAdvancing )
+				{
+					CycleCarverAbilityVideo( +1 );
+				}
+			});
+		});
+	</script>
+	
+	<script>
+		var g_bValkyrieSkillAdvancing = true;
+		function SetValkyrieActiveSkill( strName, bManual )
+		{
+			$( '#BG04' ).removeClass();
+			$( '#BG04' ).addClass( 'Container' );
+			$( '#BG04' ).addClass( strName + 'Active' );
+		}		
+		var rgValkyrieAbilityClasses = [
+			'ValkyrieQ',
+			'ValkyrieW',
+			'ValkyrieE',
+			'ValkyrieR',
+		];		
+	</script>	
+</head> -->
+
+
+<!--MAIN PATCH HEADING-->
+<body>
+<header>
+  <h1>THE SHIFT OF POWER - UPDATE: 1.17</h1><br>
+  <a href=index.html>PREVIOUS CHANGELOGS</a><br><br>
+</header>
+<!-- <div id="BG01" class="Container">
+	<div id="BG01" class="Content">
+	<h2>Totemcarver</h2>	
+	</div>
+</div> -->
+
+<!-- <div class="Container QActive" id="BG02">
+	<div class="Inner">
+		<div class="ButtonIconContainer">
+			<a class="ButtonIcon Q" href="javascript:SetCarverActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetCarverActiveSkill( 'W', true );"></a>
+			<a class="ButtonIcon E" href="javascript:SetCarverActiveSkill( 'E', true );"></a>
+			<a class="ButtonIcon R" href="javascript:SetCarverActiveSkill( 'R', true );"></a>			
+			<div style="clear: both;"></div>
+		</div>
+		<video autoplay="" preload="auto" class="Q" loop>
+		  <source src="videos/116/CarverQ.mp4" type="video/mp4"/>
+		</video>	
+		<video preload="auto" class="W" loop>
+		  <source src="videos/116/CarverW.mp4" type="video/mp4"/>
+		</video>	
+		<video preload="auto" class="E" loop>
+		  <source src="videos/116/CarverE.mp4" type="video/mp4"/>
+		</video>	
+		<video preload="auto" class="R" loop>
+		  <source src="videos/116/CarverR.mp4" type="video/mp4"/>
+		</video>	
+		
+		<div class="LargeIcon"></div>
+
+		<h2 class="Q">Aurora Ball</h2>
+		<p class="Q GrayDescription">Shoots a slow-moving ball of light which passes through enemies hit, damaging them. The slow grows stronger with each enemy hit.</p>
+
+		<h2 class="W">Dragontide Totem</h2>
+		<p class="W GrayDescription">Places a totem which provides nearby allies with a mana regeneration aura, and damages enemies each second.</p>
+	
+		<h2 class="E">Totemic Might</h2>
+		<p class="E GrayDescription">Enchants targetted hero, giving them an incoming damage taken reduction if it's an ally, or an attack speed slow if it's an enemy.</p>
+
+		<h2 class="R">Ancestral Spirit</h2>
+		<p class="R GrayDescription">After a 2 second channel, Totemcarver teleports to the target area and gains powers of the Ancestors, granting him damage immunity and cooldown reduction for a short duration.</p>	
+	
+	</div>	
+</div>
+<div id="BG03" class="Container">
+	<div id="BG03" class="Content">
+	<h2>Valkyrie</h2>
+	</div>
+</div> -->
+
+<!-- <div class="Container QActive" id="BG04">
+	<div class="Inner">
+		<div class="ButtonIconContainer">
+			<a class="ButtonIcon Q" href="javascript:SetValkyrieActiveSkill( 'Q', true );"></a>
+			<a class="ButtonIcon W" href="javascript:SetValkyrieActiveSkill( 'W', true );"></a>
+			<a class="ButtonIcon E" href="javascript:SetValkyrieActiveSkill( 'E', true );"></a>
+			<a class="ButtonIcon R" href="javascript:SetValkyrieActiveSkill( 'R', true );"></a>			
+			<div style="clear: both;"></div>
+		</div>
+		
+		<div class="LargeIcon"></div>
+
+		<h2 class="Q">Blessing of Eir</h2>
+		<p class="Q GrayDescription">Valkyrie instantly heals the target ally and grants them a movement speed buff. The spell's effectiveness is amplified per percentage of missing health.<br><br>
+		
+		Base Heal: 90/130/170/210<br> Base Momement Speed buff: 15/20/25/30%<br> Amplication per percentage of Health Missing: 1%<br>Duration: 9s
+		<br><br>Mana Cost: 90<br>Cooldown: 17/16/15/14s 
+		
+		</p>
+
+		<h2 class="W">Vae Victis</h2>
+		<p class="W GrayDescription">After a medium delay spears land in the target area, stunning any enemy in the vicinity and dealing damage. The stun is longer in the center.<br><br>
+		
+		Magical Damage: 130/200/270/340<br>Short Stun: 1.2/1.4/1.6/1.8s<br>Long Stun: 2.4/2.8/3.2/3.6s<br>Delay: 1.6s<br>Radius: 400<br> Center Radius: 125
+		<br><br>Mana Cost: 100/115/130/145<br>Cooldown: 12s 
+		
+		</p>
+	
+		<h2 class="E">Praetor's Thrust</h2>
+		<p class="E GrayDescription">Valkyrie pierces enemies with her spear, granting her a narrow but long cleave.<br><br>
+		
+		Cleave Damage: 40/60/80/100%<br>Cleave Width: 105<br>Cleave Length: 600<br>
+		
+		</p>
+
+		<h2 class="R">Soaring Fury</h2>
+		<p class="R GrayDescription">Valkyrie gains a damage buff relative to her current health on cast. During the duration, all healing received by her is amplified.<br><br>
+		
+		Current Health as Damage: 4.5/6/7.5%<br>Healing Amplification: 30%<br>Duration: 20s
+		<br><br>Mana Cost: 25<br>Cooldown: 50s 
+		
+		</p>	
+	
+	</div>	
+</div> -->
+
+<div class="content">
+
+<!-- NEW ITEMS-->
+<h2><div class="headingbox_items">ITEMS</div></h2>
+	<div class="transbox"><br><br><br>
+		<figure>
+			<img src="images/items/crescent_flame.png" hspace='100'>
+			<h3>Crescent's Flame: <span style="color:green">NEW ITEM</span></h3>
+			<ul>
+				<li>Requires: </br>
+				<ul class="subtab">					
+						Sharp Mace (1400)</br>
+						Fury's Gauntlet (1900)</br>						
+						Recipe (650)</br>	
+						Total Cost: 3950</br></li><br>
+				</ul>	
+					
+				<li>Provides: </br>
+				<ul class="subtab">					
+					25 Damage</br>
+					12 Strength</br>
+					50 Attack Speed</br>									
+					</li>
+				</ul>
+				<br>
+
+				<li>Passive: Fireball Attack</br>
+					<ul class="subtab">				
+							Your ranged attacks splash in a 225 radius, dealing 50% of your damage to enemies around the main target.</br></li>
+					</ul>
+			</ul><br><br>
+		</figure>		
+	</div>	
+
+<!-- UPDATED ITEMS -->
+	<div class="transbox"><br><br><br>
+		<figure>
+			<p><img src="images/items/blessed_greatshield.png" hspace='100'></p>
+			<h3>Blessed Greatshield</h3>
+			<ul>
+				<li>Cost Reduced from 1100 to 1000.</li>
+				<li>No longer gives 40 Mana.</li>		
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/bloodgod_amulet.png" hspace='100'></p>
+			<h3>Bloodgod Amulet</h3>
+			<ul>
+				<li>No longer gives 2 Armour.</li>		
+				<br>
+			</ul><br>
+		</figure>				
+		<figure>
+			<p><img src="images/items/delicate_longbow.png" hspace='100'></p>
+			<h3>Delicate Longbow</h3>
+			<ul>
+				<li>Cost reduced from 1100 to 1000.</li>
+				<li>No longer gives 1 HP regeneration.</li>	
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/demon_greataxe.png" hspace='100'></p>
+			<h3>Demon Greataxe</h3>
+			<ul>
+				<li>No longer gives 50 Mana.</li>		
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/extractinator.png" hspace='100'></p>
+			<h3>Extractinator</h3>
+			<ul>
+				<li>No longer gives 15 damage.</li>		
+				<br>
+			</ul><br>
+		</figure>		
+		<figure>
+			<p><img src="images/items/frozen_demonblood.png" hspace='100'></p>
+			<h3>Frozen Demonblood</h3>
+			<ul>
+				<li>No longer gives 3 damage.</li>		
+				<br>
+			</ul><br>
+		</figure>						
+		<figure>
+			<p><img src="images/items/giants_cuirass.png" hspace='100'></p>
+			<h3>Giant's Cuirass</h3>
+			<ul>
+				<li>Cost reduced from 3000 to 2800.</li>
+				<li>No longer gives 60 Mana.</li>		
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/glare_of_anubis.png" hspace='100'></p>
+			<h3>Glare of Anubis</h3>
+			<ul>
+				<li>No longer gives 2 HP regeneration.</li>		
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/garb.png" hspace='100'></p>
+			<h3>Haemoturgist's Garb</h3>
+			<ul>
+				<li>No longer gives 8 Armour.</li>		
+				<br>
+			</ul><br>
+		</figure>					
+		<figure>
+			<p><img src="images/items/magus_king_hood.png" hspace='100'></p>
+			<h3>Magus King Hood</h3>
+			<ul>
+				<li>Cost reduced from 3000 to 2800.</li>
+				<li>No longer gives 3 Armour.</li>		
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/maiden_tears.png" hspace='100'></p>
+			<h3>Maiden Tears</h3>
+			<ul>
+				<li>No longer give 5 movement speed.</li>		
+				<br>
+			</ul><br>
+		</figure>		
+		<figure>
+			<p><img src="images/items/resonance_bell.png" hspace='100'></p>
+			<h3>Resonance Bell</h3>
+			<ul>
+				<li>No longer gives 150 Mana.</li>
+				<br>
+			</ul><br>
+		</figure>							
+		<figure>
+			<p><img src="images/items/runed_bracers.png" hspace='100'></p>
+			<h3>Runed Bracers</h3>
+			<ul>
+				<li>Cost reduced from 1100 to 1000.</li>
+				<li>No longer gives 1 Armour.</li>		
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/snake_pendant.png" hspace='100'></p>
+			<h3>Snake Pendant</h3>
+			<ul>
+				<li>No longer gives 100 Mana.</li>		
+				<br>
+			</ul><br>
+		</figure>
+		<figure>
+			<p><img src="images/items/veil_of_the_night.png" hspace='100'></p>
+			<h3>Veil of the Night</h3>
+			<ul>
+				<li>No longer give 10 movement speed.</li>		
+				<br>
+			</ul><br>
+		</figure>				
+		<figure>
+			<p><img src="images/items/windrush.png" hspace='100'></p>
+			<h3>Windrush</h3>
+			<ul>
+				<li>Cost reduced from 3000 to 2800.</li>
+				<li>No longer gives 2 HP regen.</li>		
+				<br>
+			</ul><br>
+		</figure>											
+	</div>	
+	
+<!-- UPDATED HEROES-->
+<h2><div class="headingbox_heroes">HEROES</div></h2>
+	<div class="transbox"><br><br><br>
+		<figure>
+			<img src="images/heroes/armordillo.png" hspace='100'>
+			<h3>Armordillo: <span style="color:green">NEW ABILITY</span></h3>
+			<ul>
+					<li>New Ability: <b>Frenzying Rage</b> replaced with <b>Macebreaker</b></li>
+					<img src="images/spellicons/carna_hook.png" hspace='-150' width="75" height="75"><br><br>
+						
+					<li><b>Macebreaker:</b><br>
+						Strikes in a 700 unit long line with a devastating thrust that deals 100/150/200 pure damage and reduced opponents' damage by 50/60/70% for 6 seconds.<br>
+						Cooldown: 75<br>
+						Mana Cost: 100/150/200<br></li><br>
+
+
+				<li>Reinforce armor change reduced from 5/6/7/8 to 5.</li>
+				<li>Reinforce damage increased from 50/100/150/200 to 80/140/200/260.</li>
+				<li>Reinforce cast range increased from 400 to 450.</li>
+				<li>Reinforce now targets 2/3/4/5 units - On cast, searches (300 radius) for up to 1/2/3/4 closest enemies next to the spell's main target and sends a projectile to each of them (buff applied on Armordillo still increases defense by 5, regardless of the amount of enemies hit).</li>	
+				<li>Raging Taunt attack speed reduced from 100/110/120/130 to 100.</li>
+				<li>Rapier Expertise movement speed bonus per stack increased from 3% to 3/4/5/6%.</li>
+
+			</ul><br>					
+
+		</figure>
+		<figure>
+				<img src="images/heroes/basilisk.png" hspace='100'>
+				<h3>Basilisk:</h3>
+				<ul>
+					<li>Expel Acid now hits only the closest 3 units, prioritizing heroes, instead of hitting every unit in the AoE.</li>
+				</ul><br>	 
+			</figure>		
+		<figure>
+			<img src="images/heroes/darkqueen.png" hspace='100'>
+			<h3>Dark Queen:</h3>
+			<ul>
+				<li>Bladestorm duration rescaled from 5/6/7/8 to 6.</li>
+				<li>Bladestorm mana cost increased from 75 to 100.</li>
+				<li>Dark Wall damage per second reduced from 100/150/200/250 to 40/80/120/160.</li>
+				<li>Dark Wall mana cost rescaled from 140 to 50/80/110/140.</li>	
+				<li>Dark Wall cooldown time reduced from 30/26/22/18 to 22/19/16/13.</li>
+				<li>Casting Dark Wall on top of an enemy will now always put them on Dark Queen's side of the wall. (Previously, they would get placed at the side they're closer to).</li>
+				<li>Dark Wall's duration rescaled from 4/6/8/10 to 6/7/8/9.</li>
+				<li>Hidden Insight Vision reduced from 600/1000/1400 to 600/900/1200.</li>
+			</ul><br>	 
+		</figure>
+		<figure>
+				<img src="images/heroes/ent.png" hspace='100'>
+				<h3>Great Ent:</h3>
+				<ul>
+					<li>Vine Grip no longer instantly heals the target.</li>
+					<li>Vine Grip mana cost reduced from 150/140/130/120 to 140/130/120/110.</li>
+				</ul><br>	 
+		</figure>
+		<figure>
+			<img src="images/heroes/kingseeker.png" hspace='100'>
+			<h3>Kingseeker: <span style="color:green">NEW ABILITY</span></h3>
+			<ul>
+					<li>New Ability: <b>Anticipation</b> replaced with <b>Shadowbeasts</b></li>
+					<img src="images/spellicons/carna_hook.png" hspace='-150' width="75" height="75"><br><br>
+
+					<li><b>Shadowbeasts:</b><br>
+						Summons 2 Shadowbeasts with 18 attack damage, 200 health, and 350 movement speed. They last for 25 seconds. On death or expiring, a Shadowbeast heals all nearby allies in a 400 radius for 80/100/120/140 HP.<br>
+						Cooldown: 40/36/32/28<br>
+						Mana Cost: 75<br></li>
+			</ul><br>	 
+		</figure>					
+		<figure>
+			<img src="images/heroes/kron.png" hspace='100'>
+			<h3>Kron:</h3>
+			<ul>
+				<li>Intelligence increased from 16 + 1.3 to 17 + 1.8.</li>
+				<li>Whenever Powerful Roar hits at least one enemy, it's cooldown is reduced by 1.5 seconds for 8 seconds. Stacks up to 2 times.</li>
+			</ul><br>	 
+		</figure>							
+		<figure>
+			<img src="images/heroes/lucifer.png" hspace='100'>
+			<h3>Lucifer:</h3>
+			<ul>
+				<li>Strength increased from 20 + 2.6 to 22 + 2.9.</li>	
+			</ul><br>	 
+		</figure>				
+		<figure>
+			<img src="images/heroes/nerub.png" hspace='100'>
+			<h3>Nerub:</h3>
+			<ul>
+				<li>Agility increased from 12 + 1.6 to 18 + 2.</li>
+				<li>Sear Health and Scorch Mana can now target creeps.</li>
+				<li>Shred Wits now always damages and stuns creeps, instead of doing neither.</li>	
+			</ul><br>	 
+		</figure>
+		<figure>
+				<img src="images/heroes/shaman.png" hspace='100'>
+				<h3>Shaman: <span style="color:green">NEW ABILITY</span></h3>
+				<ul>
+						<li>New Ability: <b>Attack Speed Totem Rage</b> replaced with <b>Chaos Totem</b></li>
+						<img src="images/spellicons/carna_hook.png" hspace='-150' width="75" height="75"><br><br>
+							
+						<li><b>Chaos Totem:</b><br>
+							Places a totem which connects to up to 2/3/4 nearby heroes with beams, prioritizing allies. 
+							Connected allies gain 60/70/80 damage and 70/80/90 attack speed, while connected enemies take 80/140/200 damage per second. 
+							The beams have a reach of 700, and breaking a beam will cause the totem to find a new target. 
+							Totem lasts for 30 seconds or until destroyed. Dies in 3/5/7 hero attacks.<br>
+							Cooldown: 100/90/80<br>
+							Mana Cost: 100/150/200<br></li>
+				</ul><br>	 
+			</figure>			
+		<figure>
+			<img src="images/heroes/proxima.png" hspace='100'>
+			<h3>Proxima Centauri:</h3>
+			<ul>
+				<li>Moment of Respite no longer increases health regen while hidden. Now instead provides a 5 second 20/30/40/50% movement speed buff after the duration.</li>
+			</ul><br>	 
+		</figure>																																																								
+	</div>
+	
+</div>
+</body>
+</html>
