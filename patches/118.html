@@ -2,78 +2,85 @@
 <!--CUSTOM TEXT/HEADING STYLES/BACKGROUNDS-->
 <head>
 	<link href="css/global_new.css" rel="stylesheet" type="text/css">
-	<link href="css/global_116.css" rel="stylesheet" type="text/css">
+	<link href="css/global_118.css" rel="stylesheet" type="text/css">
 	<link href="images/gtd_logo.png"rel="shortcut icon">
 	<title>THE ALTERED FATES - 1.18</title>
 
-	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	
 	<script>
-		var g_bCarverSkillAdvancing = true;
-		function SetCarverActiveSkill( strName, bManual )
-		{
-			if ( bManual )
-			{
-				g_bCarverSkillAdvancing = false;
-				$( '#BG02 video' ).attr( 'loop', 'loop' );
-			}
-
-			$( '#BG02' ).removeClass();
-			$( '#BG02' ).addClass( 'Container' );
-			$( '#BG02' ).addClass( strName + 'Active' );
-			$( '#BG02 video' ).each( function () {
-				this.currentTime = 0;
-				this.pause();
-			});
-			$( '#BG02 video.' + strName ).each( function () {
-				this.currentTime = 0;
-				this.play();
-			});
-		}
-		var rgCarverAbilityClasses = [
-			'CarverQ',
-			'CarverW',
-			'CarverE',
-			'CarverR',
-		];
-		function CycleCarverAbilityVideo( nDelta )
-		{
-			var $BG02 = $( '#BG02' );
-			for ( var i = 0; i < rgCarverAbilityClasses.length; i++ )
-			{
-				if ( !$BG02.hasClass( rgCarverAbilityClasses[i] + 'Active' ) )
-					continue;
-
-				SetCarverActiveSkill( rgCarverAbilityClasses[ ( i + nDelta + rgCarverAbilityClasses.length ) % rgCarverAbilityClasses.length ], false );
-				break;
-			}
-		}
-		$( function () {
-			$( '#BG02 video' ).bind( 'ended', function () {
-				if ( g_bCarverSkillAdvancing )
-				{
-					CycleCarverAbilityVideo( +1 );
+			function initComparisons() {
+			  var x, i;
+			  /*find all elements with an "overlay" class:*/
+			  x = document.getElementsByClassName("img-comp-overlay");
+			  for (i = 0; i < x.length; i++) {
+				/*once for each "overlay" element:
+				pass the "overlay" element as a parameter when executing the compareImages function:*/
+				compareImages(x[i]);
+			  }
+			  function compareImages(img) {
+				var slider, img, clicked = 0, w, h;
+				/*get the width and height of the img element*/
+				w = img.offsetWidth;
+				h = img.offsetHeight;
+				/*set the width of the img element to 50%:*/
+				img.style.width = (w / 2) + "px";
+				/*create slider:*/
+				slider = document.createElement("DIV");
+				slider.setAttribute("class", "img-comp-slider");
+				/*insert slider*/
+				img.parentElement.insertBefore(slider, img);
+				/*position the slider in the middle:*/
+				slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+				slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+				/*execute a function when the mouse button is pressed:*/
+				slider.addEventListener("mousedown", slideReady);
+				/*and another function when the mouse button is released:*/
+				window.addEventListener("mouseup", slideFinish);
+				function slideReady(e) {
+				  /*prevent any other actions that may occur when moving over the image:*/
+				  e.preventDefault();
+				  /*the slider is now clicked and ready to move:*/
+				  clicked = 1;
+				  /*execute a function when the slider is moved:*/
+				  window.addEventListener("mousemove", slideMove);
+				  window.addEventListener("touchmove", slideMove);
 				}
-			});
-		});
-	</script>
-	
-	<script>
-		var g_bValkyrieSkillAdvancing = true;
-		function SetValkyrieActiveSkill( strName, bManual )
-		{
-			$( '#BG04' ).removeClass();
-			$( '#BG04' ).addClass( 'Container' );
-			$( '#BG04' ).addClass( strName + 'Active' );
-		}		
-		var rgValkyrieAbilityClasses = [
-			'ValkyrieQ',
-			'ValkyrieW',
-			'ValkyrieE',
-			'ValkyrieR',
-		];		
-	</script>	
-</head> -->
+				function slideFinish() {
+				  /*the slider is no longer clicked:*/
+				  clicked = 0;
+				}
+				function slideMove(e) {
+				  var pos;
+				  /*if the slider is no longer clicked, exit this function:*/
+				  if (clicked == 0) return false;
+				  /*get the cursor's x position:*/
+				  pos = getCursorPos(e)
+				  /*prevent the slider from being positioned outside the image:*/
+				  if (pos < 0) pos = 0;
+				  if (pos > w) pos = w;
+				  /*execute a function that will resize the overlay image according to the cursor:*/
+				  slide(pos);
+				}
+				function getCursorPos(e) {
+				  var a, x = 0;
+				  e = e || window.event;
+				  /*get the x positions of the image:*/
+				  a = img.getBoundingClientRect();
+				  /*calculate the cursor's x coordinate, relative to the image:*/
+				  x = e.pageX - a.left;
+				  /*consider any page scrolling:*/
+				  x = x - window.pageXOffset;
+				  return x;
+				}
+				function slide(x) {
+				  /*resize the image:*/
+				  img.style.width = x + "px";
+				  /*position the slider:*/
+				  slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+				}
+			  }
+			}
+</script>
+</head>
 
 
 <!--MAIN PATCH HEADING-->
@@ -82,103 +89,33 @@
   <h1>THE ALTERED FATES - UPDATE: 1.18</h1><br>
   <a href=index.html>PREVIOUS CHANGELOGS</a><br><br>
 </header>
-<!-- <div id="BG01" class="Container">
-	<div id="BG01" class="Content">
-	<h2>Totemcarver</h2>	
-	</div>
-</div> -->
-
-<!-- <div class="Container QActive" id="BG02">
-	<div class="Inner">
-		<div class="ButtonIconContainer">
-			<a class="ButtonIcon Q" href="javascript:SetCarverActiveSkill( 'Q', true );"></a>
-			<a class="ButtonIcon W" href="javascript:SetCarverActiveSkill( 'W', true );"></a>
-			<a class="ButtonIcon E" href="javascript:SetCarverActiveSkill( 'E', true );"></a>
-			<a class="ButtonIcon R" href="javascript:SetCarverActiveSkill( 'R', true );"></a>			
-			<div style="clear: both;"></div>
-		</div>
-		<video autoplay="" preload="auto" class="Q" loop>
-		  <source src="videos/116/CarverQ.mp4" type="video/mp4"/>
-		</video>	
-		<video preload="auto" class="W" loop>
-		  <source src="videos/116/CarverW.mp4" type="video/mp4"/>
-		</video>	
-		<video preload="auto" class="E" loop>
-		  <source src="videos/116/CarverE.mp4" type="video/mp4"/>
-		</video>	
-		<video preload="auto" class="R" loop>
-		  <source src="videos/116/CarverR.mp4" type="video/mp4"/>
-		</video>	
-		
-		<div class="LargeIcon"></div>
-
-		<h2 class="Q">Aurora Ball</h2>
-		<p class="Q GrayDescription">Shoots a slow-moving ball of light which passes through enemies hit, damaging them. The slow grows stronger with each enemy hit.</p>
-
-		<h2 class="W">Dragontide Totem</h2>
-		<p class="W GrayDescription">Places a totem which provides nearby allies with a mana regeneration aura, and damages enemies each second.</p>
-	
-		<h2 class="E">Totemic Might</h2>
-		<p class="E GrayDescription">Enchants targetted hero, giving them an incoming damage taken reduction if it's an ally, or an attack speed slow if it's an enemy.</p>
-
-		<h2 class="R">Ancestral Spirit</h2>
-		<p class="R GrayDescription">After a 2 second channel, Totemcarver teleports to the target area and gains powers of the Ancestors, granting him damage immunity and cooldown reduction for a short duration.</p>	
-	
-	</div>	
-</div>
-<div id="BG03" class="Container">
-	<div id="BG03" class="Content">
-	<h2>Valkyrie</h2>
-	</div>
-</div> -->
-
-<!-- <div class="Container QActive" id="BG04">
-	<div class="Inner">
-		<div class="ButtonIconContainer">
-			<a class="ButtonIcon Q" href="javascript:SetValkyrieActiveSkill( 'Q', true );"></a>
-			<a class="ButtonIcon W" href="javascript:SetValkyrieActiveSkill( 'W', true );"></a>
-			<a class="ButtonIcon E" href="javascript:SetValkyrieActiveSkill( 'E', true );"></a>
-			<a class="ButtonIcon R" href="javascript:SetValkyrieActiveSkill( 'R', true );"></a>			
-			<div style="clear: both;"></div>
-		</div>
-		
-		<div class="LargeIcon"></div>
-
-		<h2 class="Q">Blessing of Eir</h2>
-		<p class="Q GrayDescription">Valkyrie instantly heals the target ally and grants them a movement speed buff. The spell's effectiveness is amplified per percentage of missing health.<br><br>
-		
-		Base Heal: 90/130/170/210<br> Base Momement Speed buff: 15/20/25/30%<br> Amplication per percentage of Health Missing: 1%<br>Duration: 9s
-		<br><br>Mana Cost: 90<br>Cooldown: 17/16/15/14s 
-		
-		</p>
-
-		<h2 class="W">Vae Victis</h2>
-		<p class="W GrayDescription">After a medium delay spears land in the target area, stunning any enemy in the vicinity and dealing damage. The stun is longer in the center.<br><br>
-		
-		Magical Damage: 130/200/270/340<br>Short Stun: 1.2/1.4/1.6/1.8s<br>Long Stun: 2.4/2.8/3.2/3.6s<br>Delay: 1.6s<br>Radius: 400<br> Center Radius: 125
-		<br><br>Mana Cost: 100/115/130/145<br>Cooldown: 12s 
-		
-		</p>
-	
-		<h2 class="E">Praetor's Thrust</h2>
-		<p class="E GrayDescription">Valkyrie pierces enemies with her spear, granting her a narrow but long cleave.<br><br>
-		
-		Cleave Damage: 40/60/80/100%<br>Cleave Width: 105<br>Cleave Length: 600<br>
-		
-		</p>
-
-		<h2 class="R">Soaring Fury</h2>
-		<p class="R GrayDescription">Valkyrie gains a damage buff relative to her current health on cast. During the duration, all healing received by her is amplified.<br><br>
-		
-		Current Health as Damage: 4.5/6/7.5%<br>Healing Amplification: 30%<br>Duration: 20s
-		<br><br>Mana Cost: 25<br>Cooldown: 50s 
-		
-		</p>	
-	
-	</div>	
-</div> -->
 
 <div class="content">
+
+<!--MAIN PATCH FEATURES (MAP CHANGES)-->
+<div class="img-comp-container">
+		<div class="img-comp-img">
+		  <img src="css/images/118/test_A.PNG" width="300" height="200">
+		</div>
+		<div class="img-comp-img img-comp-overlay">
+			<img src="css/images/118/test_B.PNG" width="300" height="200">
+		</div>
+	  </div>
+
+	  <div class="img-comp-container">
+			<div class="img-comp-img">
+			  <img src="css/images/118/test_A.PNG" width="300" height="200">
+			</div>
+			<div class="img-comp-img img-comp-overlay">
+				<img src="css/images/118/test_B.PNG" width="300" height="200">
+			</div>
+		  </div>	  
+
+	  <script>
+			/*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+			initComparisons();
+	  </script>	  
+
 
 <!-- NEW ITEMS-->
 <h2><div class="headingbox_items">ITEMS</div></h2>
@@ -187,13 +124,6 @@
 			<img src="images/items/amplification_tome.png" hspace='100'>
 			<h3>Amplification Tome: <span style="color:green">NEW ITEM</span></h3>
 			<ul>
-				<!-- <li>Requires: </br>
-				<ul class="subtab">					
-						Sharp Mace (1400)</br>
-						Fury's Gauntlet (1900)</br>						
-						Recipe (650)</br>	
-						Total Cost: 3950</br></li><br>
-				</ul>	 -->
 				<li>Cost: 1000</li><br>
 
 				<li>Provides: </br>
@@ -202,13 +132,64 @@
 					</li>
 				</ul>
 				<br>			
-
-				<!-- <li>Passive: Fireball Attack</br>
-					<ul class="subtab">				
-							Your ranged attacks splash in a 225 radius, dealing 50% of your damage to enemies around the main target.</br></li>
-					</ul> -->
 			</ul><br><br>
-		</figure>		
+		</figure>
+		<figure>
+				<img src="images/items/eternity_staff.png" hspace='100'>
+				<h3>Eternity Staff: <span style="color:green">NEW ITEM</span></h3>
+				<ul>
+		
+					Runed Bracers (1000)</br>
+					Amplification Tome (1000)</br>
+					Recipe (750)<br>					
+					Total Cost: 2750</br></li><br>
+
+					Provides: <br>
+					12 Intelligence<br>
+					12% Spell Amplification<br></li><br>
+
+					Passive:<br>
+					12% Spell Lifesteal<br></li><br>				
+					<br>
+				</ul>
+		</figure>
+		<figure>
+				<img src="images/items/lich_pendant.png" hspace='100'>
+				<h3>Lich's Mana Pendant: <span style="color:green">NEW ITEM</span></h3>
+				<ul>
+		
+					Paladin's Plate (1800)</br>
+					Mana Orb (700)</br>
+					Priest's Tunic (500)<br>
+					Recipe (500)<br>					
+					Total Cost: 3500</br></li><br>
+
+					Provides: <br>
+					10 Armour<br>
+					25% Magic Resistance<br>
+					250 Mana<br>
+					5 HP Regen<br></li><br>
+
+					Passive: <br>
+					Converts 25% of all damage taken (after reductions) into mana.<br></li><br>	
+					<br>
+				</ul>
+		</figure>
+		<figure>
+				<img src="images/items/quarterlance.png" hspace='100'>
+				<h3>Quarterlance: <span style="color:green">NEW ITEM</span></h3>
+				<ul>
+					<li>Cost: 1150</li><br>
+	
+					<li>Provides: </br>
+					<ul class="subtab">					
+						15 Movement Speed<br>
+						20 Attack Speed<br>								
+						</li>
+					</ul>
+					<br>			
+				</ul><br><br>
+			</figure>					
 	</div>	
 
 <!-- UPDATED ITEMS -->
@@ -236,6 +217,65 @@
 			</ul><br>
 		</figure>
 		<figure>
+				<img src="images/items/breaker_of_nightmares.png" hspace='100'>
+				<h3>Breaker of Nightmares</h3>
+				<ul>
+					<li>Passive now gives 20 Health Regen instead of 75% amplification.</li>
+					<li>Passive damage reduction reduced from 40% to 30%.</li>	
+					<br>
+				</ul><br>
+		</figure>
+		<figure>
+				<img src="images/items/caged_boots.png" hspace='100'>
+				<h3>Caged Boots: <span style="color:#C00000">REMOVED</span></h3>
+				<ul>
+					<li>Removed from the game.</li>
+					<br>
+				</ul><br>
+		</figure>	
+		<figure>
+				<img src="images/items/cannibal_sword.png" hspace='100'>
+				<h3>Cannibal Sword: <span style="color:#CCCC00">RECIPE REWORKED</span></h3>
+				<ul>
+						<li>Old Recipe:</br>
+							<ul class="subtab">				
+									Giant's Crystal (1200)</br>
+									Thirsting Sword (1950)</br>		
+									Sharp Mace (1400)</br>			
+									Total Cost: 4550</br></li><br>
+			
+									Provided: <br>
+									41 Damage<br>
+									25 Strength<br>
+									400 HP<br>
+									11% Lifesteal<br></li><br>	
+							</ul>		
+			
+							<li>New Recipe:</br>
+							<ul class="subtab">				
+									Thirsting Sword (1950)</br>
+									Paladin's Plate (1800)</br>					
+									Total Cost: 3750</br></li><br>
+			
+									Provides: <br>
+									25 Damage<br>
+									10 Armour<br>
+									4 HP Regen</br>
+									11% Lifesteal<br>
+									Active Unchanged<br></li><br>
+							</ul>	
+					<br>
+				</ul><br>
+		</figure>
+		<figure>
+				<img src="images/items/crescent_flame.png" hspace='100'>
+				<h3>Crescent's Flame</h3>
+				<ul>
+					<li>Strength reduced from 12 to 10.</li>
+					<br>
+				</ul><br>
+		</figure>								
+		<figure>
 				<img src="images/items/crusader_mail.png" hspace='100'>
 				<h3>Crusader's Mail</h3>
 				<ul>
@@ -262,8 +302,31 @@
 		</figure>
 		<figure>
 			<img src="images/items/extractinator.png" hspace='100'>
-			<h3>Extractinator</h3>
+			<h3>Extractinator: <span style="color:#CCCC00">RECIPE REWORKED</span></h3>
 			<ul>
+					<li>Old Recipe:</br>
+						<ul class="subtab">				
+								Fury's Gauntlet (1900)</br>
+								Frozen Demonblood (825)</br>					
+								Total Cost: 2725</br></li><br>
+		
+								Provided: <br>
+								55 Attack Speed<br>
+								9 HP Regen<br></li><br>		
+						</ul>		
+		
+						<li>New Recipe:</br>
+						<ul class="subtab">				
+								Giant's Crystal (1200)</br>
+								Frozen Demonblood (825)</br>
+								Recipe (500)<br>					
+								Total Cost: 2525</br></li><br>
+		
+								Provides: <br>
+								400 HP<br>
+								9 HP Regen<br>
+								Active Unchanged</br></li><br>
+						</ul>
 				<li>No longer gives 15 damage.</li>		
 				<br>
 			</ul><br>
@@ -302,71 +365,229 @@
 			</ul><br>
 		</figure>
 		<figure>
+				<img src="images/items/hydra_thirst.png" hspace='100'>
+				<h3>Hydra's Thirst: <span style="color:#CCCC00">RECIPE REWORKED</span></h3>
+				<ul>
+						<li>Old Recipe:</br>
+							<ul class="subtab">				
+									Windrush (3000)</br>					
+									Diffusion Stone (1325)</br>
+									Sharp Dirk (500)</br>
+									Total Cost: 4825</br></li><br>
+									
+									Provided: <br>
+									20 Damage<br>
+									30 Agility<br>
+									3 Mana Regen<br>
+									25 Attack Speed<br></li><br>		
+							</ul>			
+			
+							<li>New Recipe:</br>
+							<ul class="subtab">				
+									Windrush (2800)</br>					
+									Diffusion Stone (1325)</br>
+									Quarterlance (1150)</br>
+									Total Cost: 5275</br></li><br>
+			
+									Provides: <br>
+									35 Agility<br>
+									3 Mana Regen<br>
+									30 Attack Speed<br>
+									20 Movement Speed<br></li><br>	
+							</ul>
+				</ul><br>
+		</figure>			
+		<figure>
 				<img src="images/items/ironside_dancer.png" hspace='100'>
 				<h3>Ironside Dancer</h3>
 				<ul>
 					<li>No longer gives 2.5 HP regeneration.</li>	
 					<br>
 				</ul><br>
-		</figure>								
-		<figure>
-			<img src="images/items/magus_king_hood.png" hspace='100'>
-			<h3>Magus King Hood</h3>
-			<ul>
-				<li>Cost reduced from 3000 to 2800.</li>
-				<li>No longer gives 3 Armour.</li>		
-				<br>
-			</ul><br>
 		</figure>
 		<figure>
-			<img src="images/items/maiden_tears.png" hspace='100'>
-			<h3>Maiden Tears</h3>
-			<ul>
-				<li>No longer give 5 movement speed.</li>		
-				<br>
-			</ul><br>
-		</figure>		
+				<img src="images/items/loyal_paw.png" hspace='100'>
+				<h3>Loyal's Paw: <span style="color:#CCCC00">RECIPE REWORKED</span></h3>
+				<ul>
+						<li>Old Recipe:</br>
+							<ul class="subtab">				
+									Delicate Longbow (1000)</br>
+									Reinforced Gauntlet (350)</br>					
+									Life Orb (800)</br>
+									Elven Hood (350)</br>
+									Total Cost: 2600</br></li><br>
+			
+									Provided: <br>
+									20 Agility<br>
+									10 Strength<br>
+									400 Health</br></li><br>
+							</ul>		
+			
+							<li>New Recipe:</br>
+							<ul class="subtab">				
+									Magic Tooth (300)</br>
+									Magic Tooth (300)</br>
+									Gloves of Speed (450)<br>	
+									Recipe (300)<br>				
+									Total Cost: 1350</br></li><br>
+			
+									Provides: <br>
+									25 Attack Speed<br>
+									2 Mana Regen<br>
+									Active Unchanged</br></li><br>
+							</ul>
+				</ul><br>
+		</figure>										
 		<figure>
-			<img src="images/items/resonance_bell.png" hspace='100'>
-			<h3>Resonance Bell</h3>
-			<ul>
-				<li>No longer gives 150 Mana.</li>
-				<br>
-			</ul><br>
+				<img src="images/items/magus_king_hood.png" hspace='100'>
+				<h3>Magus King Hood</h3>
+				<ul>
+					<li>Cost reduced from 3000 to 2800.</li>
+					<li>No longer gives 3 Armour.</li>		
+					<br>
+				</ul><br>
+		</figure>
+		<figure>
+				<img src="images/items/maiden_tears.png" hspace='100'>
+				<h3>Maiden Tears</h3>
+				<ul>
+					<li>No longer give 5 movement speed.</li>		
+					<br>
+				</ul><br>
+		</figure>
+		<figure>
+				<img src="images/items/murder_of_crows.png" hspace='100'>
+				<h3>Murder of the Crows: <span style="color:#CCCC00">RECIPE REWORKED</span></h3>
+				<ul>
+						<li>Old Recipe:</br>
+							<ul class="subtab">				
+									Reinforced Gauntlet (350)</br>					
+									Healing Rag (300)</br>
+									Gloves of Speed (450)</br>
+									Recipe (800)</br>
+									Total Cost: 1900</br></li><br>
+							</ul>		
+			
+							<li>New Recipe:</br>
+							<ul class="subtab">				
+									Reinforced Gauntlet (350)</br>					
+									Healing Rag (300)</br>
+									Quarterlance (1150)</br>
+									Total Cost: 1800</br></li><br>
+			
+									Stats Unchanged</br></li><br>
+							</ul>
+				</ul><br>
+		</figure>			
+		<figure>
+				<img src="images/items/norstark_fist.png" hspace='100'>
+				<h3>Norstark Fist</h3>
+				<ul>
+					<li>No longer built from Gold Ring (cost reduced by 170, now 3000 total).</li>
+					<li>No longer gives 5 Agility and 5 Intelligence</li>
+					<br>
+				</ul><br>
+		</figure>
+		<figure>
+				<img src="images/items/priestheaddress.png" hspace='100'>
+				<h3>Priest's Headdress: <span style="color:#C00000">REMOVED</span></h3>
+				<ul>
+					<li>Removed from the game.</li>
+					<br>
+				</ul><br>
+		</figure>					
+		<figure>
+				<img src="images/items/resonance_bell.png" hspace='100'>
+				<h3>Resonance Bell</h3>
+				<ul>
+					<li>No longer gives 150 Mana.</li>
+					<br>
+				</ul><br>
 		</figure>							
 		<figure>
-			<img src="images/items/runed_bracers.png" hspace='100'>
-			<h3>Runed Bracers</h3>
-			<ul>
-				<li>Cost reduced from 1100 to 1000.</li>
-				<li>No longer gives 1 Armour.</li>		
-				<br>
-			</ul><br>
+				<img src="images/items/runed_bracers.png" hspace='100'>
+				<h3>Runed Bracers</h3>
+				<ul>
+					<li>Cost reduced from 1100 to 1000.</li>
+					<li>No longer gives 1 Armour.</li>		
+					<br>
+				</ul><br>
 		</figure>
 		<figure>
-			<img src="images/items/snake_pendant.png" hspace='100'>
-			<h3>Snake Pendant</h3>
-			<ul>
-				<li>No longer gives 100 Mana.</li>		
-				<br>
-			</ul><br>
+				<img src="images/items/sharpmace.png" hspace='100'>
+				<h3>Sharp Mace</h3>
+				<ul>
+					<li>Damage reduced from 20 to 14.</li>		
+					<li>Strength reduced from 12 to 10.</li>	
+					<br>
+				</ul><br>
 		</figure>
 		<figure>
-			<img src="images/items/veil_of_the_night.png" hspace='100'>
-			<h3>Veil of the Night</h3>
-			<ul>
-				<li>No longer give 10 movement speed.</li>		
-				<br>
-			</ul><br>
-		</figure>				
+				<img src="images/items/snake_pendant.png" hspace='100'>
+				<h3>Snake Pendant</h3>
+				<ul>
+					<li>No longer gives 100 Mana.</li>		
+					<br>
+				</ul><br>
+		</figure>
 		<figure>
-			<img src="images/items/windrush.png" hspace='100'>
-			<h3>Windrush</h3>
-			<ul>
-				<li>Cost reduced from 3000 to 2800.</li>
-				<li>No longer gives 2 HP regen.</li>		
-				<br>
-			</ul><br>
+				<img src="images/items/ten_tonne_gloves.png" hspace='100'>
+				<h3>Ten Tonne Hammer Gloves</h3>
+				<ul>
+					<li>Strength reduced from 28 to 26.</li>
+					<li>No longer gives Agility or Intelligence</li>	
+					<br>
+				</ul><br>
+		</figure>		
+		<figure>
+				<img src="images/items/veil_of_the_night.png" hspace='100'>
+				<h3>Veil of the Night: <span style="color:#CCCC00">RECIPE REWORKED</span></h3>
+				<ul>
+						<li>Old Recipe:</br>
+							<ul class="subtab">				
+									Fury's Gauntlett (1900)</br>
+									Maiden's Tears (825)</br>
+									Recipe (250)<br>					
+									Total Cost: 2725</br></li><br>
+			
+									Provided: <br>
+									50 Attack Speed<br>
+									250 Night Vision<br>
+									2.5 Mana Regen<br></li><br>
+
+									Passive: Moonlight Aura <br>
+									Provides a 1200 radius aura that gives allies 20% increased healing from all sources.</br></li><br>
+			
+							</ul>		
+			
+							<li>New Recipe:</br>
+							<ul class="subtab">				
+									Mage's Skull (1200)</br>
+									Maiden's Tears (825)</br>
+									Recipe (250)<br>					
+									Total Cost: 2275</br></li><br>
+			
+									Provides: <br>
+									300 Mana<br>
+									3.5 Mana Regen<br>
+									250 Night Vision<br>
+									3% Movement Speed<br><br>
+
+									Passive: Moonlight Aura <br>
+									Provides a 1200 radius aura that gives allies 20% increased healing from all sources.</br></li><br>
+							</ul>				
+					<li>No longer give 10 movement speed.</li>		
+					<br>
+				</ul><br>
+		</figure>						
+		<figure>
+				<img src="images/items/windrush.png" hspace='100'>
+				<h3>Windrush</h3>
+				<ul>
+					<li>Cost reduced from 3000 to 2800.</li>
+					<li>No longer gives 2 HP regen.</li>		
+					<br>
+				</ul><br>
 		</figure>											
 	</div>	
 	
@@ -381,7 +602,7 @@
 					<img src="images/spellicons/carna_hook.png" hspace='-150' width="75" height="75"><br><br>
 						
 					<li><b>Macebreaker:</b><br>
-						Strikes in a long line with a devastating thrust that deals pure damage and reduces opponents damage.</br>
+						Strikes in a long line with a devastating thrust that deals pure damage and reduces opponents damage.<br><br>
 						Distance: 700</br>
 						Damage: 100/150/200</br>
 						Damage Reduction: 50/60/70%</br>
@@ -438,7 +659,8 @@
 					<img src="images/spellicons/carna_hook.png" hspace='-150' width="75" height="75"><br><br>
 
 					<li><b>Shadowbeasts:</b><br>
-						Summons 2 Shadowbeasts - Melee units under Kingseeker's control. On death or expiring, a Shadowbeast heals all nearby allies.<br>
+						Summons 2 Shadowbeasts - Melee units under Kingseeker's control. On death or expiring, a Shadowbeast heals all nearby allies.<br><br>
+
 						Attack Damage: 18</br>
 						Health: 200</br>
 						Movement Speed: 350</br>
