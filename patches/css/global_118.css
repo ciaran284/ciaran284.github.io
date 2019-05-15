@@ -1,9 +1,30 @@
 /* 1.18 IMAGE COMPARISON */
 * {box-sizing: border-box;}
-.img-comp-container {
-    position: relative;
+  .img-comp-container1 {
+    position: absolute;top: 100;left: 350px;
+    height: 432px; /*should be the same height as the images*/
+  }
+  .img-comp-container2 {
+    position: absolute;top: 600;left: 350px;
     height: 200px; /*should be the same height as the images*/
   }
+  .img-comp-container3 {
+    position: absolute;top: 1100;left: 350px;
+    height: 200px; /*should be the same height as the images*/
+  }
+  .img-comp-container4 {
+    position: absolute;top: 1600;left: 350px;
+    height: 200px; /*should be the same height as the images*/
+  }
+  .img-comp-container5 {
+    position: absolute;top: 2100;left: 350px;
+    height: 200px; /*should be the same height as the images*/
+  }
+  .img-comp-container6 {
+    position: absolute;top: 2600;left: 350px;
+    height: 200px; /*should be the same height as the images*/
+  }
+  
   
   .img-comp-img {
     position: absolute;
@@ -22,9 +43,11 @@
     z-index:9;
     cursor: ew-resize;
     /*set the appearance of the slider:*/
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
     background-color: green;
     opacity: 2.0;
     border-radius: 50%;
   }
+  
+  #BG01, #BG01.Inner{height:3200px}
