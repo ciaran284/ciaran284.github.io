@@ -1,31 +1,32 @@
 /* 1.18 IMAGE COMPARISON */
 * {box-sizing: border-box;}
   .img-comp-container1 {
-    position: absolute;top: 100;left: 350px;
+    position: absolute;top: 250;left: 350px;
     height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container2 {
-    position: absolute;top: 600;left: 350px;
+    position: absolute;top: 750;left: 350px;
     height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container3 {
-    position: absolute;top: 1100;left: 350px;
+    position: absolute;top: 1250;left: 350px;
     height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container4 {
-    position: absolute;top: 1600;left: 350px;
+    position: absolute;top: 1750;left: 350px;
     height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container5 {
-    position: absolute;top: 2100;left: 350px;
+    position: absolute;top: 2250;left: 350px;
     height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container6 {
-    position: absolute;top: 2600;left: 350px;
+    position: absolute;top: 2750;left: 350px;
     height: 432px; /*should be the same height as the images*/
   }
   
-  
+  div.headingbox_mapchanges {background-image:linear-gradient(to right,#00AA00,green);padding: 25px;margin: 50px 25px 0px 25px;width:350px;position: absolute;top:50;left: 200px}
+
   .img-comp-img {
     position: absolute;
     width: auto;
