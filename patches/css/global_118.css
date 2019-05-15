@@ -6,23 +6,23 @@
   }
   .img-comp-container2 {
     position: absolute;top: 600;left: 350px;
-    height: 200px; /*should be the same height as the images*/
+    height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container3 {
     position: absolute;top: 1100;left: 350px;
-    height: 200px; /*should be the same height as the images*/
+    height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container4 {
     position: absolute;top: 1600;left: 350px;
-    height: 200px; /*should be the same height as the images*/
+    height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container5 {
     position: absolute;top: 2100;left: 350px;
-    height: 200px; /*should be the same height as the images*/
+    height: 432px; /*should be the same height as the images*/
   }
   .img-comp-container6 {
     position: absolute;top: 2600;left: 350px;
-    height: 200px; /*should be the same height as the images*/
+    height: 432px; /*should be the same height as the images*/
   }
   
   
@@ -43,8 +43,8 @@
     z-index:9;
     cursor: ew-resize;
     /*set the appearance of the slider:*/
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     background-color: green;
     opacity: 2.0;
     border-radius: 50%;
