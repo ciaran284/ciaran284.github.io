@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link href="http://www.dota2.com/public/css/global.css?v=b5109054" rel="stylesheet" type="text/css" >
+<link href="http://www.dota2.com/public/css/global_english.css?v=BpCw4C6e29Gp" rel="stylesheet" type="text/css" >
+<link href="http://www.dota2.com/public/css/publicheader.css?v=dxJw6XR3DWJ3" rel="stylesheet" type="text/css" >
+<link href="http://www.dota2.com/public/css/heropedia.css?v=b5109054" rel="stylesheet" type="text/css" >
+	<script type="text/javascript" src="http://cdn.dota2.com/apps/dota2/javascript/static/jquery-1.7.1.min.js?v=5109054"></script>
+<script type="text/javascript" src="http://www.dota2.com/public/javascript/heropedia.js?v=b5109054&amp;l=english" ></script>
+	<title>Heroes</title>
+
+			
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-33822635-2']);
+		_gaq.push(['_setSampleRate', '1']);		_gaq.push(['_setDomainName', 'dota2.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script></head>
+<body>
+<center>
+	<!-- header bar -->
+	
+<script language="javascript">
+
+	function MM_preloadImages() { //v3.0
+	  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+		if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+	}
+
+	function PreloadHeaderImages()
+	{
+		//  Preload header rollover images
+		//MM_preloadImages(
+		//);
+	}
+
+			if ( document.addEventListener ) {
+		document.addEventListener( "DOMContentLoaded", PreloadHeaderImages, false );
+	} else if ( document.attachEvent ) {
+		document.attachEvent( 'onDomContentLoaded', PreloadHeaderImages );
+	}
+
+</script>
+
+
+
+	<script language="javascript">
+		function closeSubMenu( target ) {
+			$(target).find('.dn_arrow').attr( "src", "http://cdn.dota2.com/apps/dota2/images/nav/arrow.png" );
+			$(target).find('.menuSubItemList').hide();
+		}
+
+		function closeAllSubMenus() {
+			$('.navItem').each( function() {
+				closeSubMenu( $(this) );
+			});
+		}
+
+		function openSubMenu( target ) {
+			closeAllSubMenus();
+
+			$(target).find('.dn_arrow').attr( "src", "http://cdn.dota2.com/apps/dota2/images/nav/arrow_over.png" );
+
+			// Show the sub-menu
+			var subItemList = $(target).find('.menuSubItemList');
+			if ( subItemList.length ) {
+				var itemTop = $(target).position().top + $(target).outerHeight() - 16;
+				var itemLeft = $(target).position().left;
+				subItemList
+					.css({
+						"top": itemTop + 'px',
+						"left": itemLeft
+					})
+					.fadeIn( 'fast' );
+			}
+		}
+
+		$(document).ready( function () {
+			// Deal with the nav bars
+			$('.navItem').each( function() {
+				$(this).hover( function () {
+					$(this)
+						.find('a.navBarItem img.top')
+						.animate({
+							"opacity": 1
+						}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						openSubMenu( this );
+					}
+				},
+				function () {
+					$(this)
+					.find('a.navBarItem img.top')
+					.animate({
+						"opacity": 0
+					}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						closeSubMenu(this);
+					}
+				}
+				);
+			});
+
+			// Deal with header drop-downs
+			var strMenus = '#languageSelector';
+			
+			$(strMenus).each( function() {
+				$(this).hover( function () {
+					//show its submenu
+					$( this ).find( 'div' ).fadeIn( 'fast' );
+				},
+				function () {
+					//hide its submenu
+					$( this ).find( 'div' ).hide();
+				}
+				);
+			});
+		});
+
+	</script>
+
+	<!-- /header bar -->
+	<div id="bodyContainer">
+		<div id="centerColOuter_NoCallout">
+			<div id="centerColTopShadow"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_top_shadow.png" width="984" height="25" /></div>
+			<div id="centerColTop"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_top.png" width="984" height="9" /></div>
+			<div id="centerColContainer">
+				<div id="centerColContent">
+					<div class="redboxOuter">
+						<div class="redboxContent">
+							<div class="redboxTop"></div>
+								<div id="heroPickerInner">
+									<div id="heroBioArea"><div id="bioBoxFade"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/biobox_fade.png" width="874" height="26" /></div>
+										<h2 id="heroBioLoading">Loading hero data..</h2>
+										<div style="display:none" id="heroBioDynamic">
+											<h1 id="heroBioName"></h1>
+											<div class="bioBoxHR"></div>
+											<p id="heroBioRoles"></p>
+																					</div>
+									</div>
+									<div id="heroFilterArea">
+										Filter&nbsp;&nbsp;&nbsp;
+										<select onChange="updateFilters()" id="filterRole" class="filterSelect" name="">
+											<option value="">By Role</option>
+											<option value="">All</option>
+																						<option value="Carry">Carry</option>
+																						<option value="Disabler">Disabler</option>
+																						<option value="LaneSupport">Lane Support</option>
+																						<option value="Initiator">Initiator</option>
+																						<option value="Jungler">Jungler</option>
+																						<option value="Support">Support</option>
+																						<option value="Durable">Durable</option>
+																						<option value="Nuker">Nuker</option>
+																						<option value="Pusher">Pusher</option>
+																						<option value="Escape">Escape</option>
+																					</select>&nbsp;&nbsp;&nbsp;
+										<select onChange="updateFilters()" id="filterAttack" class="filterSelect" name="">
+											<option value="">By Attack type</option>
+											<option value="">All</option>
+											<option value="melee">Melee</option>
+											<option value="ranged">Ranged</option>
+										</select>&nbsp;&nbsp;&nbsp;
+										<select onChange="updateFilters()" id="filterName" class="filterSelect noCaps" name="">
+											<option value="">HERO NAME</option>
+											<option value="">All</option>
+																						<option value="antimage">Anti-Mage</option>
+																						<option value="axe">Axe</option>
+																						<option value="bane">Bane</option>
+																						<option value="bloodseeker">Bloodseeker</option>
+																						<option value="crystal_maiden">Crystal Maiden</option>
+																						<option value="drow_ranger">Drow Ranger</option>
+																						<option value="earthshaker">Earthshaker</option>
+																						<option value="juggernaut">Juggernaut</option>
+																						<option value="mirana">Mirana</option>
+																						<option value="nevermore">Shadow Fiend</option>
+																						<option value="morphling">Morphling</option>
+																						<option value="phantom_lancer">Phantom Lancer</option>
+																						<option value="puck">Puck</option>
+																						<option value="pudge">Pudge</option>
+																						<option value="razor">Razor</option>
+																						<option value="sand_king">Sand King</option>
+																						<option value="storm_spirit">Storm Spirit</option>
+																						<option value="sven">Sven</option>
+																						<option value="tiny">Tiny</option>
+																						<option value="vengefulspirit">Vengeful Spirit</option>
+																						<option value="windrunner">Windranger</option>
+																						<option value="zuus">Zeus</option>
+																						<option value="kunkka">Kunkka</option>
+																						<option value="lina">Lina</option>
+																						<option value="lich">Lich</option>
+																						<option value="lion">Lion</option>
+																						<option value="shadow_shaman">Shadow Shaman</option>
+																						<option value="slardar">Slardar</option>
+																						<option value="tidehunter">Tidehunter</option>
+																						<option value="witch_doctor">Witch Doctor</option>
+																						<option value="riki">Riki</option>
+																						<option value="enigma">Enigma</option>
+																						<option value="tinker">Tinker</option>
+																						<option value="sniper">Sniper</option>
+																						<option value="necrolyte">Necrophos</option>
+																						<option value="warlock">Warlock</option>
+																						<option value="beastmaster">Beastmaster</option>
+																						<option value="queenofpain">Queen of Pain</option>
+																						<option value="venomancer">Venomancer</option>
+																						<option value="faceless_void">Faceless Void</option>
+																						<option value="skeleton_king">Wraith King</option>
+																						<option value="death_prophet">Death Prophet</option>
+																						<option value="phantom_assassin">Phantom Assassin</option>
+																						<option value="pugna">Pugna</option>
+																						<option value="templar_assassin">Templar Assassin</option>
+																						<option value="viper">Viper</option>
+																						<option value="luna">Luna</option>
+																						<option value="dragon_knight">Dragon Knight</option>
+																						<option value="dazzle">Dazzle</option>
+																						<option value="rattletrap">Clockwerk</option>
+																						<option value="leshrac">Leshrac</option>
+																						<option value="furion">Nature's Prophet</option>
+																						<option value="life_stealer">Lifestealer</option>
+																						<option value="dark_seer">Dark Seer</option>
+																						<option value="clinkz">Clinkz</option>
+																						<option value="omniknight">Omniknight</option>
+																						<option value="enchantress">Enchantress</option>
+																						<option value="huskar">Huskar</option>
+																						<option value="night_stalker">Night Stalker</option>
+																						<option value="broodmother">Broodmother</option>
+																						<option value="bounty_hunter">Bounty Hunter</option>
+																						<option value="weaver">Weaver</option>
+																						<option value="jakiro">Jakiro</option>
+																						<option value="batrider">Batrider</option>
+																						<option value="chen">Chen</option>
+																						<option value="spectre">Spectre</option>
+																						<option value="doom_bringer">Doom</option>
+																						<option value="ancient_apparition">Ancient Apparition</option>
+																						<option value="ursa">Ursa</option>
+																						<option value="spirit_breaker">Spirit Breaker</option>
+																						<option value="gyrocopter">Gyrocopter</option>
+																						<option value="alchemist">Alchemist</option>
+																						<option value="invoker">Invoker</option>
+																						<option value="silencer">Silencer</option>
+																						<option value="obsidian_destroyer">Outworld Devourer</option>
+																						<option value="lycan">Lycan</option>
+																						<option value="brewmaster">Brewmaster</option>
+																						<option value="shadow_demon">Shadow Demon</option>
+																						<option value="lone_druid">Lone Druid</option>
+																						<option value="chaos_knight">Chaos Knight</option>
+																						<option value="meepo">Meepo</option>
+																						<option value="treant">Treant Protector</option>
+																						<option value="ogre_magi">Ogre Magi</option>
+																						<option value="undying">Undying</option>
+																						<option value="rubick">Rubick</option>
+																						<option value="disruptor">Disruptor</option>
+																						<option value="nyx_assassin">Nyx Assassin</option>
+																						<option value="naga_siren">Naga Siren</option>
+																						<option value="keeper_of_the_light">Keeper of the Light</option>
+																						<option value="wisp">Io</option>
+																						<option value="visage">Visage</option>
+																						<option value="slark">Slark</option>
+																						<option value="medusa">Medusa</option>
+																						<option value="troll_warlord">Troll Warlord</option>
+																						<option value="centaur">Centaur Warrunner</option>
+																						<option value="magnataur">Magnus</option>
+																						<option value="shredder">Timbersaw</option>
+																						<option value="bristleback">Bristleback</option>
+																						<option value="tusk">Tusk</option>
+																						<option value="skywrath_mage">Skywrath Mage</option>
+																						<option value="abaddon">Abaddon</option>
+																						<option value="elder_titan">Elder Titan</option>
+																						<option value="legion_commander">Legion Commander</option>
+																						<option value="ember_spirit">Ember Spirit</option>
+																						<option value="earth_spirit">Earth Spirit</option>
+																						<option value="terrorblade">Terrorblade</option>
+																						<option value="phoenix">Phoenix</option>
+																						<option value="oracle">Oracle</option>
+																						<option value="techies">Techies</option>
+																						<option value="winter_wyvern">Winter Wyvern</option>
+																						<option value="arc_warden">Arc Warden</option>
+																						<option value="abyssal_underlord">Underlord</option>
+																						<option value="monkey_king">Monkey King</option>
+																						<option value="pangolier">Pangolier</option>
+																						<option value="dark_willow">Dark Willow</option>
+																						<option value="grimstroke">Grimstroke</option>
+																						<option value="mars">Mars</option>
+																					</select>
+									</div>
+									<div class="heroColLeft">
+										<div id="columnHeader"><span id="columnHeaderTextStr">Strength</span></div>
+										<div class="heroIcons">
+											<a id="link_apostate" class="heroPickerIconLink" href="http://www.dota2.com/hero/sven/">
+												<img id="hover_apostate" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_apostate" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_carna" class="heroPickerIconLink" href="http://www.dota2.com/hero/sven/">
+												<img id="hover_carna" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_carna" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+																					</div>
+										<br clear="left" />
+									</div>
+									<div class="heroColMiddle">
+										<div id="columnHeader"><span id="columnHeaderTextAgi">Agility</span></div>
+										<div class="heroIcons">
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+																					</div>
+										<br clear="left" />
+									</div>
+									<div class="heroColRight">
+										<div id="columnHeader"><span id="columnHeaderTextInt">Intelligence</span></div>
+										<div class="heroIcons">
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="http://www.dota2.com/hero/tiny/">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.PNG" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.PNG" width="59" height="33" />
+											</a>
+																					</div>
+										<br clear="left" />
+									</div>
+
+									<br clear="left" />
+								</div>
+							<div class="redboxBottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="centerColBottom"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_bottom.png" width="984" height="9" /></div>
+			<div id="centerColBottomShadow"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_bottom_shadow.png" width="984" height="25" /></div>
+		</div>
+	</div>
+</center>
+</body>
+</html>
