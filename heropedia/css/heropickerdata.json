@@ -1,0 +1,240 @@
+{   
+    "apostate":
+    {   "name":"Apostate",
+        "bio":"",
+        "atk":"melee",
+        "atk_l":"Melee",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "carna":
+        {   "name":"Carna",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "eldritch":
+        {   "name":"Eldritch",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+            
+    "ent":
+    {   "name":"Ent",
+        "bio":"",
+        "atk":"melee",
+        "atk_l":"Melee",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "kazak":
+        {   "name":"Kazak",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "kron":
+        {   "name":"Kron",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},    
+
+    "lucifer":
+    {   "name":"Lucifer",
+        "bio":"",
+        "atk":"melee",
+        "atk_l":"Melee",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "nerub":
+        {   "name":"Nerub",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "totemcarver":
+        {   "name":"Totemcarver",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+            
+    "valkyrie":
+            {   "name":"Valkyrie",
+                "bio":"",
+                "atk":"melee",
+                "atk_l":"Melee",
+                "roles":["Carry","Escape","Nuker"],
+                "roles_l":["Carry","Escape","Nuker"]},
+               
+    "armordillo":
+    {   "name":"Armordillo",
+        "bio":"",
+        "atk":"melee",
+        "atk_l":"Melee",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "basilisk":
+        {   "name":"Basilisk",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"Ranged",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "darkqueen":
+        {   "name":"Dark Queen",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"Ranged",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+            
+    "ethereal_lancer":
+    {   "name":"Ethereal Lancer",
+        "bio":"",
+        "atk":"melee",
+        "atk_l":"Melee",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "huntress":
+        {   "name":"Huntress",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"Ranged",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "kingseeker":
+        {   "name":"Kingseeker",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},    
+
+    "merchant":
+    {   "name":"merchant",
+        "bio":"",
+        "atk":"ranged",
+        "atk_l":"Ranged",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "okita":
+        {   "name":"okita",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "plaguelord":
+        {   "name":"plague lord",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"Ranged",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+            
+    "shifter":
+            {   "name":"Shifter",
+                "bio":"",
+                "atk":"ranged",
+                "atk_l":"Ranged",
+                "roles":["Carry","Escape","Nuker"],
+                "roles_l":["Carry","Escape","Nuker"]},
+    
+    "ancientrose":
+    {   "name":"Ancient Rose",
+        "bio":"",
+        "atk":"ranged",
+        "atk_l":"Ranged",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "wolf":
+        {   "name":"Cursed Wolf",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "manaeater":
+        {   "name":"Mana Eater",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+            
+    "nahl":
+    {   "name":"Nahl",
+        "bio":"",
+        "atk":"ranged",
+        "atk_l":"Ranged",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "proxima":
+        {   "name":"Proxima Centauri",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"Ranged",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "robotscientist":
+        {   "name":"Robot Scientist",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},    
+
+    "shaman":
+    {   "name":"Shaman",
+        "bio":"",
+        "atk":"ranged",
+        "atk_l":"Ranged",
+        "roles":["Carry","Escape","Nuker"],
+        "roles_l":["Carry","Escape","Nuker"]},
+
+    "trickster":
+        {   "name":"Trickster",
+            "bio":"",
+            "atk":"melee",
+            "atk_l":"Melee",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+
+    "vampiremistress":
+        {   "name":"Vampire Mistress",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"Ranged",
+            "roles":["Carry","Escape","Nuker"],
+            "roles_l":["Carry","Escape","Nuker"]},
+            
+    "whitemagician":
+            {   "name":"White Magician",
+                "bio":"",
+                "atk":"ranged",
+                "atk_l":"Ranged",
+                "roles":["Carry","Escape","Nuker"],
+                "roles_l":["Carry","Escape","Nuker"]}}

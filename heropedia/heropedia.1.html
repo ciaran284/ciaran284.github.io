@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link href="http://www.dota2.com/public/css/global.css?v=b5109054" rel="stylesheet" type="text/css" >
+	<link href="/patches/css/global_new.css" rel="stylesheet" type="text/css">
+	<link href="/patches/css/publicheader.css" rel="stylesheet" type="text/css">
+	<link href="/heropedia/css/heropedia.css" rel="stylesheet" type="text/css">
+	<link href="images/gtd_logo.png"rel="shortcut icon">
+	<script type="text/javascript" src="http://cdn.dota2.com/apps/dota2/javascript/static/jquery-1.7.1.min.js?v=5113639"></script>
+	<script type="text/javascript">$J = jQuery;</script><script type="text/javascript" src="http://steamcommunity-a.akamaihd.net/public/shared/javascript/shared_global.js?v=OBsnl6VGf94w&amp;l=english" ></script>
+	<script type="text/javascript" src="/heropedia/css/heropedia.js" ></script>
+	<script type="text/javascript" src="/heropedia/css/heropickerdata.json" ></script>
+	<title>Heroes</title>
+
+			
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-33822635-2']);
+		_gaq.push(['_setSampleRate', '1']);		_gaq.push(['_setDomainName', 'dota2.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script></head>
+<body>
+<center>
+	<!-- header bar -->
+	<div id="navBarBGRepeat" class="DotaFont">
+			<div id="navBarBG">
+				<div id="navBar">							
+	
+					<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1448982217"><div id="SteamWorkshopButton">
+						steam workshop page
+					</div></a>
+	
+										<span class="navItem navItemDotaLogo">
+							<a class="navBarItem DotaFont">
+								<img border="0" class="DotaLogo" src="/patches/images/gtd_logo.png" width="40" height="40"/>
+							</a>
+						</span>
+	
+								<span id="HeaderSeperator" class="DotaFont">|</span>
+								<span class="navItem">
+									<a class="navBarItem DotaFont" href="https://ciaran284.github.io/patches/index.html">patch notes</a>
+								</span>
+								
+								<span id="HeaderSeperator" class="DotaFont">|</span>
+								<span class="navItem">
+									<a class="navBarItem DotaFont" href="https://ciaran284.github.io/heropedia/heropedia.html">heropedia</a>
+								</span>
+
+								<span id="HeaderSeperator" class="DotaFont">|</span>
+								<span class="navItem">
+									<a class="navBarItem DotaFont" href="https://ciaran284.github.io/heropedia/itempedia.html">itempedia</a>
+								</span>
+																		<!-- <span id="HeaderSeperator" class="DotaFont">|</span>
+														<span class="navItem"> -->
+									<!-- <a class="navBarItem DotaFont" href="javascript:void(0)">itempedia</a>
+									<div style="display:none;" class="menuSubItemList">
+																					<a class="DotaFont" href="http://www.dota2.com/heroes/">Heroes</a>
+																					<a class="DotaFont" href="http://www.dota2.com/items/">Item Explorer</a>
+																					<a class="DotaFont" href="http://www.dota2.com/workshop/builds">Builds</a>
+																					<a class="DotaFont" href="https://steamcommunity.com/app/570/guides" target="_blank">Steam Guides</a>
+																					<a class="DotaFont" href="http://www.dota2.com/patches/">Gameplay Updates</a>
+																					<a class="DotaFont" href="http://www.dota2.com/quiz">The Shopkeeper's Quiz</a>
+															</div> -->
+									<!-- <img class="dn_arrow" src="http://cdn.dota2.com/apps/dota2/images/nav/arrow.png"/> -->
+								<!-- </span> -->
+																			</div>
+			</div>
+		</div>	
+	<!-- header bar -->	
+<script language="javascript">
+
+	function MM_preloadImages() { //v3.0
+	  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+		if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+	}
+
+	function PreloadHeaderImages()
+	{
+		//  Preload header rollover images
+		//MM_preloadImages(
+		//);
+	}
+
+			if ( document.addEventListener ) {
+		document.addEventListener( "DOMContentLoaded", PreloadHeaderImages, false );
+	} else if ( document.attachEvent ) {
+		document.attachEvent( 'onDomContentLoaded', PreloadHeaderImages );
+	}
+
+</script>
+
+
+
+	<script language="javascript">
+		function closeSubMenu( target ) {
+			$(target).find('.dn_arrow').attr( "src", "http://cdn.dota2.com/apps/dota2/images/nav/arrow.png" );
+			$(target).find('.menuSubItemList').hide();
+		}
+
+		function closeAllSubMenus() {
+			$('.navItem').each( function() {
+				closeSubMenu( $(this) );
+			});
+		}
+
+		function openSubMenu( target ) {
+			closeAllSubMenus();
+
+			$(target).find('.dn_arrow').attr( "src", "http://cdn.dota2.com/apps/dota2/images/nav/arrow_over.png" );
+
+			// Show the sub-menu
+			var subItemList = $(target).find('.menuSubItemList');
+			if ( subItemList.length ) {
+				var itemTop = $(target).position().top + $(target).outerHeight() - 16;
+				var itemLeft = $(target).position().left;
+				subItemList
+					.css({
+						"top": itemTop + 'px',
+						"left": itemLeft
+					})
+					.fadeIn( 'fast' );
+			}
+		}
+
+		$(document).ready( function () {
+			// Deal with the nav bars
+			$('.navItem').each( function() {
+				$(this).hover( function () {
+					$(this)
+						.find('a.navBarItem img.top')
+						.animate({
+							"opacity": 1
+						}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						openSubMenu( this );
+					}
+				},
+				function () {
+					$(this)
+					.find('a.navBarItem img.top')
+					.animate({
+						"opacity": 0
+					}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						closeSubMenu(this);
+					}
+				}
+				);
+			});
+
+			// Deal with header drop-downs
+			var strMenus = '#languageSelector';
+			
+			$(strMenus).each( function() {
+				$(this).hover( function () {
+					//show its submenu
+					$( this ).find( 'div' ).fadeIn( 'fast' );
+				},
+				function () {
+					//hide its submenu
+					$( this ).find( 'div' ).hide();
+				}
+				);
+			});
+		});
+
+	</script>
+
+	<!-- /header bar -->
+	<div id="bodyContainer">
+		<div id="centerColOuter_NoCallout">
+			<div id="centerColTopShadow"><img src="/heropedia/heroes/overlay/centercolbox_top_shadow.png" width="984" height="25" /></div>
+			<div id="centerColTop"><img src="/heropedia/heroes/centercolbox_top.png" width="984" height="9" /></div>
+			<div id="centerColContainer">
+				<div id="centerColContent">
+					<div class="redboxOuter">
+						<div class="redboxContent">
+							<div class="redboxTop"></div>
+								<div id="heroPickerInner">
+									<div id="heroBioArea"><div id="bioBoxFade"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/biobox_fade.png" width="874" height="26" /></div>
+										<h2 id="heroBioLoading">Loading hero data..</h2>
+										<div style="display:none" id="heroBioDynamic">
+											<h1 id="heroBioName"></h1>
+											<div class="bioBoxHR"></div>
+											<p id="heroBioRoles"></p>
+																					</div>
+									</div>
+									<div id="heroFilterArea">
+										Filter&nbsp;&nbsp;&nbsp;
+										<select onChange="updateFilters()" id="filterRole" class="filterSelect" name="">
+											<option value="">By Role</option>
+											<option value="">All</option>
+																						<option value="Carry">Carry</option>
+																						<option value="Disabler">Disabler</option>
+																						<option value="LaneSupport">Lane Support</option>
+																						<option value="Initiator">Initiator</option>
+																						<option value="Jungler">Jungler</option>
+																						<option value="Support">Support</option>
+																						<option value="Durable">Durable</option>
+																						<option value="Nuker">Nuker</option>
+																						<option value="Pusher">Pusher</option>
+																						<option value="Escape">Escape</option>
+																					</select>&nbsp;&nbsp;&nbsp;
+										<select onChange="updateFilters()" id="filterAttack" class="filterSelect" name="">
+											<option value="">By Attack type</option>
+											<option value="">All</option>
+											<option value="melee">Melee</option>
+											<option value="ranged">Ranged</option>
+										</select>&nbsp;&nbsp;&nbsp;
+										<select onChange="updateFilters()" id="filterName" class="filterSelect noCaps" name="">
+											<option value="">HERO NAME</option>
+											<option value="">All</option>
+																						<option value="antimage">Apostate</option>
+																						<option value="axe">Armordillo</option>
+																						<option value="bane">Ancient Rose</option>
+																						<option value="bloodseeker">Bloodseeker</option>
+																						<option value="crystal_maiden">Crystal Maiden</option>
+																						<option value="drow_ranger">Drow Ranger</option>
+																						<option value="earthshaker">Earthshaker</option>
+																						<option value="juggernaut">Juggernaut</option>
+																						<option value="mirana">Mirana</option>
+																						<option value="nevermore">Shadow Fiend</option>
+																						<option value="morphling">Morphling</option>
+																						<option value="phantom_lancer">Phantom Lancer</option>
+																						<option value="puck">Puck</option>
+																					</select>
+									</div>
+									<div class="heroColLeft">
+										<div id="columnHeader"><span id="columnHeaderTextStr">Strength</span></div>
+										<div class="heroIcons">
+											<a id="link_apostate" class="heroPickerIconLink" href="heroes/apostate.html">
+												<img id="hover_apostate" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/apostate_horizontal.png" width="127" height="71" />
+												<img id="base_apostate" class="heroHoverSmall" src="/patches/images/heroes/apostate_horizontal.png" width="59" height="33" />
+											</a>
+											<a id="link_carna" class="heroPickerIconLink" href="heroes/carna.html">
+												<img id="hover_carna" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/carna_horizontal.png" width="127" height="71" />
+												<img id="base_carna" class="heroHoverSmall" src="/patches/images/heroes/carna_horizontal.png" width="59" height="33" />
+											</a>
+											<a id="link_eldritch" class="heroPickerIconLink" href="heroes/eldritch.html">
+												<img id="hover_eldritch" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/npc_dota_eldritch.png" width="127" height="71" />
+												<img id="base_eldritch" class="heroHoverSmall" src="/patches/images/heroes/npc_dota_eldritch.png" width="59" height="33" />
+											</a>
+											<a id="link_ent" class="heroPickerIconLink" href="heroes/ent.html">
+												<img id="hover_ent" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/ent.png" width="127" height="71" />
+												<img id="base_ent" class="heroHoverSmall" src="/patches/images/heroes/ent.png" width="59" height="33" />
+											</a>
+											<a id="link_kazak" class="heroPickerIconLink" href="heroes/kazak.html">
+												<img id="hover_kazak" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/kazak_horizontal.png" width="127" height="71" />
+												<img id="base_kazak" class="heroHoverSmall" src="/patches/images/heroes/kazak_horizontal.png" width="59" height="33" />
+											</a>
+											<a id="link_kron" class="heroPickerIconLink" href="heroes/kron.html">
+												<img id="hover_kron" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/kron_horizonal.png" width="127" height="71" />
+												<img id="base_kron" class="heroHoverSmall" src="/patches/images/heroes/kron_horizonal.png" width="59" height="33" />
+											</a>
+											<a id="link_lucifer" class="heroPickerIconLink" href="heroes/lucifer.html">
+												<img id="hover_lucifer" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/lucifer.png" width="127" height="71" />
+												<img id="base_lucifer" class="heroHoverSmall" src="/patches/images/heroes/lucifer.png" width="59" height="33" />
+											</a>
+											<a id="link_nerub" class="heroPickerIconLink" href="heroes/nerub.html">
+												<img id="hover_nerub" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/nerub_horizontal.png" width="127" height="71" />
+												<img id="base_nerub" class="heroHoverSmall" src="/patches/images/heroes/nerub_horizontal.png" width="59" height="33" />
+											</a>
+											<a id="link_totemcarver" class="heroPickerIconLink" href="heroes/totemcarver.html">
+												<img id="hover_totemcarver" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/totemcarver_horizontal.png" width="127" height="71" />
+												<img id="base_totemcarver" class="heroHoverSmall" src="/patches/images/heroes/totemcarver_horizontal.png" width="59" height="33" />
+											</a>
+											<a id="link_valkyrie" class="heroPickerIconLink" href="heroes/valkyrie.html">
+												<img id="hover_valkyrie" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/valkyrie_horizontal.png" width="127" height="71" />
+												<img id="base_valkyrie" class="heroHoverSmall" src="/patches/images/heroes/valkyrie_horizontal.png" width="59" height="33" />
+											</a>
+																					</div>
+										<br clear="left" />
+									</div>
+									<div class="heroColMiddle">
+										<div id="columnHeader"><span id="columnHeaderTextAgi">Agility</span></div>
+										<div class="heroIcons">
+											<a id="link_armordillo" class="heroPickerIconLink" href="heroes/armordillo.html">
+												<img id="hover_armordillo" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/armordillo.png" width="127" height="71" />
+												<img id="base_armordillo" class="heroHoverSmall" src="/patches/images/heroes/armordillo.png" width="59" height="33" />
+											</a>
+											<a id="link_basilisk" class="heroPickerIconLink" href="heroes/basilisk.html">
+												<img id="hover_basilisk" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/basilisk.png" width="127" height="71" />
+												<img id="base_basilisk" class="heroHoverSmall" src="/patches/images/heroes/basilisk.png" width="59" height="33" />
+											</a>
+											<a id="link_darkqueen" class="heroPickerIconLink" href="heroes/darkqueen.html">
+												<img id="hover_darkqueen" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/darkqueen.png" width="127" height="71" />
+												<img id="base_darkqueen" class="heroHoverSmall" src="/patches/images/heroes/darkqueen.png" width="59" height="33" />
+											</a>
+											<a id="link_ethereal_lancer" class="heroPickerIconLink" href="heroes/ethereal_lancer.html">
+												<img id="hover_ethereal_lancer" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/ethereal_lancer.png" width="127" height="71" />
+												<img id="base_ethereal_lancer" class="heroHoverSmall" src="/patches/images/heroes/ethereal_lancer.png" width="59" height="33" />
+											</a>
+											<a id="link_huntress" class="heroPickerIconLink" href="heroes/huntress.html">
+												<img id="hover_huntress" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/huntress_horizontal.png" width="127" height="71" />
+												<img id="base_huntress" class="heroHoverSmall" src="/patches/images/heroes/huntress_horizontal.png" width="59" height="33" />
+											</a>
+											<a id="link_kingseeker" class="heroPickerIconLink" href="heroes/kingseeker.html">
+												<img id="hover_kingseeker" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/kingseeker.png" width="127" height="71" />
+												<img id="base_kingseeker" class="heroHoverSmall" src="/patches/images/heroes/kingseeker.png" width="59" height="33" />
+											</a>
+											<a id="link_merchant" class="heroPickerIconLink" href="heroes/merchant.html">
+												<img id="hover_merchant" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/merchant.png" width="127" height="71" />
+												<img id="base_merchant" class="heroHoverSmall" src="/patches/images/heroes/merchant.png" width="59" height="33" />
+											</a>
+											<a id="link_okita" class="heroPickerIconLink" href="heroes/okita.html">
+												<img id="hover_okita" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/okita.png" width="127" height="71" />
+												<img id="base_okita" class="heroHoverSmall" src="/patches/images/heroes/okita.png" width="59" height="33" />
+											</a>
+											<a id="link_plaguelord" class="heroPickerIconLink" href="heroes/plaguelord.html">
+												<img id="hover_plaguelord" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/plaguelord.png" width="127" height="71" />
+												<img id="base_plaguelord" class="heroHoverSmall" src="/patches/images/heroes/plaguelord.png" width="59" height="33" />
+											</a>
+											<a id="link_shifter" class="heroPickerIconLink" href="heroes/shifter.html">
+												<img id="hover_shifter" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/shifter.png" width="127" height="71" />
+												<img id="base_shifter" class="heroHoverSmall" src="/patches/images/heroes/shifter.png" width="59" height="33" />
+											</a>
+																					</div>
+										<br clear="left" />
+									</div>
+									<div class="heroColRight">
+										<div id="columnHeader"><span id="columnHeaderTextInt">Intelligence</span></div>
+										<div class="heroIcons">
+											<a id="link_ancientrose" class="heroPickerIconLink" href="heroes/ancientrose.html">
+												<img id="hover_ancientrose" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/ancient_rose.png" width="127" height="71" />
+												<img id="base_ancientrose" class="heroHoverSmall" src="/patches/images/heroes/ancient_rose.png" width="59" height="33" />
+											</a>
+											<a id="link_wolf" class="heroPickerIconLink" href="heroes/wolf.html">
+												<img id="hover_wolf" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/wolf.PNG" width="127" height="71" />
+												<img id="base_wolf" class="heroHoverSmall" src="/patches/images/heroes/wolf.PNG" width="59" height="33" />
+											</a>
+											<a id="link_manaeater" class="heroPickerIconLink" href="heroes/manaeater.html">
+												<img id="hover_manaeater" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/manaeater.png" width="127" height="71" />
+												<img id="base_manaeater" class="heroHoverSmall" src="/patches/images/heroes/manaeater.png" width="59" height="33" />
+											</a>
+											<a id="link_nahl" class="heroPickerIconLink" href="heroes/nahl.html">
+												<img id="hover_nahl" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/nahl_horizontal.png" width="127" height="71" />
+												<img id="base_nahl" class="heroHoverSmall" src="/patches/images/heroes/nahl_horizontal.png" width="59" height="33" />
+											</a>
+											<a id="link_proxima" class="heroPickerIconLink" href="heroes/proxima.html">
+												<img id="hover_proxima" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/proxima.png" width="127" height="71" />
+												<img id="base_proxima" class="heroHoverSmall" src="/patches/images/heroes/proxima.png" width="59" height="33" />
+											</a>
+											<a id="link_robotscientist" class="heroPickerIconLink" href="heroes/robotscientist.html">
+												<img id="hover_robotscientist" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/robotscientist.png" width="127" height="71" />
+												<img id="base_robotscientist" class="heroHoverSmall" src="/patches/images/heroes/robotscientist.png" width="59" height="33" />
+											</a>
+											<a id="link_shaman" class="heroPickerIconLink" href="heroes/shaman.html">
+												<img id="hover_shaman" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/shaman.png" width="127" height="71" />
+												<img id="base_shaman" class="heroHoverSmall" src="/patches/images/heroes/shaman.png" width="59" height="33" />
+											</a>
+											<a id="link_trickster" class="heroPickerIconLink" href="heroes/trickster.html">
+												<img id="hover_trickster" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/trickster.png" width="127" height="71" />
+												<img id="base_trickster" class="heroHoverSmall" src="/patches/images/heroes/trickster.png" width="59" height="33" />
+											</a>
+											<a id="link_vampiremistress" class="heroPickerIconLink" href="heroes/vampiremistress.html">
+												<img id="hover_vampiremistress" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/vampiremistress.png" width="127" height="71" />
+												<img id="base_vampiremistress" class="heroHoverSmall" src="/patches/images/heroes/vampiremistress.png" width="59" height="33" />
+											</a>
+											<a id="link_whitemagician" class="heroPickerIconLink" href="heroes/whitemagician.html">
+												<img id="hover_whitemagician" class="heroHoverLarge" style="display:none;" src="/patches/images/heroes/whitemagician.png" width="127" height="71" />
+												<img id="base_whitemagician" class="heroHoverSmall" src="/patches/images/heroes/whitemagician.png" width="59" height="33" />
+											</a>
+																					</div>
+										<br clear="left" />
+									</div>
+
+									<br clear="left" />
+								</div>
+							<div class="redboxBottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="centerColBottom"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_bottom.png" width="984" height="9" /></div>
+			<div id="centerColBottomShadow"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_bottom_shadow.png" width="984" height="25" /></div>
+		</div>
+	</div>
+</center>
+</body>
+</html>
