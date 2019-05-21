@@ -9,6 +9,7 @@
 	<link href="/patches/css/publicheader.css" rel="stylesheet" type="text/css">
 	<link href="/heropedia/css/heropedia.css" rel="stylesheet" type="text/css">
 	<link href="/patches/images/gtd_logo.png"rel="shortcut icon">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<!-- <script type="text/javascript">$J = jQuery;</script><script type="text/javascript" src="http://steamcommunity-a.akamaihd.net/public/shared/javascript/shared_global.js?v=OBsnl6VGf94w&amp;l=english" ></script> -->
 	<script type="text/javascript" src="/heropedia/css/heropedia.js" ></script>
@@ -210,14 +211,16 @@
 																						<option value="Durable">Durable</option>
 																						<option value="Escape">Escape</option>
 																						<option value="Pusher">Pusher</option>
-																						<option value="Initiator">Initiator</option>
-																					</select>&nbsp;&nbsp;&nbsp;
+																						<option value="Initiator">Initiator</option>								
+										</select>&nbsp;&nbsp;&nbsp;
+
 										<select onChange="updateFilters()" id="filterAttack" class="filterSelect" name="">
 											<option value="">By Attack type</option>
 											<option value="">All</option>
 											<option value="melee">Melee</option>
 											<option value="ranged">Ranged</option>
 										</select>&nbsp;&nbsp;&nbsp;
+
 										<select onChange="updateFilters()" id="filterName" class="filterSelect noCaps" name="">
 											<option value="">HERO NAME</option>
 											<option value="">All</option>
@@ -250,7 +253,7 @@
 																						<option value="trickster">Trickster</option>
 																						<option value="vampiremistress">Vampire Mistress</option>
 																						<option value="whitemagician">White Magician</option>
-																					</select>
+										</select>
 									</div>
 									<div class="heroColLeft">
 										<div id="columnHeader"><span id="columnHeaderTextStr">Strength</span></div>
