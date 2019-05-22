@@ -323,7 +323,7 @@ function LoadHeropediaData( rgFeeds )
 		{
 			type:'GET',
 			cache:true,
-			url: 'https://www.dota2.com/jsfeed/heropediadata?feeds=itemdata',
+			url: 'https://raw.githubusercontent.com/ciaran284/ciaran284.github.io/master/heropedia/css/heropediadata.json',
 			dataType:'jsonp',
 			jsonpCallback:'HeropediaDFReceive'
 		}
