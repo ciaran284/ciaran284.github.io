@@ -319,8 +319,7 @@ function LoadHeropediaData( rgFeeds )
 		return;
 
 	strFeeds = rgNeededFeeds.join(',');
-	var URL = ( location.protocol == 'https:' ) ? 'https://www.dota2.com/' : 'http://www.dota2.com/';
-	URL = URL + 'jsfeed/heropediadata?feeds='+strFeeds+'&v=5116134b5095866&l=english';
+	URL = 'https://www.dota2.com/jsfeed/heropediadata?feeds=itemdata'
 	$.ajax(
 		{
 			type:'GET',
@@ -342,7 +341,7 @@ function BuildItemTooltipHTML( itemName )
 		strHTML += g_tooltipInsertCallback( itemName );
 	}
 
-	strHTML += '<div class="itemIcon"><img src="https://ciaran284.github.io/patches/images/'+iData.img+'" width="74" height="56" alt="'+iData.dname+'" title="'+iData.dname+'" border="0" /></div>';
+	strHTML += '<div class="itemIcon"><img src="/heropedia/images/items/'+iData.img+'" width="74" height="56" alt="'+iData.dname+'" title="'+iData.dname+'" border="0" /></div>';
 	strHTML += '<div class="itemName quality_'+iData.qual+'">'+iData.dname+'</div>';
 	strHTML += '<div class="goldIcon"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/tooltips/gold.png" width="25" height="17" border="0" /></div>';
 	strHTML += '<div class="goldCost">'+iData.cost+'</div><br clear="left" /><div class="description">'+iData.desc+'</div>';
