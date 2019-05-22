@@ -1,0 +1,373 @@
+<html>
+<head>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link href="/patches/css/global.css" rel="stylesheet" type="text/css" >
+	<link href="/patches/css/publicheader.css" rel="stylesheet" type="text/css">
+	<link href="/heropedia/css/heropedia.css" rel="stylesheet" type="text/css">
+	<link href="/patches/images/gtd_logo.png"rel="shortcut icon">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">$J = jQuery;</script><script type="text/javascript" src="/heropedia/css/shared_global.js" ></script>
+	<script type="text/javascript" src="/heropedia/css/tooltips.js" ></script>
+	<script type="text/javascript" src="/heropedia/css/heropedia.js" ></script>
+	<title>Items</title>
+			
+	<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-33822635-2']);
+		_gaq.push(['_setSampleRate', '1']);		_gaq.push(['_setDomainName', 'dota2.com']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+</head>
+<body>
+<center>
+	<!-- header bar -->
+	
+
+
+	<!-- header bar -->
+	<div id="navBarBGRepeat" class="DotaFont">
+			<div id="navBarBG">
+				<div id="navBar">							
+	
+					<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1448982217"><div id="SteamWorkshopButton">
+						steam workshop page
+					</div></a>
+	
+										<span class="navItem navItemDotaLogo">
+							<a class="navBarItem DotaFont">
+								<img border="0" class="DotaLogo" src="/patches/images/gtd_logo.png" width="40" height="40"/>
+							</a>
+						</span>
+	
+								<span id="HeaderSeperator" class="DotaFont">|</span>
+								<span class="navItem">
+									<a class="navBarItem DotaFont" href="https://ciaran284.github.io/patches/index.html">patch notes</a>
+								</span>
+								
+								<span id="HeaderSeperator" class="DotaFont">|</span>
+								<span class="navItem">
+									<a class="navBarItem DotaFont" href="https://ciaran284.github.io/heropedia/heropedia.html">heropedia</a>
+								</span>
+
+								<span id="HeaderSeperator" class="DotaFont">|</span>
+								<span class="navItem">
+									<a class="navBarItem DotaFont" href="https://ciaran284.github.io/heropedia/itempedia.html">itempedia</a>
+								</span>
+																		<!-- <span id="HeaderSeperator" class="DotaFont">|</span>
+														<span class="navItem"> -->
+									<!-- <a class="navBarItem DotaFont" href="javascript:void(0)">itempedia</a>
+									<div style="display:none;" class="menuSubItemList">
+																					<a class="DotaFont" href="http://www.dota2.com/heroes/">Heroes</a>
+																					<a class="DotaFont" href="http://www.dota2.com/items/">Item Explorer</a>
+																					<a class="DotaFont" href="http://www.dota2.com/workshop/builds">Builds</a>
+																					<a class="DotaFont" href="https://steamcommunity.com/app/570/guides" target="_blank">Steam Guides</a>
+																					<a class="DotaFont" href="http://www.dota2.com/patches/">Gameplay Updates</a>
+																					<a class="DotaFont" href="http://www.dota2.com/quiz">The Shopkeeper's Quiz</a>
+															</div> -->
+									<!-- <img class="dn_arrow" src="http://cdn.dota2.com/apps/dota2/images/nav/arrow.png"/> -->
+								<!-- </span> -->
+																			</div>
+			</div>
+		</div>	
+	<!-- header bar -->	
+<script language="javascript">
+
+	function MM_preloadImages() { //v3.0
+	  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+		if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+	}
+
+	function PreloadHeaderImages()
+	{
+		//  Preload header rollover images
+		//MM_preloadImages(
+		//);
+	}
+
+			if ( document.addEventListener ) {
+		document.addEventListener( "DOMContentLoaded", PreloadHeaderImages, false );
+	} else if ( document.attachEvent ) {
+		document.attachEvent( 'onDomContentLoaded', PreloadHeaderImages );
+	}
+
+</script>
+
+
+
+	<script language="javascript">
+		function closeSubMenu( target ) {
+			$(target).find('.dn_arrow').attr( "src", "https://steamcdn-a.akamaihd.net/apps/dota2/images/nav/arrow.png" );
+			$(target).find('.menuSubItemList').hide();
+		}
+
+		function closeAllSubMenus() {
+			$('.navItem').each( function() {
+				closeSubMenu( $(this) );
+			});
+		}
+
+		function openSubMenu( target ) {
+			closeAllSubMenus();
+
+			$(target).find('.dn_arrow').attr( "src", "https://steamcdn-a.akamaihd.net/apps/dota2/images/nav/arrow_over.png" );
+
+			// Show the sub-menu
+			var subItemList = $(target).find('.menuSubItemList');
+			if ( subItemList.length ) {
+				var itemTop = $(target).position().top + $(target).outerHeight() - 16;
+				var itemLeft = $(target).position().left;
+				subItemList
+					.css({
+						"top": itemTop + 'px',
+						"left": itemLeft
+					})
+					.fadeIn( 'fast' );
+			}
+		}
+
+		$(document).ready( function () {
+			// Deal with the nav bars
+			$('.navItem').each( function() {
+				$(this).hover( function () {
+					$(this)
+						.find('a.navBarItem img.top')
+						.animate({
+							"opacity": 1
+						}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						openSubMenu( this );
+					}
+				},
+				function () {
+					$(this)
+					.find('a.navBarItem img.top')
+					.animate({
+						"opacity": 0
+					}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						closeSubMenu(this);
+					}
+				}
+				);
+			});
+
+			// Deal with header drop-downs
+			var strMenus = '#languageSelector';
+			
+			$(strMenus).each( function() {
+				$(this).hover( function () {
+					//show its submenu
+					$( this ).find( 'div' ).fadeIn( 'fast' );
+				},
+				function () {
+					//hide its submenu
+					$( this ).find( 'div' ).hide();
+				}
+				);
+			});
+		});
+
+	</script>
+
+	<!-- /header bar -->
+	<!--<div id="bodyContainer">-->
+		<div id="centerColOuter_NoCallout">
+			<div id="centerColTopShadow"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_top_shadow.png" width="984" height="25" /></div>
+			<div id="centerColTop"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_top.png" width="984" height="9" /></div>
+			<div id="centerColContainer">
+				<div id="centerColContent">
+					<div class="redboxOuter">
+						<div class="redboxContent">
+							<div class="redboxTop"></div>
+								<div id="itemPickerInner">
+									<div id="itemsHeader">
+											<h1 id="heroBioName">Items</h1>
+									</div>
+									<div id="itemPickerColHeaders">
+										<div id="basicsHeader">BASICS</div>
+										<div id="upgradesHeader">UPGRADES</div>
+										<div id="secretsHeader">Secret</div>
+									</div>
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_consumables.png" width="49" height="49" alt="CONSUMABLES" title="CONSUMABLES" />
+																				<div onClick="showItemInFullBox('tpscroll', 0)" style="cursor:pointer" id="icon_tpscroll" itemname="tpscroll" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/tpscroll.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/healthpot.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/manapot.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('smoke_of_deceit', 0)" style="cursor:pointer" id="icon_smoke_of_deceit" itemname="smoke_of_deceit" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/smoke_of_deceit_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ward_observer', 0)" style="cursor:pointer" id="icon_ward_observer" itemname="ward_observer" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/ward_observer_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ward_sentry', 0)" style="cursor:pointer" id="icon_ward_sentry" itemname="ward_sentry" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/ward_sentry_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('dust', 0)" style="cursor:pointer" id="icon_dust" itemname="dust" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/dust_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('courier', 0)" style="cursor:pointer" id="icon_courier" itemname="courier" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/courier_lg.png" width="70" height="53" border="0" /></div>
+																			</div>
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_attributes.png" width="49" height="49" alt="ATTRIBUTES" title="ATTRIBUTES" />
+																				<div onClick="showItemInFullBox('branches', 0)" style="cursor:pointer" id="icon_branches" itemname="branches" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gold_ring.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('gauntlets', 0)" style="cursor:pointer" id="icon_gauntlets" itemname="gauntlets" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/bracer_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('slippers', 0)" style="cursor:pointer" id="icon_slippers" itemname="slippers" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/cloak_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('mantle', 0)" style="cursor:pointer" id="icon_mantle" itemname="mantle" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/robe_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('circlet', 0)" style="cursor:pointer" id="icon_circlet" itemname="circlet" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/magic_cube.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('belt_of_strength', 0)" style="cursor:pointer" id="icon_belt_of_strength" itemname="belt_of_strength" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/blessed_greatshield.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('boots_of_elves', 0)" style="cursor:pointer" id="icon_boots_of_elves" itemname="boots_of_elves" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/delicate_longbow.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('robe', 0)" style="cursor:pointer" id="icon_robe" itemname="robe" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/runed_bracers.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('crown', 0)" style="cursor:pointer" id="icon_crown" itemname="crown" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/angel_pearl.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ogre_axe', 0)" style="cursor:pointer" id="icon_ogre_axe" itemname="ogre_axe" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/giants_cuirass.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('blade_of_alacrity', 0)" style="cursor:pointer" id="icon_blade_of_alacrity" itemname="blade_of_alacrity" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/windrush.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('staff_of_wizardry', 0)" style="cursor:pointer" id="icon_staff_of_wizardry" itemname="staff_of_wizardry" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/magus_king_hood.png" width="70" height="53" border="0" /></div>
+																			</div>
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_armaments.png" width="49" height="49" alt="ARMAMENTS" title="ARMAMENTS" />
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/metal_shard.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/round_shield.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/vampirism_amulet.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sharp_dirk.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/priest_tunic.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/crusader_mail.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/life_orb.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/quarterlance.png" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/orb_of_pyros.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/broadsword_lg.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sharpmace.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/paladin_plate.png" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/demon_metal.png" width="70" height="53" border="0" /></div>
+																		</div>
+																				<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_arcane.png" width="49" height="49" alt="ARCANE" title="ARCANE" />
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/healer_rag.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/magic_tooth.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/unstable_orb.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/boots_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gloves_of_speed.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/mana_orb.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/frozen_demonblood.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/maiden_tears.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/gem_lg.png"70" height="53" border="0" /></div>																																									
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/amplification_tome.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/fury_gauntlet.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bottled_ghost.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/blink_lg.png"70" height="53" border="0" /></div>																																									
+																				</div>
+
+																				<div class="shopColumn">
+																						<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_arcane.png" width="49" height="49" alt="ARCANE" title="ARCANE" />
+																																<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/wild_talisman.png" width="70" height="53" border="0" /></div>
+																																<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/lucky_coin.png" width="70" height="53" border="0" /></div>
+																																<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/orichalcum_anvil.png"70" height="53" border="0" /></div>
+																																<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/elven_flask.png" width="70" height="53" border="0" /></div>
+																																<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/enchanted_dagger.png" width="70" height="53" border="0" /></div>
+																																</div>																				
+
+																				<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_common.png" width="49" height="49" alt="COMMON" title="COMMON" />
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sac_ring.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/dice_dice.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/saint_pace.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bloodthirst_claws.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/diffusionstone.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/midas_claw.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/nonchalance.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/life_cage.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/extractinator.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/eternal_frenzy.png"70" height="53" border="0" /></div>
+
+									</div>
+
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_support.png" width="49" height="49" alt="SUPPORT" title="SUPPORT" />
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/hermes_boots.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/enduring_willpower.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/loyal_paw.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/murder_of_crows.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/veil_of_the_night.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ursine_zeal.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/emperor_cuirass.png"70" height="53" border="0" /></div>																				
+									</div>
+
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_caster.png" width="49" height="49" alt="CASTER" title="CASTER" />
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/arcane_ring.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/mage_skull.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gem_of_legends.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/starlight_slippers.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/momentum_boots.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/pyromancer_hand.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/eternity_staff.png"70" height="53" border="0" /></div>																					
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bloodgod_amulet.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/vendetta_grasp.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/rune_scimmy.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/darkmoon_sword.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/garb.png"70" height="53" border="0" /></div>	
+									</div>
+
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_armor.png" width="49" height="49" alt="WEAPONS" title="WEAPONS" />
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/alucard_shield.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/giant_crystal.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/peasant_boot.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ironside_dancer.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/snake_pendant.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ciaran_ring.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/infernalis.png"70" height="53" border="0" /></div>																					
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/lich_pendant.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/jonathan_willpower.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/goldensun.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/breaker_of_nightmares.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/immortalia.png"70" height="53" border="0" /></div>	
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/vanguard_aegis.png"70" height="53" border="0" /></div>	
+									</div>
+
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_weapons.png" width="49" height="49" alt="ARMOR" title="ARMOR" />
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/clawed_boots.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/thirsting_sword.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/misforged_demon_sword.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/dismantlers.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/norstark_fist.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bladed_blade.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/cannibal_sword.png"70" height="53" border="0" /></div>																					
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/demon_greataxe.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/crescent_flame.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sanguine_fletcher.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/butchy_dagger.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ten_tonne_gloves.png"70" height="53" border="0" /></div>	
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/soul_harvest.png"70" height="53" border="0" /></div>																					</div>
+																				
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_artifacts.png" width="49" height="49" alt="ARTIFACTS" title="ARTIFACTS" />
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/thickblooded_ale.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gamma.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/delta.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/glare_of_anubis.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/frostbrand.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/delta_gamma.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/greatruneblade.png"70" height="53" border="0" /></div>																					
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/greatruneblade2.png"70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/hydra_thirst.png" width="70" height="53" border="0" /></div>
+										<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/elemental_grasp.png" width="70" height="53" border="0" /></div>	
+																				</div>
+
+																		<br clear="left" />
+								</div>
+							<div class="redboxBottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="centerColBottom"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_bottom.png" width="984" height="9" /></div>
+			<div id="centerColBottomShadow"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_bottom_shadow.png" width="984" height="25" /></div>
+		</div>
+	<!--</div>-->
+	<!--<div style="height:290px;"></div>-->
+</center>
+</body>
+</html>
