@@ -319,12 +319,11 @@ function LoadHeropediaData( rgFeeds )
 		return;
 
 	strFeeds = rgNeededFeeds.join(',');
-	URL = 'https://www.dota2.com/jsfeed/heropediadata?feeds=itemdata'
 	$.ajax(
 		{
 			type:'GET',
 			cache:true,
-			url: URL,
+			url: 'https://raw.githubusercontent.com/ciaran284/ciaran284.github.io/master/heropedia/css/itempediadata.jsonp',
 			dataType:'jsonp',
 			jsonpCallback:'HeropediaDFReceive'
 		}
