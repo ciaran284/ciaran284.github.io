@@ -190,11 +190,11 @@ function BuildItemFullBoxHTML( iData )
 	strHTML += '<div class="goldIcon"><img src="http://cdn.dota2.com/apps/dota2/images/tooltips/gold.png" width="25" height="17" border="0" /></div>';
 	strHTML += '<div class="goldCost">'+iData.cost+'</div>';
 	strHTML += '</div>';
-	strHTML += '<div class="largeItemImg"><img src="http://cdn.dota2.com/apps/dota2/images/items/'+iData.img+'" width="182" height="138" border="0" /></div>';
+	strHTML += '<div class="largeItemImg"><img src="/patches/images/items/'+iData.img+'" width="100" height="72" border="0" /></div>';
 	strHTML += '<div class="itemBoxDetails">';
 	strHTML += '<div class="itemBoxHR"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/itembox_hr.png" width="646" height="1" border="0" /></div>';
-	strHTML += '<div class="detailBoxCol detailBoxLore">'+iData.lore+'&nbsp;</div>';
 	strHTML += '<div class="detailBoxCol detailBoxDesc">'+iData.desc+'&nbsp;</div>';
+	// strHTML += '<div class="detailBoxCol detailBoxLore">'+iData.lore+'&nbsp;</div>';
 	strHTML += '<div class="detailBoxCol detailBoxAttribs">'+iData.attrib+'&nbsp;';
 	if ( iData.mc || iData.cd )
 	{
