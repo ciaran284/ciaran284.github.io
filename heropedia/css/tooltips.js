@@ -340,7 +340,7 @@ function BuildItemTooltipHTML( itemName )
 		strHTML += g_tooltipInsertCallback( itemName );
 	}
 
-	strHTML += '<div class="itemIcon"><img src="/heropedia/items/images/'+iData.img+'" width="74" height="56" alt="'+iData.dname+'" title="'+iData.dname+'" border="0" /></div>';
+	strHTML += '<div class="itemIcon"><img src="/patches/images/items/'+iData.img+'" width="74" height="56" alt="'+iData.dname+'" title="'+iData.dname+'" border="0" /></div>';
 	strHTML += '<div class="itemName quality_'+iData.qual+'">'+iData.dname+'</div>';
 	strHTML += '<div class="goldIcon"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/tooltips/gold.png" width="25" height="17" border="0" /></div>';
 	strHTML += '<div class="goldCost">'+iData.cost+'</div><br clear="left" /><div class="description">'+iData.desc+'</div>';
