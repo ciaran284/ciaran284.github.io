@@ -150,7 +150,158 @@ HeropediaDFReceive(
                 "cd":false,
                 "lore":"Worn over the hands to protect them in battle, can also pack a mean punch.",
                 "components":null,
+                "created":false},
+
+        "elven_hood":{
+                "id":45,"img":
+                "elven_hood.png?3",
+                "dname":"Elven Hood",
+                "qual":"component",
+                "cost":350,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">4<\/span> <span class=\"attribValText\">Agility<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"Imbued with certain Elven Magicks, it makes the wearer appear to move faster.",
+                "components":null,
                 "created":false},  
+
+        "wizard_robe":{
+                "id":45,"img":
+                "wizard_robe.png?3",
+                "dname":"Wizard's Robe",
+                "qual":"component",
+                "cost":350,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">4<\/span> <span class=\"attribValText\">Intelligence<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"An old robe once owned by a wizard, it still carries faint energies from its previous owners magical exploits.",
+                "components":null,
+                "created":false},
+
+        "magic_cube":{
+                "id":45,"img":
+                "magic_cube.png?3",
+                "dname":"Magic Cube",
+                "qual":"component",
+                "cost":800,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">5<\/span> <span class=\"attribValText\">All Attributes<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"A cube made of shattered glass, held together by some magical power.",
+                "components":null,
+                "created":false},
+
+        "blessed_greatshield":{
+                "id":45,"img":
+                "blessed_greatshield.png?3",
+                "dname":"Blessed Greatshield",
+                "qual":"component",
+                "cost":1000,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">9<\/span> <span class=\"attribValText\">Strength<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"A shield based on the design of a Holy Knight's shield, who dared to try and fight Demons in their own Realm.",
+                "components":null,
+                "created":false},
+
+        "delicate_longbow":{
+                "id":45,"img":
+                "delicate_longbow.png?3",
+                "dname":"Delicate Longbow",
+                "qual":"component",
+                "cost":1000,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">9<\/span> <span class=\"attribValText\">Agility<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"It looks like it could break at the mere pluck of it's string, and yet it has held true for many eons of use",
+                "components":null,
+                "created":false},
+
+        "runed_bracers":{
+                "id":45,"img":
+                "runed_bracers.png?3",
+                "dname":"Runed Bracers",
+                "qual":"component",
+                "cost":1000,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">9<\/span> <span class=\"attribValText\">Intelligence<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"The runes seem to circle and glow around it, a circling mantra in a language that only a high mage could decipher.",
+                "components":null,
+                "created":false},
+
+        "angel_pearl":{
+                "id":45,"img":
+                "angel_pearl.png?3",
+                "dname":"Angel Pearl",
+                "qual":"component",
+                "cost":2200,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">11<\/span> <span class=\"attribValText\">All Attributes<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"An ethereal pearl in a delicate housing of silver, swirling with untold amounts of energy.",
+                "components":null,
+                "created":false},
+
+        "giant_cuirass":{
+                "id":45,"img":
+                "giants_cuirass.png?3",
+                "dname":"Giant's Cuirass",
+                "qual":"component",
+                "cost":2800,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">24<\/span> <span class=\"attribValText\">Strength<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"It should be impossible to wear and yet you actually feel stronger as this armour magically fits itself to your size.",
+                "components":null,
+                "created":false},
+
+        "windrush":{
+                "id":45,"img":
+                "windrush.png?3",
+                "dname":"Windrush",
+                "qual":"component",
+                "cost":2800,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">24<\/span> <span class=\"attribValText\">Agility<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"The true form of this scimitar is unknown, as it is always moving faster than the eye can see, surrounded by a cursed wind.",
+                "components":null,
+                "created":false},
+
+        "magus_king_hood":{
+                "id":45,"img":
+                "magus_king_hood.png?3",
+                "dname":"Magus King Hood",
+                "qual":"component",
+                "cost":2800,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">24<\/span> <span class=\"attribValText\">Intelligence<\/span><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"The Magus King was rumoured to be a Legendary Mage in old times. While his actual existence is debated, many of his supposed garbs circulate the lands, imbued with magic that lives up to the legend they're attached to.",
+                "components":null,
+                "created":false},
+
 
 
     "super_blink":{"id":1029,"img":"super_blink_lg.png?3","dname":"Super Blink Dagger","qual":false,"cost":0,"desc":"<h1>Active: Drink<\/h1> Teleport to a target point up to 1200 units away.","notes":"","attrib":"","mc":false,"cd":15,"lore":"The fabled dagger used by the fastest assassin ever to walk the lands.","components":null,"created":false},"pocket_tower":{"id":1030,"img":"pocket_tower_lg.png?3","dname":"Pocket Tower","qual":false,"cost":0,"desc":"","notes":"","attrib":"","mc":false,"cd":15,"lore":"","components":null,"created":false},"pocket_roshan":{"id":1032,"img":"pocket_roshan_lg.png?3","dname":"Pocket Roshan","qual":"rare","cost":1000,"desc":"","notes":"","attrib":"","mc":false,"cd":60,"lore":"","components":null,"created":false}}});
