@@ -122,7 +122,7 @@ HeropediaDFReceive(
                 "components":null,
                 "created":false},                   
 
-        "goldring":{
+        "gold_ring":{
                 "id":45,"img":
                 "gold_ring.png?3",
                 "dname":"Gold Ring",
@@ -309,7 +309,7 @@ HeropediaDFReceive(
                 "cost":200,
                 "desc":"",
                 "notes":"",
-                "attrib":"+ <span class=\"attribVal\">5<\/span> <span class=\"attribValText\">Armour<\/span><br><br>",
+                "attrib":"+ <span class=\"attribVal\">2<\/span> <span class=\"attribValText\">Armour<\/span><br><br>",
                 "mc":false,
                 "cd":false,
                 "lore":"A shard of some nondescript metal. Some believe carrying one as a good luck charm can protect you from the attacks of a highwayman or bandit.",
@@ -767,6 +767,179 @@ HeropediaDFReceive(
                 "cd":false,
                 "lore":"One of many Daggers enchanted by High Wizards for the Captains of the Army. For a moment, it shines with a sharp edge that can turn the tides of any fight with one fatal thrust.",
                 "components":null,
-                "created":false},                
+                "created":false},            
+
+       "sac_ring":{
+                "id":375,
+                "img":"sac_ring.png?3",
+                "dname":"Sacrificial Ring",
+                "qual":"common",
+                "cost":650,
+                "desc":"<h1> Active: Pact </h1> Target a creep up to level 3 to kill it and heal for 80% of its current health. The creep provides no experience or gold bounty.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">5<\/span> <span class=\"attribValText\">Intelligence<\/span><br>+ <span class=\"attribVal\">0.5<\/span> <span class=\"attribValText\">Mana Regeneration<\/span><br><br>",
+                "mc":75,
+                "cd":45,
+                "lore":"The few sacrificed for the greater good, but at what cost?",
+                "components":["wizard_robe"],
+                "created":true},
+
+       "dice_dice":{
+                "id":375,
+                "img":"dice_dice.png?3",
+                "dname":"Dice's Dice",
+                "qual":"common",
+                "cost":1000,
+                "desc":"<h1>Passive: Greed</h1> You gain 2-3 bonus gold for each unit killed.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">1<\/span> <span class=\"attribValText\">Mana Regeneration<\/span><br>+ <span class=\"attribVal\">4<\/span> <span class=\"attribValText\">Armour<\/span><br>+ <span class=\"attribVal\">6<\/span> <span class=\"attribValText\">Damage<\/span><br> + <span class=\"attribVal\">5<\/span> <span class=\"attribValText\">All Attributes<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"Whose Dice is it anyway?",
+                "components":["magic_tooth","lucky_coin","metal_shard"],
+                "created":true},    
+
+       "saint_pace":{
+                "id":375,
+                "img":"saint_pace.png?3",
+                "dname":"Saint's Pace",
+                "qual":"common",
+                "cost":1020,
+                "desc":"<h1>Passive: Unhindered</h1> The wielder can move through units.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">60<\/span> <span class=\"attribValText\">Movement Speed<\/span><br>+ <span class=\"attribVal\">4<\/span> <span class=\"attribValText\">All Attributes<\/span><br>+ <span class=\"attribVal\">12%<\/span> <span class=\"attribValText\">Evasion<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"The boots of a blessed saint, they provide protection against those who would do harm and seem to become even lighter when the user needs them to be, allowing faster movement than most boots.",
+                "components":["boots","gold_ring"],
+                "created":true},    
+
+       "bloodthirst_claws":{
+                "id":375,
+                "img":"bloodthirst_claws.png?3",
+                "dname":"Bloodthirst Claws",
+                "qual":"common",
+                "cost":1300,
+                "desc":"<h1> Passive: Blood Frenzy </h1> After landing an attack, you have a 40% chance to go into a frenzy, increasing the lifesteal to 30% and the attack speed to 60. Lasts 3 seconds.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">5%<\/span> <span class=\"attribValText\">Lifesteal<\/span><br>+ <span class=\"attribVal\">20<\/span> <span class=\"attribValText\">Attack Speed<\/span><br><br>",
+                "mc":false,
+                "cd":7,
+                "lore":"These claws create an unsettling feeling in their wielder, as if they are becoming more like a ravenous beast with every swipe.",
+                "components":["vampirism_amulet","gloves_of_speed"],
+                "created":true},    
+
+       "diffusion_stone":{
+                "id":375,
+                "img":"diffusionstone.png?3",
+                "dname":"Diffusion Stone",
+                "qual":"common",
+                "cost":1325,
+                "desc":"<h1> Active: Diffuse </h1> Purges the user.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">2.5<\/span> <span class=\"attribValText\">Mana Regeneration<\/span><br><br>",
+                "mc":100,
+                "cd":60,
+                "lore":"A stone found on many peacekeepers who visit arcane lands. It provides brief solace from those who possess both arcane mastery and malicious intent.",
+                "components":["maiden_tears"],
+                "created":true},
+
+       "midas_claw":{
+                "id":375,
+                "img":"midas_claw.png?3",
+                "dname":"Midas Claw",
+                "qual":"common",
+                "cost":1450,
+                "desc":"<h1> Passive: Grevious Greed </h1> You gain 2 - 3 bonus gold for each unit killed. Landing an attack on a hero grants you 5 gold.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">20<\/span> <span class=\"attribValText\">Attack Speed<\/span><br>+ <span class=\"attribVal\">15<\/span> <span class=\"attribValText\">Damage<\/span><br>+ <span class=\"attribVal\">3<\/span> <span class=\"attribValText\">All Attributes<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"",
+                "components":["lucky_coin","sharp_dirk","gloves_of_speed"],
+                "created":true},    
+
+       "nonchalance":{
+                "id":375,
+                "img":"nonchalance.png?3",
+                "dname":"Nonchalance",
+                "qual":"common",
+                "cost":1650,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">2.25<\/span> <span class=\"attribValText\">Mana Regeneration<\/span><br>+ <span class=\"attribVal\">5.5<\/span> <span class=\"attribValText\">HP Regeneration<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"The uncaring ignorance of the world, created both demons and maidens, and now both have paid for price for the nonchalance of the living who refuse their fate.",
+                "components":["frozen_demonblood","maiden_tears"],
+                "created":true},  
+
+       "life_cage":{
+                "id":375,
+                "img":"life_cage.png?3",
+                "dname":"Cage of Life",
+                "qual":"common",
+                "cost":1950,
+                "desc":"<h1>Active: Life from Death</h1> Consumes target creep, healing the user for 60% of its maximum health, and providing 2.25 times the experience from it.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">15<\/span> <span class=\"attribValText\">Intelligence<\/span><br>+ <span class=\"attribVal\">5<\/span> <span class=\"attribValText\">Armour<\/span><br>+ <span class=\"attribVal\">2<\/span> <span class=\"attribValText\">Mana Regeneration<\/span><br><br>",
+                "mc":75,
+                "cd":45,
+                "lore":"Am I stuck in here with you or are you stuck in here with me?",
+                "components":["runed_bracers","metal_shard","sac_ring"],
+                "created":true},
+
+       "extractinator":{
+                "id":375,
+                "img":"extractinator.png?3",
+                "dname":"Extractinator",
+                "qual":"common",
+                "cost":2525,
+                "desc":"<h1> Active: Extract </h1> Consumes target tree, providing the user with 21 health regeneration for 15 seconds.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">350<\/span> <span class=\"attribValText\">Health<\/span><br>+ <span class=\"attribVal\">9<\/span> <span class=\"attribValText\">HP Regen<\/span><br><br>",
+                "mc":25,
+                "cd":30,
+                "lore":"A tool developed in secret by one who wanted revenge against the nature that had spurned them for far too long...",
+                "components":["giant_crystal","frozen_demonblood"],
+                "created":true},    
+
+       "eternal_frenzy":{
+                "id":375,
+                "img":"eternal_frenzy.png?3",
+                "dname":"Eternal Frenzy",
+                "qual":"common",
+                "cost":2700,
+                "desc":"<h1>Active: Omega Frenzy</h1> Increases your attack speed by 120, but you lose 12 armour. Lasts 8 seconds.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">7<\/span> <span class=\"attribValText\">All Attributes<\/span><br>+ <span class=\"attribVal\">60<\/span> <span class=\"attribValText\">Attack Speed<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"Not to be confused with Eternal Envy, which is a throwing weapon.",
+                "components":["fury_gauntlet","magic_cube"],
+                "created":true},  
+
+
+
+
+
+
+
+
+       "giant_crystal":{
+                "id":375,
+                "img":"giant_crystal.png?3",
+                "dname":"Giant's Crystal",
+                "qual":"component",
+                "cost":1200,
+                "desc":"",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">300<\/span> <span class=\"attribValText\">Health<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"You thought it would be bigger...",
+                "components":["life_orb",],
+                "created":true},   
+
 
     "super_blink":{"id":1029,"img":"super_blink_lg.png?3","dname":"Super Blink Dagger","qual":false,"cost":0,"desc":"<h1>Active: Drink<\/h1> Teleport to a target point up to 1200 units away.","notes":"","attrib":"","mc":false,"cd":15,"lore":"The fabled dagger used by the fastest assassin ever to walk the lands.","components":null,"created":false},"pocket_tower":{"id":1030,"img":"pocket_tower_lg.png?3","dname":"Pocket Tower","qual":false,"cost":0,"desc":"","notes":"","attrib":"","mc":false,"cd":15,"lore":"","components":null,"created":false},"pocket_roshan":{"id":1032,"img":"pocket_roshan_lg.png?3","dname":"Pocket Roshan","qual":"rare","cost":1000,"desc":"","notes":"","attrib":"","mc":false,"cd":60,"lore":"","components":null,"created":false}}});

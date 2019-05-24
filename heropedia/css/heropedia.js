@@ -181,7 +181,7 @@ function BuildItemFullBoxHTML( iData )
 		$.each( iData.components,
 			function( i, iName )
 			{
-				strHTML += '<div onClick="showItemInFullBox(\''+iName+'\', 1)" style="cursor:pointer" itemname="'+iName+'" class="floatRecipeImage itemIconWithTooltip recipeComponent"><img src="/heropedia/items/images/items/'+iName+'.png" width="49" height="37" border="0" /></div>';
+				strHTML += '<div onClick="showItemInFullBox(\''+iName+'\', 1)" style="cursor:pointer" itemname="'+iName+'" class="floatRecipeImage itemIconWithTooltip recipeComponent"><img src="/patches/images/items/'+iName+'.png" width="49" height="37" border="0" /></div>';
 			}
 		);
 		strHTML += '</div>';
