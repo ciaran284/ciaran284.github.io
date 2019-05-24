@@ -173,10 +173,6 @@ function BuildItemFullBoxHTML( iData )
 			totalPrice -= g_rgItemData[iName].cost;
 		});
 
-		if ( totalPrice != 0 ) {
-			strHTML += '<div style="cursor:pointer" itemname=recipe" class="floatRecipeImage itemIconWithTooltip recipeComponent"><img src="http://cdn.dota2.com/apps/dota2/images/items/recipe_lg.png" width="49" height="37" border="0" /></div>';
-		}
-
 		// Now, add the rest of the components
 		$.each( iData.components,
 			function( i, iName )
@@ -184,6 +180,11 @@ function BuildItemFullBoxHTML( iData )
 				strHTML += '<div onClick="showItemInFullBox(\''+iName+'\', 1)" style="cursor:pointer" itemname="'+iName+'" class="floatRecipeImage itemIconWithTooltip recipeComponent"><img src="/patches/images/items/'+iName+'.png" width="49" height="37" border="0" /></div>';
 			}
 		);
+
+		if ( totalPrice != 0 ) {
+			strHTML += '<div style="cursor:pointer" itemname=recipe" class="floatRecipeImage itemIconWithTooltip recipeComponent"><img src="/patches/images/items/recipe.png" width="49" height="37" border="0" /></div>';
+		}
+
 		strHTML += '</div>';
 	}
 	strHTML += '<div class="itemName quality_'+iData.qual+'">'+iData.dname+'</div>';

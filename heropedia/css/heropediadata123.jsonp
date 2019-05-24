@@ -498,7 +498,7 @@ HeropediaDFReceive(
 
 
 
-        "healing_rag":{
+        "healer_rag":{
                 "id":45,
                 "img":"healer_rag.png?3",
                 "dname":"Healing Rag",
@@ -921,8 +921,127 @@ HeropediaDFReceive(
 
 
 
+       "hermes_boots":{
+                "id":375,
+                "img":"hermes_boots.png?3",
+                "dname":"Hermes Boots",
+                "qual":"rare",
+                "cost":1000,
+                "desc":"<h1> Passive: Godspeed </h1> Provides 115 movement speed. After taking or dealing damage, this gets reduced to 50 movement speed for 5 seconds.",
+                "notes":"",
+                "attrib":"",
+                "mc":false,
+                "cd":5,
+                "lore":"Speed at the cost of virtue.",
+                "components":["boots"],
+                "created":true},    
+
+       "enduring_willpower":{
+                "id":375,
+                "img":"enduring_willpower.png?3",
+                "dname":"Enduring Willpower",
+                "qual":"rare",
+                "cost":1125,
+                "desc":"<h1>Active: Inspire</h1> Gives an ally 20 health regeneration for 5 seconds. After the duration, they are healed for 30% of damage taken in the duration.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">1.5<\/span> <span class=\"attribValText\">Mana Regeneration<\/span><br>+ <span class=\"attribVal\">5<\/span> <span class=\"attribValText\">HP Regeneration<\/span><br>        <br>",
+                "mc":75,
+                "cd":25,
+                "lore":"A Vanguards shield blessed by a Western Maiden, it's protection seems to remove the injuries of soldiers with Bravery.",
+                "components":["frozen_demonblood","magic_tooth"],
+                "created":true},
+
+       "loyal_paw":{
+                "id":375,
+                "img":"loyal_paw.png?3",
+                "dname":"Loyal Paw",
+                "qual":"rare",
+                "cost":1350,
+                "desc":"<h1>Active: Summon Wolf</h1> Summons a wolf which lasts 30 seconds. The wolf has unobstructed vision, phased movement, and a leap.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">25<\/span> <span class=\"attribValText\">Attack Speed<\/span><br>+ <span class=\"attribVal\">2<\/span> <span class=\"attribValText\">Mana Regen<\/span><br><br>",
+                "mc":100,
+                "cd":50,
+                "lore":"Old Hunters would often use a companion, whose senses were far more attuned to finding their prey in the wild. This loyal one still scouts the wilds for prey even long after it's original master perished.",
+                "components":["magic_tooth","magic_tooth","gloves_of_speed"],
+                "created":true},    
+
+       "murder_of_crows":{
+                "id":375,
+                "img":"murder_of_crows.png?3",
+                "dname":"Murder of Crows",
+                "qual":"rare",
+                "cost":1800,
+                "desc":"<h1> Passive: Ravenous</h1> Allies in a 1200 radius gain 15 attack speed and 15 movement speed.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">15<\/span> <span class=\"attribValText\">Attack Speed<\/span><br>+ <span class=\"attribVal\">3.5<\/span> <span class=\"attribValText\">HP Regeneration<\/span><br>+ <span class=\"attribVal\">5<\/span> <span class=\"attribValText\">Strength<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"A group of Crows is called a Murder, this however is a Murdered Murder.",
+                "components":["healer_rag","quarterlance","reinforced_gauntlet"],
+                "created":true},  
+
+       "veil_of_the_night":{
+                "id":375,
+                "img":"veil_of_the_night.png?3",
+                "dname":"Veil of the Night",
+                "qual":"rare",
+                "cost":2275,
+                "desc":"<h1>Passive: Moonlight Aura </h1> All allies in a 800 radius have their healing from all sources increased by 20%.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">250<\/span> <span class=\"attribValText\">Mana<\/span><br>+ <span class=\"attribVal\">250<\/span> <span class=\"attribValText\">Night Vision<\/span><br>+ <span class=\"attribVal\">3.5<\/span> <span class=\"attribValText\">Mana Regeneration<\/span><br>+ <span class=\"attribVal\">3%<\/span> <span class=\"attribValText\">Movement Speed<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"Under the Veil of Night, those of the woods healed the many, friend or foe, and covered them from harm. They did it, even knowing with the break of dawn, they would shed each others blood once more.",
+                "components":["mage_skull","maiden_tears"],
+                "created":true},
+
+       "ursine_zeal":{
+                "id":375,
+                "img":"ursine_zeal.png?3",
+                "dname":"Ursine Zeal",
+                "qual":"rare",
+                "cost":2650,
+                "desc":"<h1>Passive: Stubborn Nature</h1> Nearby allies in a 1200 radius gain 15% magic resistance and 2 mana regeneration.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">10%<\/span> <span class=\"attribValText\">Magic Resistance<\/span><br>+ <span class=\"attribVal\">7<\/span> <span class=\"attribValText\">HP Regen<\/span><br>+ <span class=\"attribVal\">1<\/span> <span class=\"attribValText\">Mana Regen<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"The Ursine came from many corners of the world, a tribe that sought to embrace magic and nature, but eventually forsook their mother for their hubris.",
+                "components":["nonchalance","priest_tunic"],
+                "created":true},    
+
+       "emperor_cuirass":{
+                "id":375,
+                "img":"emperor_cuirass.png?3",
+                "dname":"Emperor's Cuirass",
+                "qual":"rare",
+                "cost":4000,
+                "desc":"<h1>Passive: Legion Aura </h1> Allied heroes in a 1200 radius gain 10% damage reduction.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">12<\/span> <span class=\"attribValText\">All Attributes<\/span><br>+ <span class=\"attribVal\">10<\/span> <span class=\"attribValText\">Armour<\/span><br>+ <span class=\"attribVal\">10<\/span> <span class=\"attribValText\">HP Regen<\/span><br>+ <span class=\"attribVal\">18<\/span> <span class=\"attribValText\">Damage Block<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"From the late Emperor Bael, who sacrificed his life to save his own people. Known as the last True Emperor of the realm, any symbol of his still carries his selfless, protective spirit.",
+                "components":["paladin_plate","angel_pearl"],
+                "created":true},  
 
 
+
+       "mage_skull":{
+                "id":375,
+                "img":"mage_skull.png?3",
+                "dname":"Mage's Skull",
+                "qual":"rare",
+                "cost":1200,
+                "desc":"<h1>Passive: Legion Aura </h1> Allied heroes in a 1200 radius gain 10% damage reduction.",
+                "notes":"",
+                "attrib":"+ <span class=\"attribVal\">12<\/span> <span class=\"attribValText\">All Attributes<\/span><br>+ <span class=\"attribVal\">10<\/span> <span class=\"attribValText\">Armour<\/span><br>+ <span class=\"attribVal\">10<\/span> <span class=\"attribValText\">HP Regen<\/span><br>+ <span class=\"attribVal\">18<\/span> <span class=\"attribValText\">Damage Block<\/span><br><br>",
+                "mc":false,
+                "cd":false,
+                "lore":"From the late Emperor Bael, who sacrificed his life to save his own people. Known as the last True Emperor of the realm, any symbol of his still carries his selfless, protective spirit.",
+                "components":["paladin_plate","angel_pearl"],
+                "created":true},  
 
 
 
