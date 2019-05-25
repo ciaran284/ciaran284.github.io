@@ -1,21 +1,19 @@
-<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
 <html>
 <head>
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=9" />
-		<link href="/patches/css/global.css" rel="stylesheet" type="text/css" >
-		<link href="/patches/css/global_new.css" rel="stylesheet" type="text/css">
-		<link href="/patches/css/publicheader.css" rel="stylesheet" type="text/css">
-		<link href="/heropedia/css/heropedia.css" rel="stylesheet" type="text/css">
-		<link href="/patches/images/gtd_logo.png"rel="shortcut icon">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<!-- <script type="text/javascript">$J = jQuery;</script><script type="text/javascript" src="http://steamcommunity-a.akamaihd.net/public/shared/javascript/shared_global.js?v=OBsnl6VGf94w&amp;l=english" ></script> -->
-		<script type="text/javascript" src="/heropedia/css/heropedia.js" ></script>
-		<script type="text/javascript" src="/heropedia/css/heropickerdata.json" ></script>
-	<title>Heroes</title>
-
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link href="/patches/css/global.css" rel="stylesheet" type="text/css" >
+	<link href="/patches/css/publicheader.css" rel="stylesheet" type="text/css">
+	<link href="/heropedia/css/heropedia.css" rel="stylesheet" type="text/css">
+	<link href="/patches/images/gtd_logo.png"rel="shortcut icon">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">$J = jQuery;</script><script type="text/javascript" src="/heropedia/css/shared_global.js" ></script>
+	<script type="text/javascript" src="/heropedia/css/tooltips.js" ></script>
+	<script type="text/javascript" src="/heropedia/css/heropedia.js" ></script>
+	<script type="text/javascript" src="/heropedia/css/itempediadata.jsonp" ></script>
+	
+	<title>Items</title>
 			
 	<script type="text/javascript">
 
@@ -30,7 +28,8 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 
-	</script></head>
+	</script>
+</head>
 <body>
 <center>
 	<!-- header bar -->
@@ -79,11 +78,294 @@
 			</div>
 		</div>	
 	<!-- header bar -->	
-			<ul>WORK IN PROGRESS</ul>
-			<div id="centerColBottom"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_bottom.png" width="984" height="9" /></div>
-			<div id="centerColBottomShadow"><img src="http://cdn.dota2.com/apps/dota2/images/heropedia/centercolbox_bottom_shadow.png" width="984" height="25" /></div>
+<script language="javascript">
+
+	function MM_preloadImages() { //v3.0
+	  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+		if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+	}
+
+	function PreloadHeaderImages()
+	{
+		//  Preload header rollover images
+		//MM_preloadImages(
+		//);
+	}
+
+			if ( document.addEventListener ) {
+		document.addEventListener( "DOMContentLoaded", PreloadHeaderImages, false );
+	} else if ( document.attachEvent ) {
+		document.attachEvent( 'onDomContentLoaded', PreloadHeaderImages );
+	}
+
+</script>
+
+
+
+	<script language="javascript">
+		function closeSubMenu( target ) {
+			$(target).find('.dn_arrow').attr( "src", "https://steamcdn-a.akamaihd.net/apps/dota2/images/nav/arrow.png" );
+			$(target).find('.menuSubItemList').hide();
+		}
+
+		function closeAllSubMenus() {
+			$('.navItem').each( function() {
+				closeSubMenu( $(this) );
+			});
+		}
+
+		function openSubMenu( target ) {
+			closeAllSubMenus();
+
+			$(target).find('.dn_arrow').attr( "src", "https://steamcdn-a.akamaihd.net/apps/dota2/images/nav/arrow_over.png" );
+
+			// Show the sub-menu
+			var subItemList = $(target).find('.menuSubItemList');
+			if ( subItemList.length ) {
+				var itemTop = $(target).position().top + $(target).outerHeight() - 16;
+				var itemLeft = $(target).position().left;
+				subItemList
+					.css({
+						"top": itemTop + 'px',
+						"left": itemLeft
+					})
+					.fadeIn( 'fast' );
+			}
+		}
+
+		$(document).ready( function () {
+			// Deal with the nav bars
+			$('.navItem').each( function() {
+				$(this).hover( function () {
+					$(this)
+						.find('a.navBarItem img.top')
+						.animate({
+							"opacity": 1
+						}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						openSubMenu( this );
+					}
+				},
+				function () {
+					$(this)
+					.find('a.navBarItem img.top')
+					.animate({
+						"opacity": 0
+					}, 100 );
+					if ( $(this).find('.menuSubItemList').length !== 0 ) {
+						closeSubMenu(this);
+					}
+				}
+				);
+			});
+
+			// Deal with header drop-downs
+			var strMenus = '#languageSelector';
+			
+			$(strMenus).each( function() {
+				$(this).hover( function () {
+					//show its submenu
+					$( this ).find( 'div' ).fadeIn( 'fast' );
+				},
+				function () {
+					//hide its submenu
+					$( this ).find( 'div' ).hide();
+				}
+				);
+			});
+		});
+
+	</script>
+
+	<!-- /header bar -->
+	<!--<div id="bodyContainer">-->
+		<div id="centerColOuter_NoCallout">
+			<div id="centerColTopShadow"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_top_shadow.png" width="984" height="25" /></div>
+			<div id="centerColTop"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_top.png" width="984" height="9" /></div>
+			<div id="centerColContainer">
+				<div id="centerColContent">
+					<div class="redboxOuter">
+						<div class="redboxContent">
+							<div class="redboxTop"></div>
+								<div id="itemPickerInner">
+									<div id="itemsHeader">
+											<h1 id="heroBioName">Items</h1>
+									</div>
+									<div id="itemPickerColHeaders">
+										<div id="basicsHeader">basics</div>
+										<div id="upgradesHeader">upgrades</div>
+									</div>
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_consumables.png" width="49" height="49" alt="CONSUMABLES" title="CONSUMABLES" />
+																				<div onClick="showItemInFullBox('tpscroll', 0)" style="cursor:pointer" id="icon_tpscroll" itemname="tpscroll" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/tpscroll.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('healthpot', 0)" style="cursor:pointer" id="icon_healthpot" itemname="healthpot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/healthpot.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('manapot', 0)" style="cursor:pointer" id="icon_manapot" itemname="manapot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/manapot.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('smoke_of_deceit', 0)" style="cursor:pointer" id="icon_smoke_of_deceit" itemname="smoke_of_deceit" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/smoke_of_deceit_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ward_observer', 0)" style="cursor:pointer" id="icon_ward_observer" itemname="ward_observer" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/ward_observer_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ward_sentry', 0)" style="cursor:pointer" id="icon_ward_sentry" itemname="ward_sentry" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/ward_sentry_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('dust', 0)" style="cursor:pointer" id="icon_dust" itemname="dust" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/dust_lg.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('courier', 0)" style="cursor:pointer" id="icon_courier" itemname="courier" class="floatItemImage itemIconWithTooltip"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/items/courier_lg.png" width="70" height="53" border="0" /></div>
+																			</div>
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_attributes.png" width="49" height="49" alt="ATTRIBUTES" title="ATTRIBUTES" />
+																				<div onClick="showItemInFullBox('gold_ring', 0)" style="cursor:pointer" id="icon_gold_ring" itemname="gold_ring" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gold_ring.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('reinforced_gauntlet', 0)" style="cursor:pointer" id="icon_reinforced_gauntlet" itemname="reinforced_gauntlet" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/reinforced_gauntlet.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('elven_hood', 0)" style="cursor:pointer" id="icon_elven_hood" itemname="elven_hood" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/elven_hood.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('wizard_robe', 0)" style="cursor:pointer" id="icon_wizard_robe" itemname="wizard_robe" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/wizard_robe.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('magic_cube', 0)" style="cursor:pointer" id="icon_magic_cube" itemname="magic_cube" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/magic_cube.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('blessed_greatshield', 0)" style="cursor:pointer" id="icon_blessed_greatshield" itemname="blessed_greatshield" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/blessed_greatshield.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('delicate_longbow', 0)" style="cursor:pointer" id="icon_delicate_longbow" itemname="delicate_longbow" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/delicate_longbow.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('runed_bracers', 0)" style="cursor:pointer" id="icon_runed_bracers" itemname="runed_bracers" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/runed_bracers.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('angel_pearl', 0)" style="cursor:pointer" id="icon_angel_pearl" itemname="angel_pearl" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/angel_pearl.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('giants_cuirass', 0)" style="cursor:pointer" id="icon_giants_cuirass" itemname="giants_cuirass" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/giants_cuirass.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('windrush', 0)" style="cursor:pointer" id="icon_windrush" itemname="windrush" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/windrush.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('magus_king_hood', 0)" style="cursor:pointer" id="icon_magus_king_hood" itemname="magus_king_hood" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/magus_king_hood.png" width="70" height="53" border="0" /></div>
+																			</div>
+																		<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_armaments.png" width="49" height="49" alt="ARMAMENTS" title="ARMAMENTS" />
+																				<div onClick="showItemInFullBox('metal_shard', 0)" style="cursor:pointer" id="icon_metal_shard" itemname="metal_shard" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/metal_shard.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('round_shield', 0)" style="cursor:pointer" id="icon_round_shield" itemname="round_shield" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/round_shield.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('vampirism_amulet', 0)" style="cursor:pointer" id="icon_vampirism_amulet" itemname="vampirism_amulet" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/vampirism_amulet.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('sharp_dirk', 0)" style="cursor:pointer" id="icon_sharp_dirk" itemname="sharp_dirk" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sharp_dirk.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('priest_tunic', 0)" style="cursor:pointer" id="icon_priest_tunic" itemname="priest_tunic" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/priest_tunic.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('crusader_mail', 0)" style="cursor:pointer" id="icon_crusader_mail" itemname="crusader_mail" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/crusader_mail.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('life_orb', 0)" style="cursor:pointer" id="icon_life_orb" itemname="life_orb" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/life_orb.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('quarterlance', 0)" style="cursor:pointer" id="icon_quarterlance" itemname="quarterlance" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/quarterlance.png" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('orb_of_pyros', 0)" style="cursor:pointer" id="icon_orb_of_pyros" itemname="orb_of_pyros" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/orb_of_pyros.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('longsword', 0)" style="cursor:pointer" id="icon_longsword" itemname="longsword" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/longsword.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('sharpmace', 0)" style="cursor:pointer" id="icon_sharpmace" itemname="sharpmace" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sharpmace.png" width="70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('paladin_plate', 0)" style="cursor:pointer" id="icon_paladin_plate" itemname="paladin_plate" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/paladin_plate.png" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('demon_metal', 0)" style="cursor:pointer" id="icon_demon_metal" itemname="demon_metal" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/demon_metal.png" width="70" height="53" border="0" /></div>
+																		</div>
+																				<div class="shopColumn">
+										<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_arcane.png" width="49" height="49" alt="ARCANE" title="ARCANE" />
+																				<div onClick="showItemInFullBox('healer_rag', 0)" style="cursor:pointer" id="icon_healer_rag" itemname="healer_rag" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/healer_rag.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('magic_tooth', 0)" style="cursor:pointer" id="icon_magic_tooth" itemname="magic_tooth" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/magic_tooth.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('unstable_orb', 0)" style="cursor:pointer" id="icon_unstable_orb" itemname="unstable_orb" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/unstable_orb.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('brown_boots', 0)" style="cursor:pointer" id="icon_brown_boots" itemname="brown_boots" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/brown_boots.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('gloves_of_speed', 0)" style="cursor:pointer" id="icon_gloves_of_speed" itemname="gloves_of_speed" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gloves_of_speed.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('mana_orb', 0)" style="cursor:pointer" id="icon_mana_orb" itemname="mana_orb" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/mana_orb.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('frozen_demonblood', 0)" style="cursor:pointer" id="icon_frozen_demonblood" itemname="frozen_demonblood" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/frozen_demonblood.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('maiden_tears', 0)" style="cursor:pointer" id="icon_maiden_tears" itemname="maiden_tears" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/maiden_tears.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('gem', 0)" style="cursor:pointer" id="icon_gem" itemname="gem" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gem.png"width="70" height="53" border="0" /></div>																																									
+																				<div onClick="showItemInFullBox('amplification_tome', 0)" style="cursor:pointer" id="icon_amplification_tome" itemname="amplification_tome" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/amplification_tome.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('fury_gauntlet', 0)" style="cursor:pointer" id="icon_fury_gauntlet" itemname="fury_gauntlet" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/fury_gauntlet.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('bottled_ghost', 0)" style="cursor:pointer" id="icon_bottled_ghost" itemname="bottled_ghost" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bottled_ghost.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('blink', 0)" style="cursor:pointer" id="icon_blink" itemname="blink" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/blink.png"width="70" height="53" border="0" /></div>																																									
+																				</div>
+
+																				<div class="shopColumn">
+																						<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_arcane.png" width="49" height="49" alt="ARCANE" title="ARCANE" />
+																				<div onClick="showItemInFullBox('wild_talisman', 0)" style="cursor:pointer" id="icon_wild_talisman" itemname="wild_talisman" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/wild_talisman.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('lucky_coin', 0)" style="cursor:pointer" id="icon_lucky_coin" itemname="lucky_coin" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/lucky_coin.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('orichalcum_anvil', 0)" style="cursor:pointer" id="icon_orichalcum_anvil" itemname="orichalcum_anvil" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/orichalcum_anvil.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('elven_flask', 0)" style="cursor:pointer" id="icon_elven_flask" itemname="elven_flask" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/elven_flask.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('enchanted_dagger', 0)" style="cursor:pointer" id="icon_enchanted_dagger" itemname="enchanted_dagger" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/enchanted_dagger.png" width="70" height="53" border="0" /></div>
+																				</div>																				
+
+																				<div class="shopColumn">
+																				<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_common.png" width="49" height="49" alt="COMMON" title="COMMON" />
+																				<div onClick="showItemInFullBox('sac_ring', 0)" style="cursor:pointer" id="icon_sac_ring" itemname="sac_ring" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sac_ring.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('dice_dice', 0)" style="cursor:pointer" id="icon_dice_dice" itemname="dice_dice" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/dice_dice.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('saint_pace', 0)" style="cursor:pointer" id="icon_saint_pace" itemname="saint_pace" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/saint_pace.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('bloodthirst_claws', 0)" style="cursor:pointer" id="icon_bloodthirst_claws" itemname="bloodthirst_claws" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bloodthirst_claws.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('diffusionstone', 0)" style="cursor:pointer" id="icon_diffusionstone" itemname="diffusionstone" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/diffusionstone.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('midas_claw', 0)" style="cursor:pointer" id="icon_midas_claw" itemname="midas_claw" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/midas_claw.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('nonchalance', 0)" style="cursor:pointer" id="icon_nonchalance" itemname="nonchalance" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/nonchalance.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('life_cage', 0)" style="cursor:pointer" id="icon_life_cage" itemname="life_cage" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/life_cage.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('extractinator', 0)" style="cursor:pointer" id="icon_extractinator" itemname="extractinator" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/extractinator.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('eternal_frenzy', 0)" style="cursor:pointer" id="icon_eternal_frenzy" itemname="eternal_frenzy" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/eternal_frenzy.png"width="70" height="53" border="0" /></div>
+
+																			</div>
+
+																												<div class="shopColumn">
+																				<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_support.png" width="49" height="49" alt="SUPPORT" title="SUPPORT" />
+																				<div onClick="showItemInFullBox('hermes_boots', 0)" style="cursor:pointer" id="icon_hermes_boots" itemname="hermes_boots" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/hermes_boots.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('enduring_willpower', 0)" style="cursor:pointer" id="icon_enduring_willpower" itemname="enduring_willpower" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/enduring_willpower.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('loyal_paw', 0)" style="cursor:pointer" id="icon_loyal_paw" itemname="loyal_paw" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/loyal_paw.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('murder_of_crows', 0)" style="cursor:pointer" id="icon_murder_of_crows" itemname="murder_of_crows" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/murder_of_crows.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('veil_of_the_night', 0)" style="cursor:pointer" id="icon_veil_of_the_night" itemname="veil_of_the_night" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/veil_of_the_night.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ursine_zeal', 0)" style="cursor:pointer" id="icon_ursine_zeal" itemname="ursine_zeal" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ursine_zeal.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('emperor_cuirass', 0)" style="cursor:pointer" id="icon_emperor_cuirass" itemname="emperor_cuirass" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/emperor_cuirass.png"width="70" height="53" border="0" /></div>																				
+																			</div>
+
+																												<div class="shopColumn">
+																				<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_caster.png" width="49" height="49" alt="CASTER" title="CASTER" />
+																				<div onClick="showItemInFullBox('arcane_ring', 0)" style="cursor:pointer" id="icon_arcane_ring" itemname="arcane_ring" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/arcane_ring.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('mage_skull', 0)" style="cursor:pointer" id="icon_mage_skull" itemname="mage_skull" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/mage_skull.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('gem_of_legends', 0)" style="cursor:pointer" id="icon_gem_of_legends" itemname="gem_of_legends" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gem_of_legends.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('starlight_slippers', 0)" style="cursor:pointer" id="icon_starlight_slippers" itemname="starlight_slippers" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/starlight_slippers.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('momentum_boots', 0)" style="cursor:pointer" id="icon_momentum_boots" itemname="momentum_boots" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/momentum_boots.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('pyromancer_hand', 0)" style="cursor:pointer" id="icon_pyromancer_hand" itemname="pyromancer_hand" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/pyromancer_hand.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('eternity_staff', 0)" style="cursor:pointer" id="icon_eternity_staff" itemname="eternity_staff" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/eternity_staff.png"width="70" height="53" border="0" /></div>																					
+																				<div onClick="showItemInFullBox('bloodgod_amulet', 0)" style="cursor:pointer" id="icon_bloodgod_amulet" itemname="bloodgod_amulet" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bloodgod_amulet.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('vendetta_grasp', 0)" style="cursor:pointer" id="icon_vendetta_grasp" itemname="vendetta_grasp" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/vendetta_grasp.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('rune_scimmy', 0)" style="cursor:pointer" id="icon_rune_scimmy" itemname="rune_scimmy" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/rune_scimmy.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('darkmoon_sword', 0)" style="cursor:pointer" id="icon_darkmoon_sword" itemname="darkmoon_sword" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/darkmoon_sword.png"width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('garb', 0)" style="cursor:pointer" id="icon_garb" itemname="garb" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/garb.png"width="70" height="53" border="0" /></div>	
+																			</div>
+
+																												<div class="shopColumn">
+																				<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_armor.png" width="49" height="49" alt="WEAPONS" title="WEAPONS" />
+																				<div onClick="showItemInFullBox('alucard_shield', 0)" style="cursor:pointer" id="icon_alucard_shield" itemname="alucard_shield" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/alucard_shield.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('giant_crystal', 0)" style="cursor:pointer" id="icon_giant_crystal" itemname="giant_crystal" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/giant_crystal.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('peasant_boot', 0)" style="cursor:pointer" id="icon_peasant_boot" itemname="peasant_boot" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/peasant_boot.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('annihilator_boot.png', 0)" style="cursor:pointer" id="icon_annihilator_boot.png" itemname="annihilator_boot.png" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/annihilator_boot.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ironside_dancer', 0)" style="cursor:pointer" id="icon_ironside_dancer" itemname="ironside_dancer" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ironside_dancer.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('snake_pendant', 0)" style="cursor:pointer" id="icon_snake_pendant" itemname="snake_pendant" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/snake_pendant.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ciaran_ring', 0)" style="cursor:pointer" id="icon_ciaran_ring" itemname="ciaran_ring" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ciaran_ring.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('lich_pendant', 0)" style="cursor:pointer" id="icon_lich_pendant" itemname="lich_pendant" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/lich_pendant.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('jonathan_willpower', 0)" style="cursor:pointer" id="icon_jonathan_willpower" itemname="jonathan_willpower" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/jonathan_willpower.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('infernalis', 0)" style="cursor:pointer" id="icon_infernalis" itemname="infernalis" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/infernalis.png"70" height="53" border="0" /></div>																					
+																				<div onClick="showItemInFullBox('goldensun', 0)" style="cursor:pointer" id="icon_goldensun" itemname="goldensun" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/goldensun.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('breaker_of_nightmares', 0)" style="cursor:pointer" id="icon_breaker_of_nightmares" itemname="breaker_of_nightmares" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/breaker_of_nightmares.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('immortalia', 0)" style="cursor:pointer" id="icon_immortalia" itemname="immortalia" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/immortalia.png"70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('vanguard_aegis', 0)" style="cursor:pointer" id="icon_vanguard_aegis" itemname="vanguard_aegis" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/vanguard_aegis.png"70" height="53" border="0" /></div>	
+																			</div>
+
+																												<div class="shopColumn">
+																				<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_weapons.png" width="49" height="49" alt="ARMOR" title="ARMOR" />
+																				<div onClick="showItemInFullBox('clawed_boots', 0)" style="cursor:pointer" id="icon_clawed_boots" itemname="clawed_boots" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/clawed_boots.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('thirsting_sword', 0)" style="cursor:pointer" id="icon_thirsting_sword" itemname="thirsting_sword" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/thirsting_sword.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('misforged_demon_sword', 0)" style="cursor:pointer" id="icon_misforged_demon_sword" itemname="misforged_demon_sword" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/misforged_demon_sword.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('dismantlers', 0)" style="cursor:pointer" id="icon_dismantlers" itemname="dismantlers" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/dismantlers.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('norstark_fist', 0)" style="cursor:pointer" id="icon_norstark_fist" itemname="norstark_fist" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/norstark_fist.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('bladed_blade', 0)" style="cursor:pointer" id="icon_bladed_blade" itemname="bladed_blade" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/bladed_blade.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('cannibal_sword', 0)" style="cursor:pointer" id="icon_cannibal_sword" itemname="cannibal_sword" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/cannibal_sword.png"70" height="53" border="0" /></div>																					
+																				<div onClick="showItemInFullBox('demon_greataxe', 0)" style="cursor:pointer" id="icon_demon_greataxe" itemname="demon_greataxe" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/demon_greataxe.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('crescent_flame', 0)" style="cursor:pointer" id="icon_crescent_flame" itemname="crescent_flame" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/crescent_flame.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('sanguine_fletcher', 0)" style="cursor:pointer" id="icon_sanguine_fletcher" itemname="sanguine_fletcher" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/sanguine_fletcher.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('butchy_dagger', 0)" style="cursor:pointer" id="icon_butchy_dagger" itemname="butchy_dagger" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/butchy_dagger.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('ten_tonne_gloves', 0)" style="cursor:pointer" id="icon_ten_tonne_gloves" itemname="ten_tonne_gloves" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/ten_tonne_gloves.png"70" height="53" border="0" /></div>	
+																				<div onClick="showItemInFullBox('soul_harvest', 0)" style="cursor:pointer" id="icon_soul_harvest" itemname="soul_harvest" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/soul_harvest.png"70" height="53" border="0" /></div>																					</div>
+																														
+																												<div class="shopColumn">
+																				<img class="shopColumnHeaderImg" src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/itemcat_artifacts.png" width="49" height="49" alt="ARTIFACTS" title="ARTIFACTS" />
+																				<div onClick="showItemInFullBox('thickblooded_ale', 0)" style="cursor:pointer" id="icon_thickblooded_ale" itemname="thickblooded_ale" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/thickblooded_ale.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('gamma', 0)" style="cursor:pointer" id="icon_gamma" itemname="gamma" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/gamma.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('delta', 0)" style="cursor:pointer" id="icon_delta" itemname="delta" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/delta.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('glare_of_anubis', 0)" style="cursor:pointer" id="icon_glare_of_anubis" itemname="glare_of_anubis" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/glare_of_anubis.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('frostbrand', 0)" style="cursor:pointer" id="icon_frostbrand" itemname="frostbrand" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/frostbrand.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('delta_gamma', 0)" style="cursor:pointer" id="icon_delta_gamma" itemname="delta_gamma" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/delta_gamma.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('greatruneblade', 0)" style="cursor:pointer" id="icon_greatruneblade" itemname="greatruneblade" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/greatruneblade.png"70" height="53" border="0" /></div>																					
+																				<div onClick="showItemInFullBox('greatruneblade2', 0)" style="cursor:pointer" id="icon_greatruneblade2" itemname="greatruneblade2" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/greatruneblade2.png"70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('hydra_thirst', 0)" style="cursor:pointer" id="icon_hydra_thirst" itemname="hydra_thirst" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/hydra_thirst.png" width="70" height="53" border="0" /></div>
+																				<div onClick="showItemInFullBox('elemental_grasp', 0)" style="cursor:pointer" id="icon_elemental_grasp" itemname="elemental_grasp" class="floatItemImage itemIconWithTooltip"><img src="/patches/images/items/elemental_grasp.png" width="70" height="53" border="0" /></div>	
+																				</div>
+
+																		<br clear="left" />
+								</div>
+							<div class="redboxBottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="centerColBottom"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_bottom.png" width="984" height="9" /></div>
+			<div id="centerColBottomShadow"><img src="https://steamcdn-a.akamaihd.net/apps/dota2/images/heropedia/centercolbox_bottom_shadow.png" width="984" height="25" /></div>
 		</div>
-	</div>
+	<!--</div>-->
+	<!--<div style="height:290px;"></div>-->
 </center>
 </body>
 </html>
