@@ -323,7 +323,7 @@ function LoadHeropediaData( rgFeeds )
 		{
 			type:'GET',
 			cache:true,
-			url: '/heropedia/css/heropickerdata123.jsonp',
+			url: '/heropedia/css/itempediadata.jsonp',
 			dataType:'jsonp',
 			jsonpCallback:'HeropediaDFReceive'
 		}
