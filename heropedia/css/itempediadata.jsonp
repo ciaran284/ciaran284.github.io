@@ -1038,7 +1038,7 @@ HeropediaDFReceive(
                 "cd":30,
                 "lore":"Its magical power is overflowing.",
                 "components":["gold_ring","mana_orb"],
-                "created":true},  
+                "created":true},    
 
        "mage_skull":{
                 "id":375,
@@ -1170,7 +1170,7 @@ HeropediaDFReceive(
                 "desc":"<h1> Passive: Tear Soul </h1> When off cooldown, your next attack deals extra magical damage to the target equal to 15% of your missing mana.",
                 "notes":"",
                 "attrib":"+ <span class=\"attribVal\">400<\/span> <span class=\"attribValText\">Mana<\/span><br>+ <span class=\"attribVal\">15<\/span> <span class=\"attribValText\">Intelligence<\/span><br>+ <span class=\"attribVal\">25<\/span> <span class=\"attribValText\">Damage<\/span><br>+ <span class=\"attribVal\">7.5%<\/span> <span class=\"attribValText\">Spell Amplification<\/span><br><br>",
-                "mc":,
+                "mc":false,
                 "cd":4,
                 "lore":"An enchanted scimitar that bleeds raw mana as it cuts through the air. It feeds off of the lack of mana in your body, becoming as ferocious as a starving beast, that wants only for sweet mana...",
                 "components":["gamma","longsword","mana_orb"],
