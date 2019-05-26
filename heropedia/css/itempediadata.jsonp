@@ -1293,7 +1293,7 @@ HeropediaDFReceive(
                 "attrib":"+ <span class=\"attribVal\">10<\/span> <span class=\"attribValText\">Strength<\/span><br>+ <span class=\"attribVal\">20%<\/span> <span class=\"attribValText\">Magic Resistance<\/span><br><br>",
                 "mc":false,
                 "cd":15,
-                "lore":"A Vampire's Shield, covered in blessed gold that wards off evil... strangely ironic.",
+                "lore":"An oily pendant that constantly wriggles out of your grasp.",
                 "components":["blessed_greatshield","priest_tunic","round_shield"],
                 "created":true},
 
