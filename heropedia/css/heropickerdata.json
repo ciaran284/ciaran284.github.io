@@ -119,6 +119,14 @@
             "roles":["Carry","Escape","Nuker"],
             "roles_l":["Carry","Escape","Nuker"]},
 
+    "kaylin":
+        {   "name":"kaylin",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"ranged",
+            "roles":["Support","Durable","Nuker","Disabler"],
+            "roles_l":["Support","Durable","Nuker","Disabler"]},              
+
     "kingseeker":
         {   "name":"Kingseeker",
             "bio":"",
