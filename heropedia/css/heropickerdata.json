@@ -117,15 +117,7 @@
             "atk":"ranged",
             "atk_l":"Ranged",
             "roles":["Carry","Escape","Nuker"],
-            "roles_l":["Carry","Escape","Nuker"]},
-
-    "kaylin":
-        {   "name":"kaylin",
-            "bio":"",
-            "atk":"ranged",
-            "atk_l":"ranged",
-            "roles":["Support","Durable","Nuker","Disabler"],
-            "roles_l":["Support","Durable","Nuker","Disabler"]},              
+            "roles_l":["Carry","Escape","Nuker"]},        
 
     "kingseeker":
         {   "name":"Kingseeker",
@@ -166,6 +158,16 @@
                 "atk_l":"Ranged",
                 "roles":["Carry","Nuker","Disabler"],
                 "roles_l":["Carry","Nuker","Disabler"]},
+
+    "xarthoth":
+            {   "name":"Xarthoth",
+                "bio":"",
+                "atk":"melee",
+                "atk_l":"Melee",
+                "roles":["Carry","Nuker","Disabler"],
+                "roles_l":["Carry","Nuker","Disabler"]},    
+                
+                
     
     "ancientrose":
     {   "name":"Ancient Rose",
@@ -182,6 +184,15 @@
             "atk_l":"Melee",
             "roles":["Support","Nuker","Disabler","Initiator"],
             "roles_l":["Support","Nuker","Disabler","Initiator"]},
+
+
+    "kaylin":
+        {   "name":"kaylin",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"ranged",
+            "roles":["Support","Durable","Nuker","Disabler"],
+            "roles_l":["Support","Durable","Nuker","Disabler"]},                 
 
     "manaeater":
         {   "name":"Mana Eater",
