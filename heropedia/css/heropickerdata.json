@@ -190,7 +190,7 @@
         {   "name":"kaylin",
             "bio":"",
             "atk":"ranged",
-            "atk_l":"ranged",
+            "atk_l":"Ranged",
             "roles":["Support","Durable","Nuker","Disabler"],
             "roles_l":["Support","Durable","Nuker","Disabler"]},                 
 
