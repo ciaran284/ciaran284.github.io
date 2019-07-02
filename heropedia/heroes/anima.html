@@ -246,7 +246,7 @@
                                                         <div class="abilityHeaderBox">
                                                             <div class="abilityIconHolder2"><img src="/patches/images/spellicons/anima_obliterate.png"105" height="105" /></div>
                                                             <div class="abilityHeaderRowDescription">
-                                                                <h2>Energy Burst</h2>
+                                                                <h2>Search and Obliterate</h2>
                                                                 <p>Each second, 2 projectiles are shot at the nearest enemy units. A projectile deals damage on hit, and a lower amount over time.</p>
                                                             </div>
                                                             <div class="abilityHeaderRowDescriptionRight">
@@ -265,14 +265,17 @@
                                                             <div class="abilityFooterBoxLeft">
                                                                     ABILITY: <span class="attribVal">no target</span><br />
                                                                     AFFECTS: <span class="attribVal">enemy units</span><br />
-                                                                    DAMAGE TYPE: <span class="attribVal"><font color=#71a9ea>pure</font></span><br/>
+                                                                    DAMAGE TYPE: <span class="attribVal"><font color=#D8AE53>pure</font></span><br/>
                                                                     DISPELLABLE: <span class="attribVal">yes</span><br />
                                                             </div>
                                                             <div class="abilityFooterBoxRight">
                                                                     SEARCH RANGE: <span class="attribVal">600</span><br/>
                                                                     SEARCH DURATION: <span class="attribVal">6</span><br />
-                                                                    DAMAGE: <span class="attribVal">100 / 170 / 240 / 310</span><br/>                                                                                    
-                                                            </div>
+                                                                    PROJECTILE HIT DAMAGE: <span class="attribVal">15 / 30 / 45 / 60</span><br/>
+                                                                    PROJECTILE DPS: <span class="attribVal">8 / 16 / 24 / 32</span><br />
+                                                                    PROJECTILE DPS DURATION DAMAGE: <span class="attribVal">2</span><br/>                                                                                     
+                                                            
+                                                                </div>
                                                             <br clear="left" />
                                                                                                                    									</div>
                                                 </div>
@@ -281,32 +284,36 @@
                                                 <div class="abilitiesInsetBoxInner">
                                                     <div class="abilitiesInsetBoxContent">
                                                         <div class="abilityHeaderBox">
-                                                            <div class="abilityIconHolder2"><img src="/patches/images/spellicons/pudge_flesh_heap_lua.png" width="105" height="105" /></div>
+                                                            <div class="abilityIconHolder2"><img src="/patches/images/spellicons/anima_despair.png" width="105" height="105" /></div>
                                                             <div class="abilityHeaderRowDescription">
-                                                                <h2>Jungle Power</h2>
-                                                                <p>Nearby enemy hero deaths grant permanent stacks of Jungle Power. Each stack gives Rose spell amplification. Jungle Power is retroactive.</p>
+                                                                <h2>Field of Despair</h2>
+                                                                <p>Creates an extremely large area which withers the life of enemies inside, dealing damage relative to their max health, and slowing their movement.</p>
                                                             </div>
                                                             <div class="abilityHeaderRowDescriptionRight">
                                                                 <div class="cooldownMana">
-                                                                    <!-- <div class="mana"><img alt="Mana Cost" title="Mana Cost" class="manaImg" src="overlay/mana.png" width="16" height="16" border="0" /> <span class="manaCoolKey">
-                                                                        Mana Cost:</span> 100
+                                                                    <div class="mana"><img alt="Mana Cost" title="Mana Cost" class="manaImg" src="overlay/mana.png" width="16" height="16" border="0" /> <span class="manaCoolKey">
+                                                                        Mana Cost:</span> 115 / 130 / 145 / 160
                                                                     </div>
                                                                     <div class="cooldown"><img alt="Cooldown" title="Cooldown" class="cooldownImg" src="overlay/cooldown.png" width="16" height="16" border="0" /> <span class="manaCoolKey">
-                                                                        Cooldown:</span> 30
-                                                                    </div><br clear="left" /> -->
+                                                                        Cooldown:</span> 60 / 56 / 52 / 48
+                                                                    </div><br clear="left" />
                                                                 </div>											
                                                             </div>
                                                             <br clear="left" />
                                                         </div>
                                                         <div class="abilityFooterBox">
                                                             <div class="abilityFooterBoxLeft">
-                                                                ABILITY: <span class="attribVal">passive</span><br />
-                                                                <!-- AFFECTS: <span class="attribVal">enemy heroes</span><br /> -->
-                                                                <!-- DAMAGE TYPE: <span class="attribVal"><font color=#71a9ea>magical</font></span><br/> -->
+                                                                ABILITY: <span class="attribVal">point target</span><br />
+                                                                AFFECTS: <span class="attribVal">enemy units</span><br />
+                                                                DAMAGE TYPE: <span class="attribVal"><font color=#D8AE53>pure</font></span><br/>
                                                             </div>
                                                             <div class="abilityFooterBoxRight">
-                                                                SPELL AMP PER STACK: <span class="attribVal">1.3% / 1.9% / 2.5% / 3.1%</span><br />
-                                                                RANGE: <span class="attribVal">700</span><br>                                                                
+                                                                RADIUS: <span class="attribVal">1400</span><br />
+                                                                DURATION: <span class="attribVal">22</span><br>
+                                                                SLOW: <span class="attribVal">10% / 12% / 14% / 16%</span><br />
+                                                                MAX HEALTH LOST PER SECOND: <span class="attribVal">1.2% / 1.6% / 2% / 2.4%</span><br>
+                                                                                                                                
+                                                            
                                                             </div>
                                                             <br clear="left" />
                                                                                                                                                 										</div>
@@ -316,33 +323,34 @@
                                                 <div class="abilitiesInsetBoxInner">
                                                     <div class="abilitiesInsetBoxContent">
                                                         <div class="abilityHeaderBox">
-                                                            <div class="abilityIconHolder2"><img src="/patches/images/spellicons/rose_thorns.png" width="105" height="105" /></div>
+                                                            <div class="abilityIconHolder2"><img src="/patches/images/spellicons/anima_ultimate.png" width="105" height="105" /></div>
                                                             <div class="abilityHeaderRowDescription">
-                                                                <h2>Stranglethorns</h2>
-                                                                <p>After a delay, enemies near Ancient Rose are stunned and take damage.
+                                                                <h2>Resequencing</h2>
+                                                                <p>Applies a slow and silence to enemies in the area. After this debuff expires, the enemies are stunned.
                                                                                 
                                                             </div>
                                                             <div class="abilityHeaderRowDescriptionRight">
                                                                 <div class="cooldownMana">
                                                                     <div class="mana"><img alt="Mana Cost" title="Mana Cost" class="manaImg" src="overlay/mana.png" width="16" height="16" border="0" /> 
-                                                                        <span class="manaCoolKey">Mana Cost:</span> 150 / 175 / 200</div>
+                                                                        <span class="manaCoolKey">Mana Cost:</span> 250 / 350 / 450</div>
                                                                     <div class="cooldown"><img alt="Cooldown" title="Cooldown" class="cooldownImg" src="overlay/cooldown.png" width="16" height="16" border="0" /> 
-                                                                        <span class="manaCoolKey">Cooldown:</span> 75</div><br clear="left" />
+                                                                        <span class="manaCoolKey">Cooldown:</span> 140 / 130 / 120</div><br clear="left" />
                                                                 </div>												
                                                             </div>
                                                             <br clear="left" />
                                                         </div>
                                                         <div class="abilityFooterBox">
                                                             <div class="abilityFooterBoxLeft">
-                                                                ABILITY: <span class="attribVal">no target</span><br />
-                                                                <!-- AFFECTS: <span class="attribVal">enemy heroes</span><br /> -->
-                                                                DAMAGE TYPE: <span class="attribVal"><font color=#71a9ea>magical</font></span><br/>
+                                                                ABILITY: <span class="attribVal">point target</span><br />
+                                                                AFFECTS: <span class="attribVal">enemy units</span><br />
+                                                                <!-- DAMAGE TYPE: <span class="attribVal"><font color=#71a9ea>magical</font></span><br/> -->
+                                                                DISPELLABLE: <span class="attribVal"><font color=#71a9ea>Cannot be dispelled</font></span><br/>
                                                             </div>
                                                             <div class="abilityFooterBoxRight">
-                                                                DELAY: <span class="attribVal">2</span><br />
-                                                                AREA: <span class="attribVal">475</span><br>
-                                                                STUN DURATION: <span class="attribVal">1.75 / 2 / 2.25</span><br />
-                                                                DAMAGE: <span class="attribVal">200 / 250 / 300</span><br>
+                                                                RADIUS: <span class="attribVal">500</span><br />
+                                                                SILENCE/SLOW DURATION: <span class="attribVal">3</span><br>
+                                                                MOVE SLOW: <span class="attribVal">40% / 60% / 80%</span><br />
+                                                                STUN DURATION: <span class="attribVal">2 / 2.75 / 3.5</span><br>
                                                                 
                                                             </div>
                                                             <br clear="left" />
