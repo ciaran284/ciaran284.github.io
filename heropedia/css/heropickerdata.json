@@ -177,6 +177,14 @@
         "roles":["Nuker","Disabler"],
         "roles_l":["Nuker","Disabler"]},
 
+    "anima":
+        {   "name":"Anima",
+            "bio":"",
+            "atk":"ranged",
+            "atk_l":"Ranged",
+            "roles":["Nuker","Disabler","Initiator"],
+            "roles_l":["Nuker","Disabler","Initiator"]},
+        
     "wolf":
         {   "name":"Cursed Wolf",
             "bio":"",
